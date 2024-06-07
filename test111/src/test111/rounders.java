@@ -7,6 +7,7 @@ public class rounders {
 		
 		System.out.println("경석이 왔다감");
 		
+		System.out.println("전승주 왔다감");
 	}
 
 }
