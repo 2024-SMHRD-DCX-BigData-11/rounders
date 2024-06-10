@@ -1,7 +1,7 @@
-<%@page import="com.smhrd.model.Message"%>
+<%@page import="com.baseballtalk.model.Message"%>
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.MessageDAO"%>
-<%@page import="com.smhrd.model.Member"%>
+<%@page import="com.baseballtalk.model.MessageDAO"%>
+<%@page import="com.baseballtalk.model.Member"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>  

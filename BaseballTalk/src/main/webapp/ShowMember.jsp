@@ -1,6 +1,6 @@
-<%@page import="com.smhrd.model.Member"%>
+<%@page import="com.baseballtalk.model.Member"%>
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 1.request영역에 저장된 정보를 가져오시오. -->
 

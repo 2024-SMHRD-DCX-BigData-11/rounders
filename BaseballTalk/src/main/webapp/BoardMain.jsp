@@ -1,6 +1,6 @@
-<%@page import="com.smhrd.model.Board"%>
+<%@page import="com.baseballtalk.model.Board"%>
 <%@page import="java.util.List"%>
-<%@page import="com.smhrd.model.BoardDAO"%>
+<%@page import="com.baseballtalk.model.BoardDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
