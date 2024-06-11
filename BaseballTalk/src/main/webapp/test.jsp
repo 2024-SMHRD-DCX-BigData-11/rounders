@@ -290,7 +290,7 @@
 	<%@ include file = "header.jsp" %>
 	<c:if test="${empty match}">
 	<%
-		response.sendRedirect("TestCon");
+		response.sendRedirect("");
 	%>
 	
 	</c:if>
