@@ -9,6 +9,7 @@ public class CommitTest {
 		System.out.println("여기 밑으로 복붙해서 커밋 테스트 ㄱㄱ");
 		System.out.println("여기 밑으로 복붙해서 커밋 테스트 ㄱㄱ");
 		System.out.println("여기 밑으로 복붙해서 커밋 테스트 ㄱㄱ");
+		System.out.println("최리 커밋했다");
 		
 	}
 
