@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baseballtalk.database.MemberMapper">
+
+  	<insert id="join" parameterType="Member">
+  		insert into tbl_member values(#{id}, #{pw}, #{name}, #{tel}, sysdate, #{nick}, 'rookie', 0, #{team_Num})
+  	</insert>
+  	
+  	<select id="emailCheck" parameterType="String" resultType="boolean">
+  		select case when count(*)>0 then 1
+  			else 0
+  			end result
+  		from tbl_member where mem_nick=#{nick}
+  	</select>
+  	
+  	<select id="login" parameterType="Member" resultType = "Member">
+  		select * from tbl_member where mem_id = #{id}, mem_pw = #{pw}
+  	</select>
+  	
+  	<select id="serchPw" parameterType="Member" resultType = "Member">
+  		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}
+  	</select>
+ 
+</mapper>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baseballtalk.database.BoardMapper">
+
+	<insert id="insertNoticeBoard">
+	
+		INSERT INTO tbl_notice
+    (notice_title, 
+    notice_content, 
+    notice_views, 
+    mem_id, 
+    notice_category, 
+    created_at)
+VALUES
+    (#{title}, 
+    #{content}, 
+    #{views}, 
+    #{writer}, 
+    #{category}, 
+    sysdate);
+	
+	</insert>
+
+	<insert id="insertFreeBoard">
+	
+		INSERT INTO tbl_freeboard
+    (board_title, 
+    board_content, 
+    created_at, 
+    board_views, 
+    board_likes, 
+    board_file, 
+    mem_id)
+VALUES
+    (#{title}, 
+    #{content}, 
+    sysdate, 
+    #{views}, 
+    #{likes}, 
+    #{filename}, 
+    #{writer});
+	
+	</insert>
+	
+	<insert id="insertTeamBoard">
+	
+		INSERT INTO tbl_team_board
+    (team_idx, 
+    board_category, 
+    board_title, 
+    board_content, 
+    created_at, 
+    board_views, 
+    board_likes, 
+    board_file, 
+    mem_id)
+VALUES
+    (#{team_Num}, 
+    #{category}, 
+    #{title}, 
+    #{content}, 
+    sysdate, 
+    #{views}, 
+    #{likes}, 
+    #{filename}, 
+    #{writer});
+	
+	</insert>
+	
+	<update id="updateNoticeBoard" parameterType = "NoticeBoard">
+	
+		update tbl_notice set notice_category=#{category}, notice_title=#{title}, notice_content=#{content}  where mem_id=#{writer} and notice_idx=#{borad_Num}
+	
+	</update>
+
+	<update id="updateFreeBoard" parameterType = "FreeBoard">
+	
+		update tbl_freeboard set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{writer}
+	
+	</update>
+
+	<update id="updateTeamBoard" parameterType = "TeamBoard">
+	
+		update tbl_team_board set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{writer}
+	
+	</update>
+
+	<delete id="deleteNoticeBoard">
+	
+		delete from tbl_notice where mem_id=#{writer} and notice_idx=#{boardNum} and notice_title=#{title}
+	
+	</delete>
+	
+	<delete id="deleteFreeBoard">
+	
+		delete from tbl_freeboard where mem_id=#{writer} and board_idx=#{boardNum} and board_title=#{title}
+	
+	</delete>
+	
+	<delete id="deleteTeamBoard">
+	
+		delete from tbl_team_board where mem_id=#{writer} and team_idx=#{teamNum} and board_idx=#{boardNum} and board_title=#{title}
+	
+	</delete>
+ 
+</mapper>

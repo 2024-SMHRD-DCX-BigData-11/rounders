@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baseballtalk.database.MemberMapper">
+
+  	<insert id="insertHotplayer" parameterType="HotPlayer">
+  	
+  		insert into tbl_hot_player (mem_id, player_idx, created_at) VALUES(#{id}, #{player_id}, sysdate);
+  		
+  	</insert>
+  	
+</mapper>

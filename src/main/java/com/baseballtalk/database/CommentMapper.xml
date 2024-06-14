@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baseballtalk.database.CommentMapper">
+
+
+	<insert id="insertRecoredComment">
+	
+		INSERT INTO tbl_recored_comment
+    (rcmt_content, 
+    created_at, 
+    mem_id)
+VALUES
+    (#{content}, 
+    sysdate, 
+    #{writer});
+	
+	</insert>
+	
+	<insert id="insertFreeBoardComment">
+	
+		INSERT INTO tbl_freeboard_comment
+    (board_idx, 
+    cmt_content, 
+    created_at, 
+    mem_id)
+VALUES
+    (#{comment_Num}, 
+    #{content}, 
+    sysdate, 
+    #{writer});
+	
+	</insert>
+	
+	<insert id="insertTeamComment">
+	
+		INSERT INTO tbl_team_comment
+    (board_idx, 
+    cmt_content, 
+    created_at, 
+    mem_id)
+VALUES
+    (#{comment_Num}, 
+    #{content}, 
+    sysdate, 
+    #{writer});
+	
+	</insert>
+	
+	
+	<update id="updateRecoredComment" parameterType = "Board">
+	
+		update tbl_recored_comment set rcmt_content=#{content} where rcmt_idx =#{comment_Num} and mem_id=#{writer}
+	
+	</update>
+	
+	<update id="updateFreeBoardComment" parameterType = "Board">
+	
+		update tbl_freeboard_comment set cmt_content=#{content} where cmt_idx =#{comment_Num} and mem_id=#{writer}
+	
+	</update>
+
+	<update id="updateTeamBoardComment" parameterType = "Board">
+	
+		update tbl_team_comment set cmt_content=#{content} where cmt_idx =#{comment_Num} and mem_id=#{writer}
+	
+	</update>
+	
+	
+	<delete id="deleteRecoredBoardComment">
+	
+		delete from tbl_recored_comment where mem_id=#{writer} and rcmt_idx=#{comment_Num}
+	
+	</delete>
+
+	<delete id="deleteFreeBoardComment">
+	
+		delete from tbl_freeboard_comment where mem_id=#{writer} and cmt_idx=#{comment_Num}
+	
+	</delete>
+	
+	<delete id="deleteTeamComment">
+	
+		delete from tbl_team_comment where mem_id=#{writer} and cmt_idx=#{comment_Num}
+	
+	</delete>
+ 
+</mapper>
