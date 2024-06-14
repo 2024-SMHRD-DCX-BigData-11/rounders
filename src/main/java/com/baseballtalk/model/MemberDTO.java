@@ -36,11 +36,12 @@ public class MemberDTO {
 		this.tel = tel;
 	}
 	
-	public MemberDTO(String id,String pw, String name, String nick, String tel, int team_Num) {
+	public MemberDTO(@NonNull String id,String pw, String name, String nick, String tel, int team_Num) {
 		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
+		this.nick = nick;
 		this.tel = tel;
 		this.team_Num = team_Num;
 	}

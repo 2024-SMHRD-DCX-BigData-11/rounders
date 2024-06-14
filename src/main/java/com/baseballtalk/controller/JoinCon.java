@@ -21,7 +21,7 @@ import com.baseballtalk.model.MemberDAO;
 			
 			request.setCharacterEncoding("UTF-8");
 			
-			String id = request.getParameter("id");
+			String id = request.getParameter("email");
 			String pw = request.getParameter("pw");
 			String name = request.getParameter("name");
 			String nick = request.getParameter("nick");
@@ -29,27 +29,24 @@ import com.baseballtalk.model.MemberDAO;
 			int team_Num = Integer.parseInt(request.getParameter("team_Num"));
 			
 			System.out.println(id + "" + pw + "" + name + "" + nick + "" + tel + "" + team_Num);
+			System.out.println(nick);
 			
-			MemberDTO member = new MemberDTO(id, pw, name, nick, tel, team_Num);
-			
-			// System.out.println(member.toString());
-			
-			int join_member = new MemberDAO().join(member);
-			
-			if(join_member > 0) {
-				System.out.println("회원가입 성공!!");
+			 MemberDTO member = new MemberDTO(id, pw, name, nick, tel, team_Num);
+			 System.out.println(member.toString());
+				
+				System.out.println(member.toString());
+				 
+				 int join_member = new MemberDAO().join(member);
+				
+				if(join_member > 0) { System.out.println("회원가입 성공!!");
 				
 				HttpSession session = request.getSession();
 				
 				session.setAttribute("join_member", join_member);
 				
-				response.sendRedirect("test.jsp");
-			}
-			else {
-				System.out.println("회원가입 실패ㅠㅠ");
-			}
-			
-			response.sendRedirect("test.jsp");
+				 response.sendRedirect("test.jsp"); } else { System.out.println("회원가입 실패ㅠㅠ");
+				 response.sendRedirect("test.jsp"); }
+			 
 			
 		}
 
