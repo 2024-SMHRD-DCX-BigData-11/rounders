@@ -49,19 +49,19 @@ VALUES
 	</insert>
 	
 	
-	<update id="updateRecoredComment" parameterType = "Board">
+	<update id="updateRecoredComment" parameterType = "RecoredComment">
 	
 		update tbl_recored_comment set rcmt_content=#{content} where rcmt_idx =#{comment_Num} and mem_id=#{writer}
 	
 	</update>
 	
-	<update id="updateFreeBoardComment" parameterType = "Board">
+	<update id="updateFreeBoardComment" parameterType = "FreeBoardComment">
 	
 		update tbl_freeboard_comment set cmt_content=#{content} where cmt_idx =#{comment_Num} and mem_id=#{writer}
 	
 	</update>
 
-	<update id="updateTeamBoardComment" parameterType = "Board">
+	<update id="updateTeamBoardComment" parameterType = "TeamBoardComment">
 	
 		update tbl_team_comment set cmt_content=#{content} where cmt_idx =#{comment_Num} and mem_id=#{writer}
 	

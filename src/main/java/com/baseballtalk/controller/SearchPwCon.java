@@ -35,6 +35,8 @@ public class SearchPwCon{
 			session.setAttribute("SearchPw", SearchPw);
 			
 			response.sendRedirect("searchPwSuccess.jsp");
+			
+			
 		}
 		else {
 			System.out.println("비밀번호 찾기 실패 ㅠㅠ");

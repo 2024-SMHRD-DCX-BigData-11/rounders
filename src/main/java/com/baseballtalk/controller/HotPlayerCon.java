@@ -14,7 +14,7 @@ import com.baseballtalk.model.HotPlayerDAO;
 import com.baseballtalk.model.HotPlayerDTO;
 import com.baseballtalk.model.MemberDAO;
 
-@WebServlet("/LoginCon")
+@WebServlet("/HotplayerCon")
 	
 	public class HotPlayerCon extends HttpServlet {
 

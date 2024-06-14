@@ -298,15 +298,15 @@
 	<table>
 	<tr>
 	<th colspan="3" id="match_date">오늘의 경기<br>
-	<span>${match.get(0).getDate()}</span></th>
+	<span>${match.get(0).getMatch_date()}</span></th>
 	</tr>
 	<c:forEach var="i" begin="0" end="4" step="1">
 		<tr>
-		<td><span class="team">${match.get(i).getAway()}</span><br>
-			<span class = "pitcher">${match.get(i).getAwayPitcher() }</span></td>
-		<td>${match.get(i).getTime() }</td>
-		<td><span class = "team">${match.get(i).getHome() }</span><br>
-			<span class = "pitcher">${match.get(i).getHomePitcher() }</span></td>
+		<td><span class="team">${match.get(i).getAway_team()}</span><br>
+			<span class = "pitcher">${match.get(i).getAway_pitcher() }</span></td>
+		<td>${match.get(i).getMatch_time() }</td>
+		<td><span class = "team">${match.get(i).getHome_team() }</span><br>
+			<span class = "pitcher">${match.get(i).getHome_pitcher() }</span></td>
 		</tr>
 	</c:forEach>
 	</table>

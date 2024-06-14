@@ -15,7 +15,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertRecoredComment(RecoredCommentDTO Recoredcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.database.CommentMapper.RecoredComment",Recoredcomment);
+		int cnt = session.insert("com.baseballtalk.database.CommentMapper.RecoredComment",Recoredcomment);
 		session.close();
 		return cnt;
 	}
@@ -23,7 +23,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertFreeBoardComment(FreeBoardCommentDTO Freecomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.database.CommentMapper.insertFreeBoardComment",Freecomment);
+		int cnt = session.insert("com.baseballtalk.database.CommentMapper.insertFreeBoardComment",Freecomment);
 		session.close();
 		return cnt;
 	}
@@ -31,7 +31,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertTeamBoardComment(TeamBoardCommentDTO Teamcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.database.BoardMapper.insertTeamComment",Teamcomment);
+		int cnt = session.insert("com.baseballtalk.database.BoardMapper.insertTeamComment",Teamcomment);
 		session.close();
 		return cnt;
 	}
@@ -39,7 +39,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int updateRecoredComment(RecoredCommentDTO Recoredcomment) {
 			
 			SqlSession session = sqlSessionFactory.openSession(true);
-			int cnt = session.update("com.smhrd.database.CommentMapper.updateRecoredComment",Recoredcomment);
+			int cnt = session.update("com.baseballtalk.database.CommentMapper.updateRecoredComment",Recoredcomment);
 			session.close();
 			return cnt;
 			
@@ -49,7 +49,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int updateFreeBoardComment(FreeBoardCommentDTO Freecomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.update("com.smhrd.database.CommentMapper.updateFreeBoardComment",Freecomment);
+		int cnt = session.update("com.baseballtalk.database.CommentMapper.updateFreeBoardComment",Freecomment);
 		session.close();
 		return cnt;
 		
@@ -58,7 +58,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int updateTeamBoardComment(TeamBoardCommentDTO Teamcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.update("com.smhrd.database.BoardMapper.updateTeamComment",Teamcomment);
+		int cnt = session.update("com.baseballtalk.database.CommentMapper.updateTeamComment",Teamcomment);
 		session.close();
 		return cnt;
 		
@@ -67,7 +67,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int deleteRecoredComment(RecoredCommentDTO Recoredcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.smhrd.database.BoardMapper.deleteRecoredComment",Recoredcomment);
+		int cnt = session.delete("com.baseballtalk.database.CommentMapper.deleteRecoredComment",Recoredcomment);
 		session.close();
 		return cnt;
 		
@@ -77,7 +77,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int deleteFreeBoardComment(FreeBoardCommentDTO Freecomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.smhrd.database.BoardMapper.deleteFreeBoardComment",Freecomment);
+		int cnt = session.delete("com.baseballtalk.database.CommentMapper.deleteFreeBoardComment",Freecomment);
 		session.close();
 		return cnt;
 		
@@ -86,7 +86,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int deleteTeamBoardComment(TeamBoardCommentDTO Teamcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.smhrd.database.BoardMapper.deleteTeamComment",Teamcomment);
+		int cnt = session.delete("com.baseballtalk.database.CommentMapper.deleteTeamComment",Teamcomment);
 		session.close();
 		return cnt;
 		

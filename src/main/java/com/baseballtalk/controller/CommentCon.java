@@ -23,7 +23,7 @@ import com.baseballtalk.model.CommentDAO;
 import com.baseballtalk.model.FreeBoardCommentDTO;
 import com.baseballtalk.model.TeamBoardCommentDTO;
 
-@WebServlet("/BoardCon")
+@WebServlet("/CommentCon")
 	
 	public class CommentCon extends HttpServlet {
 

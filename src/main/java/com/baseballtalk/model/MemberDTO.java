@@ -36,7 +36,7 @@ public class MemberDTO {
 		this.tel = tel;
 	}
 	
-	public MemberDTO(String id,String pw, String name, String nick, String tel, int Team_Num) {
+	public MemberDTO(String id,String pw, String name, String nick, String tel, int team_Num) {
 		super();
 		this.id = id;
 		this.pw = pw;

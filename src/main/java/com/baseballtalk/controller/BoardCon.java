@@ -72,7 +72,7 @@ import com.baseballtalk.model.BoardDAO;
 			
 			if(i_cnt3 == 1) {
 				System.out.println("팀게시글 업로드 성공");
-				response.sendRedirect("NoticeBoard.jsp");
+				response.sendRedirect("test.jsp");
 			}
 			else {
 				System.out.println("팀게시글 업로드 실패");

@@ -11,14 +11,16 @@ public class PlayerDAO {
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
-	public List<PlayerDTO> selectplayer(String player_id){
+	public List<PlayerDTO> showPlayer() {
 		
+		// Connection 하나 빌려오기
 		SqlSession session = sqlSessionFactory.openSession(true);
-		List<PlayerDTO> list = session.selectList("com.baseballtalk.database.PlayerMapper.selectPlayer", player_id);
-		session.close();
-		return list;
 		
+		List <PlayerDTO> player = session.selectList("com.baseballtalk.database.PlayerMapper.showPlayer");
+		session.close();
+		
+		return player;
+
 	}
-	
 
 }

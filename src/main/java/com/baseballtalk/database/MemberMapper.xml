@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.baseballtalk.database.MemberMapper">
+<mapper namespace="com.batalk.database.MemberMapper">
 
   	<insert id="join" parameterType="Member">
   		insert into tbl_member values(#{id}, #{pw}, #{name}, #{tel}, sysdate, #{nick}, 'rookie', 0, #{team_Num})
