@@ -12,7 +12,7 @@
 
 	<div class="button-login" align ="center" >
 	                <a id="kakao-login-btn" >
-	    <img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="83%" height ="50px" />
+	    <img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300px" height ="50px" />
 	    </a>
 	</div>
 	

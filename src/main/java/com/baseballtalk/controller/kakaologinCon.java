@@ -19,23 +19,25 @@ public class kakaologinCon extends HttpServlet {
 		String email = request.getParameter("email");
 		String nick = request.getParameter("nick");
 		
-		System.out.println(email + " " + nick);
+		//System.out.println(email + " " + nick);
 		
 		MemberDTO member = new MemberDTO("k-"+email, null,null,"k-"+nick,null,null);
 		MemberDTO kakao_member = new MemberDAO().kakaologin(member);
-		System.out.println(member.toString());
+		//System.out.println(member.toString());
 		if(kakao_member != null) {
 			if(!member.getMem_nick().equals(kakao_member.getMem_nick())) {
 				int cnt = new MemberDAO().kakaoupdate(member);
 				if(cnt == 1) {
 					kakao_member = new MemberDAO().kakaologin(member);
+					System.out.println("업데이트 성공!");
 				}else {
 					System.out.println("데이터 업데이트 실패");
 				}
 			}
-			System.out.println(kakao_member);
+			//System.out.println(kakao_member);
 			HttpSession session = request.getSession();
 			session.setAttribute("login_member",kakao_member);
+			System.out.println("로그인 성공!");
 		}else{
 			int cnt = new MemberDAO().join(member);
 			if(cnt == 1) {
