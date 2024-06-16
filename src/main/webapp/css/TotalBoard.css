@@ -1,0 +1,14 @@
+@charset "UTF-8";
+#totalboard{
+	 width: 80%; /* 적절한 너비 조정 */
+    margin: 0 auto; /* 가운데 정렬 */
+     display: flex; /* 요소를 플렉스 컨테이너로 만듭니다. */
+    align-items: center; /* 요소들을 수직으로 가운데 정렬합니다. */
+    flex-direction: column; /* 내부 요소들을 세로로 배열합니다. */
+    unicode-bidi: isolate;
+    height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+}
+td {
+    padding: 8px; /* 내부 여백 설정 */
+    border: 1px solid #ccc; /* 테이블 셀 경계선 설정 */
+}

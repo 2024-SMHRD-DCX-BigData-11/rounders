@@ -10,7 +10,7 @@
 a {
   text-decoration: none;
   color: black;
-  padding-top : 100px;
+  padding-top : 60px;
   display: inline-block; /* 가운데 정렬을 위해 인라인 블록 요소로 변경 */
   font-size: 2em;
   text-align: center;
@@ -35,7 +35,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
+ 
 }
 
 .member_management{
