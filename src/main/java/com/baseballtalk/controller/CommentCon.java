@@ -32,20 +32,21 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 			
 		request.setCharacterEncoding("UTF-8");
 			
-			int comment_Num = Integer.parseInt(request.getParameter("comment_Num"));
-			int board_Num = Integer.parseInt(request.getParameter("board_Num"));
-			String writer = request.getParameter("writer");
-			String content = request.getParameter("content");
-			int c_likes = Integer.parseInt(request.getParameter("c_likes"));
-			String c_date = request.getParameter("c_date");
+			int rcmt_idx = Integer.parseInt(request.getParameter("rcmt_idx"));
+			int cmt_idx = Integer.parseInt(request.getParameter("cmt_idx"));
+			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
+			String mem_id = request.getParameter("mem_id");
+			String rcmt_content = request.getParameter("rcmt_content");
+			String cmt_content = request.getParameter("cmt_content");
+			String created_at = request.getParameter("create_at");
 			
-			System.out.println(comment_Num + "" + board_Num + "" + writer + "" + content + "" + c_date);
+			System.out.println(rcmt_idx + "" + cmt_idx + "" + mem_id + "" + rcmt_content + "" + cmt_content + "" + created_at);
 			
-			RecoredCommentDTO recoredComment = new RecoredCommentDTO(comment_Num, board_Num, writer, content, c_date);
+			RecoredCommentDTO recoredComment = new RecoredCommentDTO(rcmt_idx, rcmt_content, created_at, mem_id);
 			
-			FreeBoardCommentDTO freeBoardComment = new FreeBoardCommentDTO(comment_Num, board_Num, writer, content, c_date);
+			FreeBoardCommentDTO freeBoardComment = new FreeBoardCommentDTO(cmt_idx, board_idx, cmt_content, created_at, mem_id);
 			
-			TeamBoardCommentDTO teamBoardComment = new TeamBoardCommentDTO(comment_Num, board_Num, writer, content, c_date);
+			TeamBoardCommentDTO teamBoardComment = new TeamBoardCommentDTO(cmt_idx, board_idx, cmt_content, created_at, mem_id);
 			
 			// System.out.println(member.toString());
 			

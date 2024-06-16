@@ -47,22 +47,27 @@ import com.baseballtalk.model.BoardDAO;
 			
 			request.setCharacterEncoding("UTF-8");
 			
-			int board_Num = Integer.parseInt(multi.getParameter("board_Num"));
-			int team_Num = Integer.parseInt(multi.getParameter("team_Num"));
-			String category = multi.getParameter("category");
-			String title = multi.getParameter("title");
-			String writer = multi.getParameter("writer");
-			String content = multi.getParameter("content");
-			String filename = multi.getParameter("filename");
-			int views = Integer.parseInt(multi.getParameter("views"));
-			int likes = Integer.parseInt(multi.getParameter("likes"));;
-			String b_date = multi.getParameter("b_date");
+			int notice_idx = Integer.parseInt(multi.getParameter("notice_idx"));
+			int board_idx = Integer.parseInt(multi.getParameter("board_idx"));
+			int team_idx = Integer.parseInt(multi.getParameter("team_idx"));
+			String notice_category = multi.getParameter("notice_category");
+			String board_category = multi.getParameter("board_category");
+			String notice_title = multi.getParameter("notice_title");
+			String board_title = multi.getParameter("board_title");
+			String notice_content = multi.getParameter("notice_content");
+			String board_content = multi.getParameter("board_content");
+			String created_at = multi.getParameter("created_at");
+			int notice_views = Integer.parseInt(multi.getParameter("notice_views"));
+			int board_views = Integer.parseInt(multi.getParameter("board_views"));
+			int board_likes = Integer.parseInt(multi.getParameter("board_likes"));;
+			String board_file = multi.getParameter("board_file");
+			String mem_id = multi.getParameter("mem_id");
 			
-			NoticeBoardDTO noticeBoard = new NoticeBoardDTO(board_Num, category, title, writer, content, filename, views, b_date);
+			NoticeBoardDTO noticeBoard = new NoticeBoardDTO(notice_idx, notice_title, notice_content, notice_views, mem_id, notice_category, created_at);
 			
-			FreeBoardDTO freeBoard = new FreeBoardDTO(board_Num, category, title, writer, content, filename, likes, views, b_date);
+			FreeBoardDTO freeBoard = new FreeBoardDTO(board_idx, board_title, board_content, created_at, board_views, board_likes, board_file, mem_id);
 			
-			TeamBoardDTO teamBoard = new TeamBoardDTO(board_Num, team_Num, category, title, writer, content, filename, views, likes, b_date);
+			TeamBoardDTO teamBoard = new TeamBoardDTO(board_idx, team_idx, board_category, board_title, board_content, created_at, board_views, board_likes, board_file, mem_id);
 			
 			int i_cnt1 = new BoardDAO().insertNoticeBoard(noticeBoard); //i_cnt = insert_cnt
 			

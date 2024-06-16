@@ -14,13 +14,12 @@ import lombok.ToString;
 
 public class NoticeBoardDTO {
 	
-	private int board_Num;
-	private String category;
-	private String title;
-	private String writer;
-	private String content;
-	private String filename;
-	private int views;
-	private String b_date;
+	private int notice_idx;
+	private String notice_title;
+	private String notice_content;
+	private int notice_views;
+	private String mem_id;
+	private String notice_category;
+	private String created_at;
 
 }
