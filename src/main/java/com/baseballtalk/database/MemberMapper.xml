@@ -31,7 +31,7 @@
   		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}
   	</select>
   	
-  	<select id="getSPw" parameterType="Member" resultType = "Member">
+  	<select id="getPw" parameterType="Member" resultType = "Member">
   		select mem_pw from tbl_member where mem_id = #{id}
   	</select>
  
