@@ -4,9 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+	
 
 	<!-- db.properties 파일 연결하기 -->
 	<properties resource="com/baseballtalk/database/db.properties" />
+	
+	<settings>
+	<!-- Null 값이 발생할 경우 빈칸이 아닌 Null로 인식 -->
+	<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
 	
 	<typeAliases>
 	

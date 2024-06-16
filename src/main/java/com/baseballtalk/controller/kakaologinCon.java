@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
 import com.baseballtalk.model.MemberDAO;
 import com.baseballtalk.model.MemberDTO;
 
-@WebServlet("/kakaologin")
-public class kakaologin extends HttpServlet {
+@WebServlet("/kakaologinCon")
+public class kakaologinCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String email = request.getParameter("email");
@@ -21,14 +21,14 @@ public class kakaologin extends HttpServlet {
 		
 		System.out.println(email + " " + nick);
 		
-		MemberDTO member = new MemberDTO("k-"+email, "0",nick, "k-"+nick, "0", 1);
-		MemberDTO kakao_member = new MemberDAO().login(member);
+		MemberDTO member = new MemberDTO("k-"+email, null,null,"k-"+nick,null,null);
+		MemberDTO kakao_member = new MemberDAO().kakaologin(member);
 		System.out.println(member.toString());
 		if(kakao_member != null) {
 			if(!member.getMem_nick().equals(kakao_member.getMem_nick())) {
 				int cnt = new MemberDAO().kakaoupdate(member);
 				if(cnt == 1) {
-					kakao_member = new MemberDAO().login(member);
+					kakao_member = new MemberDAO().kakaologin(member);
 				}else {
 					System.out.println("데이터 업데이트 실패");
 				}
@@ -41,7 +41,7 @@ public class kakaologin extends HttpServlet {
 			if(cnt == 1) {
 				System.out.println("카카오 가입 성공");
 				HttpSession session = request.getSession();
-				kakao_member = new MemberDAO().login(member);
+				kakao_member = new MemberDAO().kakaologin(member);
 				session.setAttribute("login_member",kakao_member);
 			}else {
 				System.out.println("카카오 가입 실패");

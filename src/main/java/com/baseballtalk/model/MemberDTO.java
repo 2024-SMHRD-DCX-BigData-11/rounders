@@ -24,7 +24,7 @@ public class MemberDTO {
 	private String mem_name;
 	private String mem_nick;
 	private String mem_tel;
-	private int team_idx;
+	private Integer team_idx;
 	private Date joined_at;
 	private String mem_grade;
 	private int mem_point;
@@ -36,7 +36,7 @@ public class MemberDTO {
 		this.mem_tel = tel;
 	}
 	
-	public MemberDTO(String id,String pw, String name, String nick, String tel, int team_Num) {
+	public MemberDTO(String id,String pw, String name, String nick, String tel, Integer team_Num) {
 		super();
 		this.mem_id = id;
 		this.mem_pw = pw;

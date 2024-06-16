@@ -18,6 +18,10 @@
   	<select id="login" resultType="Member">
 	select * from tbl_member where mem_id = #{mem_id} and mem_pw = #{mem_pw}
 	</select>
+	
+	<select id="kakaologin" resultType="Member">
+	select * from tbl_member where mem_id = #{mem_id} and mem_pw is null
+	</select>
   	
   	<update id="kakaoupdate" parameterType = "Member">
   		update tbl_member set mem_nick = #{mem_nick} where mem_id = #{mem_id}

@@ -35,7 +35,7 @@
 	            	var nick = res.kakao_account.profile.nickname;
 	            	$.ajax({ // {key1 : value1, key2 : value2 key3 : value3}
 						// 어디로 요청할건지
-						url : 'kakaologin',
+						url : 'kakaologinCon',
 						// 요청데이터 타입(json)
 						data : {'email' : email, 'nick' : nick},
 						// 요청방식
