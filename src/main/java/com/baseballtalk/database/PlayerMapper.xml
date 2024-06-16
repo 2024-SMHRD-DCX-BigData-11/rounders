@@ -6,7 +6,7 @@
 
 	<select id="showPlayer">
 	
-		select * from 
+		select * from tbl_player where team_name = (select team_name from tbl_team where team_idx = #{team_num})
 		
 	</select>
   	

@@ -60,5 +60,12 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+	public MemberDTO getPW(MemberDTO member) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		MemberDTO remove_member = session.selectOne("com.baseballtalk.database.MemberMapper.getPW", member);
+		session.close();
+		return remove_member;
+	}
+	
 	
 }

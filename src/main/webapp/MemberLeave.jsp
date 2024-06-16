@@ -1,5 +1,11 @@
+<%@page import="com.baseballtalk.model.MemberDTO"%>
+<%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.ResultSet"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,6 +44,17 @@ function member_leave() {
 						</div>
 						<div id="check_leave_pw">
 							<input type="button" value="확인" onclick="check_pw()">
+							
+						<%
+						MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+						
+						MemberDTO removeMember=  new MemberDAO().getPW(login_member);
+							
+						
+						%>
+							
+						
+		
 						</div>
 						<div id="submit_pw">
 							<input type="submit" value="회원탈퇴" onclick="member_leave()">

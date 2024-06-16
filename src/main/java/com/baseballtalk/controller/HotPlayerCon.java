@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.baseballtalk.model.MemberDTO;
 import com.baseballtalk.model.HotPlayerDAO;
 import com.baseballtalk.model.HotPlayerDTO;
+import com.baseballtalk.model.MatchDTO;
 import com.baseballtalk.model.MemberDAO;
 
 @WebServlet("/HotplayerCon")
@@ -23,14 +24,12 @@ import com.baseballtalk.model.MemberDAO;
 			
 			request.setCharacterEncoding("UTF-8");
 			
-			int hot_pid = Integer.parseInt(request.getParameter("hot_pid"));
-			String id = request.getParameter("nick");
-			int player_id = Integer.parseInt(request.getParameter("player_id"));
-			String v_date = request.getParameter("v_date");
+			int hot_idx = Integer.parseInt(request.getParameter("hot_idx"));
+			String mem_id = request.getParameter("mem_id");
+			int player_idx = Integer.parseInt(request.getParameter("player_idx"));
+			String created_at = request.getParameter("created_at");
 			
-			
-			
-			HotPlayerDTO hotPlayer = new HotPlayerDTO(hot_pid, id, player_id, v_date);
+			HotPlayerDTO hotPlayer = new HotPlayerDTO(hot_idx, mem_id, player_idx, created_at);
 			
 			int insert_hotPlayer = new HotPlayerDAO().insertHotPlayer(hotPlayer);
 			
@@ -45,7 +44,9 @@ import com.baseballtalk.model.MemberDAO;
 				System.out.println("투표 실패 ㅠㅠ");
 			}
 			
+			
 			response.sendRedirect("HotPlayer.jsp");
+			
 			
 		}
 

@@ -15,8 +15,8 @@ public class PwCheckCon{
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String inputPw1 = request.getParameter("inputPw1");
-		String inputPw2 = request.getParameter("inputPw2");
+		String inputPw1 = request.getParameter("???");
+		String inputPw2 = request.getParameter("???");
 		
 		System.out.println(inputPw1);
 		System.out.println(inputPw2);

@@ -23,6 +23,7 @@
 		<typeAlias type="com.baseballtalk.model.RecoredCommentDTO" alias="RecoredComment"/>
 		<typeAlias type="com.baseballtalk.model.FreeBoardCommentDTO" alias="FreeBoardComment"/>
 		<typeAlias type="com.baseballtalk.model.TeamBoardCommentDTO" alias="TeamBoardComment"/>
+		<typeAlias type="com.baseballtalk.model.MatchDTO" alias="Match"/>
 
 	</typeAliases>
 

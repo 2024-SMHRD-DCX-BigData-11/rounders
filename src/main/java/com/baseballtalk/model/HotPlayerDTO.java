@@ -15,10 +15,10 @@ import lombok.ToString;
 
 public class HotPlayerDTO {
 	
-	private int hot_pid;
-	@NonNull private String id;
-	@NonNull private int player_id;
-	private String v_date;
+	private int hot_idx;
+	@NonNull private String mem_id;
+	@NonNull private int player_idx;
+	private String created_at;
 	
 
 }
