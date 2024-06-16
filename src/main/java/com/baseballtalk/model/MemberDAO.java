@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.baseballtalk.database.SqlSessionManager;
+import com.fasterxml.jackson.databind.deser.DataFormatReaders.Match;
 
 public class MemberDAO {
 	
@@ -33,7 +34,6 @@ public class MemberDAO {
 	public MemberDTO login(MemberDTO member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		MemberDTO login_member = session.selectOne("com.baseballtalk.database.MemberMapper.login", member);
-		System.out.println(login_member);
 		session.close();
 		return login_member;
 	}
@@ -41,10 +41,10 @@ public class MemberDAO {
 	public MemberDTO kakaologin(MemberDTO member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		MemberDTO login_member = session.selectOne("com.baseballtalk.database.MemberMapper.kakaologin", member);
-		System.out.println(login_member);
 		session.close();
 		return login_member;
 	}
+	
 	
 	public int kakaoupdate(MemberDTO update_member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
