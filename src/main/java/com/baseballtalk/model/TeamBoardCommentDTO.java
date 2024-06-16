@@ -14,10 +14,10 @@ import lombok.ToString;
 
 public class TeamBoardCommentDTO {
 
-	private int comment_Num;
-	private int board_Num;
-	private String writer;
-	private String content;
-	private String c_date;
+	private int cmt_idx;
+	private int board_idx;
+	private String cmt_content;
+	private String created_at;
+	private String mem_id;
 
 }

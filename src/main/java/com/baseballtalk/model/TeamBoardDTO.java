@@ -16,16 +16,16 @@ import lombok.ToString;
 
 public class TeamBoardDTO {
 	
-	private int board_Num;
-	private int team_Num;
-	private String category;
-	private String title;
-	private String writer;
-	private String content;
-	private String filename;
-	private int views;
-	private int likes;
-	private String b_date;
+	private int board_idx;
+	private int team_idx;
+	private String board_category;
+	private String board_title;
+	private String board_content;
+	private String created_at;
+	private int board_views;
+	private int board_likes;
+	private String board_file;
+	private String mem_id;
 	
 	
 

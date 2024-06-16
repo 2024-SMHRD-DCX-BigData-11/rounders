@@ -16,10 +16,9 @@ import lombok.ToString;
 
 public class RecoredCommentDTO {
 	
-	private int comment_Num;
-	private int board_Num;
-	private String writer;
-	private String content;
-	private String c_date;
+	private int rcmt_idx;
+	private String rcmt_content;
+	private String created_at;
+	private String mem_id;
 	
 }
