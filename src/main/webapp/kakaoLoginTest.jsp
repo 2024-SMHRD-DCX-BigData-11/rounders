@@ -15,10 +15,6 @@
 	    <img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="83%" height ="50px" />
 	    </a>
 	</div>
-	<form id="form-kakao-login" method="post" action="kakaologin">
-		    			<input type="hidden" name="email"/>
-		    			<input type="hidden" name="nick"/>
-	</form>
 	
 	<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	

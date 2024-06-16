@@ -46,4 +46,5 @@ public class MemberDTO {
 		this.team_idx = team_Num;
 	}
 
+	
 }

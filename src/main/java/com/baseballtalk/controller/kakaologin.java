@@ -40,6 +40,9 @@ public class kakaologin extends HttpServlet {
 			int cnt = new MemberDAO().join(member);
 			if(cnt == 1) {
 				System.out.println("카카오 가입 성공");
+				HttpSession session = request.getSession();
+				kakao_member = new MemberDAO().login(member);
+				session.setAttribute("login_member",kakao_member);
 			}else {
 				System.out.println("카카오 가입 실패");
 			}
