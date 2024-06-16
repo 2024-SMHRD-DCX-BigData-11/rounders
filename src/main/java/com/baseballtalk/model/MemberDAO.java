@@ -38,12 +38,11 @@ public class MemberDAO {
 		return login_member;
 	}
 	
-	public MemberDTO kakaologin(MemberDTO member) {
+	public int kakaoupdate(MemberDTO update_member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		MemberDTO kakao_member = session.selectOne("com.baseballtalk.database.MemberMapper.kakaologin", member);
-		System.out.println(kakao_member);
+		int cnt = session.update("com.baseballtalk.database.MemberMapper.kakaoupdate", update_member);
 		session.close();
-		return kakao_member;
+		return cnt;
 	}
 	
 	public int SerchPw(MemberDTO member) {

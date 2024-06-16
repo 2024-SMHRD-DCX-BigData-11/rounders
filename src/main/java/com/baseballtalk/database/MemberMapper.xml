@@ -19,9 +19,9 @@
 	select * from tbl_member where mem_id = #{mem_id} and mem_pw = #{mem_pw}
 	</select>
   	
-  	<select id="kakaologin" parameterType = "Member" resultType = "Member">
-  		select * from tbl_member where mem_id = #{id}
-  	</select> 
+  	<update id="kakaoupdate" parameterType = "Member">
+  		update tbl_member set mem_nick = #{mem_nick} where mem_id = #{mem_id}
+  	</update>
   	
   	<select id="serchPw" parameterType="Member" resultType = "Member">
   		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}

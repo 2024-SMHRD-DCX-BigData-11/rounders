@@ -21,11 +21,19 @@ public class kakaologin extends HttpServlet {
 		
 		System.out.println(email + " " + nick);
 		
-		MemberDTO member = new MemberDTO("k-"+email, "0","k-"+nick, "k-"+nick, "0", 1);
+		MemberDTO member = new MemberDTO("k-"+email, "0",nick, "k-"+nick, "0", 1);
 		MemberDTO kakao_member = new MemberDAO().login(member);
 		System.out.println(member.toString());
-		System.out.println(kakao_member);
 		if(kakao_member != null) {
+			if(!member.getMem_nick().equals(kakao_member.getMem_nick())) {
+				int cnt = new MemberDAO().kakaoupdate(member);
+				if(cnt == 1) {
+					kakao_member = new MemberDAO().login(member);
+				}else {
+					System.out.println("데이터 업데이트 실패");
+				}
+			}
+			System.out.println(kakao_member);
 			HttpSession session = request.getSession();
 			session.setAttribute("login_member",kakao_member);
 		}else{
