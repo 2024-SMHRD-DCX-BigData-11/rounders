@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#totalboard{
+#total{
 	 width: 80%; /* 적절한 너비 조정 */
     margin: 0 auto; /* 가운데 정렬 */
      display: flex; /* 요소를 플렉스 컨테이너로 만듭니다. */

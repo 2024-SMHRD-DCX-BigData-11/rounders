@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>전체 게시글</title>
+<title>전체 계정관리</title>
 	<link href="./css/Total.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -13,12 +13,11 @@
 		<h4>전체 게시글</h4>
 			<table>
 				<tr>
-					<td>카테고리</td>
-					<td>제목</td>
-					<td>좋아요</td>
-					<td>작성자</td>
-					<td>작성일시</td>
-					<td>조회수</td>
+					<td>글 번호</td>
+					<td>아이디</td>
+					<td>닉네임</td>
+					<td>전화번호</td>
+					<td>응원 팀</td>
 				</tr>
 			</table>
 	</div>
