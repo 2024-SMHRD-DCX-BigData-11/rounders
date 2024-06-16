@@ -5,7 +5,7 @@
 <mapper namespace="com.baseballtalk.database.MemberMapper">
 
   	<insert id="join" parameterType="Member">
-  		insert into tbl_member values(#{id}, #{pw}, #{name}, #{tel},SYSDATE , #{nick}, 'rookie', 0, #{team_Num})
+  		insert into tbl_member values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_tel},SYSDATE , #{mem_nick}, 'rookie', 0, #{team_idx})
   	</insert>
   	
   	<select id="emailCheck" parameterType="String" resultType="boolean">
@@ -15,9 +15,13 @@
   		from tbl_member where mem_nick=#{nick}
   	</select>
   	
-  	<select id="login" parameterType="Member" resultType = "Member">
-  		select * from tbl_member where mem_id = #{id}, mem_pw = #{pw}
-  	</select>
+  	<select id="login" resultType="Member">
+	select * from tbl_member where mem_id = #{mem_id} and mem_pw = #{mem_pw}
+	</select>
+  	
+  	<select id="kakaologin" parameterType = "Member" resultType = "Member">
+  		select * from tbl_member where mem_id = #{id}
+  	</select> 
   	
   	<select id="serchPw" parameterType="Member" resultType = "Member">
   		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}

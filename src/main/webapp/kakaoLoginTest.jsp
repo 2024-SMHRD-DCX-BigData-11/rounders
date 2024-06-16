@@ -15,6 +15,10 @@
 	    <img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="83%" height ="50px" />
 	    </a>
 	</div>
+	<form id="form-kakao-login" method="post" action="kakaologin">
+		    			<input type="hidden" name="email"/>
+		    			<input type="hidden" name="nick"/>
+	</form>
 	
 	<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	
@@ -31,14 +35,27 @@
 	          Kakao.API.request({
 	            url: '/v2/user/me',
 	            success: function(res) {
-	              console.log(res);
-	              var id = res.id;
-				  scope : 'account_email';
-				alert('로그인성공');
-	              location.href="kakaologin_createSession.jsp";
-			
-	
-	              
+	            	var email = res.kakao_account.email;
+	            	var nick = res.kakao_account.profile.nickname;
+	            	$.ajax({ // {key1 : value1, key2 : value2 key3 : value3}
+						// 어디로 요청할건지
+						url : 'kakaologin',
+						// 요청데이터 타입(json)
+						data : {'email' : email, 'nick' : nick},
+						// 요청방식
+						type : 'post',
+						// 요청~응답~성공
+						success : function(data){
+							/* alert(data); */
+							console.log("데이터 전송 성공!")
+							location.href="test.jsp";
+						},
+						
+						error : function(){
+							alert('error');
+						}
+						
+					});
 	        }
 	          })
 	          console.log(authObj);

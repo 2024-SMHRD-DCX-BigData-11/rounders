@@ -1,3 +1,5 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.baseballtalk.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
@@ -292,8 +294,10 @@
 	<%
 		response.sendRedirect("TestCon");
 	%>
-	
 	</c:if>
+	<%
+		MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+	%>
 	<div id = "schedule_wrap">
 	<table>
 	<tr>
@@ -312,6 +316,7 @@
 	</table>
 	</div>
 	<div id = "hot_board">핫게시글
+	<%=member %>
 	</div>
 	<div id = "rank">순위표
 	</div>

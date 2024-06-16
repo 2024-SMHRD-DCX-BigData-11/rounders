@@ -19,31 +19,31 @@ import lombok.ToString;
 
 public class MemberDTO {
 	
-	@NonNull private String id;
-	@NonNull private String pw;
-	private String name;
-	private String nick;
-	private String tel;
-	private int team_Num;
-	private Date j_date;
-	private String grade;
-	private int point;
+	@NonNull private String mem_id;
+	@NonNull private String mem_pw;
+	private String mem_name;
+	private String mem_nick;
+	private String mem_tel;
+	private int team_idx;
+	private Date joined_at;
+	private String mem_grade;
+	private int mem_point;
 	
-	public MemberDTO(@NonNull String id, String name, String tel) {
+	public MemberDTO(String id, String name, String tel) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.tel = tel;
+		this.mem_id = id;
+		this.mem_name = name;
+		this.mem_tel = tel;
 	}
 	
-	public MemberDTO(@NonNull String id,String pw, String name, String nick, String tel, int team_Num) {
+	public MemberDTO(String id,String pw, String name, String nick, String tel, int team_Num) {
 		super();
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.nick = nick;
-		this.tel = tel;
-		this.team_Num = team_Num;
+		this.mem_id = id;
+		this.mem_pw = pw;
+		this.mem_name = name;
+		this.mem_nick = nick;
+		this.mem_tel = tel;
+		this.team_idx = team_Num;
 	}
 
 }

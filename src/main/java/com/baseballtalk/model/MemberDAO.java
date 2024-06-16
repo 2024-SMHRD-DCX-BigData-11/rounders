@@ -30,11 +30,20 @@ public class MemberDAO {
 		return result;
 	}
 	
-	public int login(MemberDTO member) {
+	public MemberDTO login(MemberDTO member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.selectOne("com.baseballtalk.database.MemberMapper.login", member);
+		MemberDTO login_member = session.selectOne("com.baseballtalk.database.MemberMapper.login", member);
+		System.out.println(login_member);
 		session.close();
-		return cnt;
+		return login_member;
+	}
+	
+	public MemberDTO kakaologin(MemberDTO member) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		MemberDTO kakao_member = session.selectOne("com.baseballtalk.database.MemberMapper.kakaologin", member);
+		System.out.println(kakao_member);
+		session.close();
+		return kakao_member;
 	}
 	
 	public int SerchPw(MemberDTO member) {

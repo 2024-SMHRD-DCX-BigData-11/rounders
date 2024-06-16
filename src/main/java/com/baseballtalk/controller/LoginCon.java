@@ -21,18 +21,18 @@ import com.baseballtalk.model.MemberDAO;
 			
 			request.setCharacterEncoding("UTF-8");
 			
-			String id = request.getParameter("id");
+			String id = request.getParameter("email");
 			String pw = request.getParameter("pw");
 			
 			// System.out.println(id + " " + pw);
 			
 			MemberDTO member = new MemberDTO(id, pw);
 			
-			// System.out.println(member.toString());
+			//System.out.println(member.toString());
 			
-			int login_member = new MemberDAO().login(member);
+			MemberDTO login_member = new MemberDAO().login(member);
 			
-			if(login_member > 0) {
+			if(login_member != null) {
 				System.out.println("로그인 성공!!");
 				
 				HttpSession session = request.getSession();
