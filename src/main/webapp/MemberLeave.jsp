@@ -48,10 +48,7 @@ function member_leave() {
 						<%
 						
 						MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
-						
-						MemberDTO removeMember=  new MemberDAO().getPW(login_member);
-							
-						
+					
 						%>
 							
 						

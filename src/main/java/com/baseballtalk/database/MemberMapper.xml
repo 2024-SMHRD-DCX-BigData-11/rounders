@@ -8,7 +8,7 @@
   		insert into tbl_member values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_tel},SYSDATE , #{mem_nick}, 'rookie', 0, #{team_idx})
   	</insert>
   	
-  	<select id="emailCheck" parameterType="String" resultType="boolean">
+  	<select id="nickCheck" parameterType="String" resultType="boolean">
   		select case when count(*)>0 then 1
   			else 0
   			end result
