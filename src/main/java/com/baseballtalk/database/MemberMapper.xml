@@ -12,7 +12,7 @@
   		select case when count(*)>0 then 1
   			else 0
   			end result
-  		from tbl_member where mem_nick=#{nick}
+  		from tbl_member where mem_nick=#{input_nick}
   	</select>
   	
   	<select id="login" resultType="Member">
@@ -31,8 +31,5 @@
   		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}
   	</select>
   	
-  	<select id="getPw" parameterType="Member" resultType = "Member">
-  		select mem_pw from tbl_member where mem_id = #{id}
-  	</select>
  
 </mapper>

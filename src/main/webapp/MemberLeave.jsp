@@ -46,6 +46,7 @@ function member_leave() {
 							<input type="button" value="확인" onclick="check_pw()">
 							
 						<%
+						
 						MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 						
 						MemberDTO removeMember=  new MemberDAO().getPW(login_member);

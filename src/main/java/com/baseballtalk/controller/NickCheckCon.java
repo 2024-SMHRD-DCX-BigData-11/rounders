@@ -15,20 +15,13 @@ public class NickCheckCon{
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String inputNick = request.getParameter("inputNick");
+		String input_nick = request.getParameter("input_nick");
 		
-		System.out.println(inputNick);
+		System.out.println(input_nick);
 	
-		boolean result = new MemberDAO().nickCheck(inputNick);
+		boolean result = new MemberDAO().nickCheck(input_nick);
 		
 		System.out.println(result);
-		
-		if(result) {
-			// 사용가능한 닉네임 입니다.
-		}
-		else {
-			// 사용중인 닉네임 입니다.
-		}
 		
 		PrintWriter out;
 		try {

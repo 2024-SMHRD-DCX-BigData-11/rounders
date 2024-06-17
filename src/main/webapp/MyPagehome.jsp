@@ -14,7 +14,7 @@
             	<fieldset>
 		            <div class="mypage_home">
 		                <a href="UpdateMypage.jsp">회원정보 수정</a><br><br>
-		                <a href="#">회원 탈퇴</a>
+		                <a href="MemberLeave.jsp">회원 탈퇴</a>
 		            </div>
             	</fieldset>
 		  </div>
