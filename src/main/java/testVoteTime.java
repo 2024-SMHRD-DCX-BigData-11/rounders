@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.ibatis.reflection.SystemMetaObject;
+
 import com.baseballtalk.model.MatchDAO;
 
 public class testVoteTime {
@@ -19,14 +21,14 @@ public class testVoteTime {
 			System.out.println("경기중");
 		}else {
 		Date today = new Date();
+		String to = today.toString();
 		Calendar now = Calendar.getInstance();
-		System.out.println(time);
 		time = now.get(Calendar.YEAR) + "-" +  time;
-		System.out.println(time);
 		SimpleDateFormat fo = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		Date date = fo.parse(time);
 		System.out.println(date);
 		System.out.println(today);
+		
 		int compare = date.compareTo(today);
 		System.out.println(compare);
 		if(compare<0) {
