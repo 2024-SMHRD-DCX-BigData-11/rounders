@@ -23,6 +23,8 @@
 		<typeAlias type="com.baseballtalk.model.RecoredCommentDTO" alias="RecoredComment"/>
 		<typeAlias type="com.baseballtalk.model.FreeBoardCommentDTO" alias="FreeBoardComment"/>
 		<typeAlias type="com.baseballtalk.model.TeamBoardCommentDTO" alias="TeamBoardComment"/>
+		<typeAlias type="com.baseballtalk.model.TeamBoardCommentDTO" alias="TeamBoardComment"/>
+		<typeAlias type="com.baseballtalk.model.PlayerDTO" alias="Player"/>
 		<typeAlias type="com.baseballtalk.model.MatchDTO" alias="Match"/>
 
 	</typeAliases>
@@ -46,6 +48,7 @@
 	<mapper resource="com/baseballtalk/database/MemberMapper.xml"/>
     <mapper resource="com/baseballtalk/database/BoardMapper.xml"/>
 	<mapper resource="com/baseballtalk/database/CommentMapper.xml"/>
+	<mapper resource="com/baseballtalk/database/ManagerMapper.xml"/>
 	
   </mappers>
   

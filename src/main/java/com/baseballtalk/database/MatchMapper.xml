@@ -7,7 +7,7 @@
 	 </select>
 	
 	<select id="matchtime" parameterType="int" resultType = "String">
-	select concat(concat(concat(substr(to_char(sysdate,'YYYY-MM-DD HH24:MI'),1,5),concat(substr(match_date,1,2),'-')),substr(match_date,4,2)),concat(' ',match_time)) as match_time
-from tbl_match_schedule where away_team = (select team_name from tbl_team where team_idx = 1) or home_team = (select team_name from tbl_team where team_idx = 1)
+	select concat(concat(concat(substr(match_date,1,2),'-'),substr(match_date,4,2)),concat(' ',match_time)) as match_time
+	from tbl_match_schedule where away_team = (select team_name from tbl_team where team_idx = 1) or home_team = (select team_name from tbl_team where team_idx = 1)
 	</select>
 </mapper>

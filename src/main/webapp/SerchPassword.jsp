@@ -25,7 +25,7 @@
 		                <input type="tel" name="tel" placeholder="전화번호" required>
 		            </div>
 		            <div class="submit">
-		                <input type="submit" value="확인">
+		                <input type="submit" value="비밀번호 확인">
 		            </div>
             	</fieldset>
             </form>

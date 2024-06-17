@@ -13,10 +13,14 @@
 
 <title>Nav bar</title>
 <style type="text/css">
+
+
+    
 body {
 	margin:0;
     font-family: 'Jua';
 }
+
 
 img {
 	width: 80%;
@@ -25,16 +29,20 @@ img {
 
 a {
     text-decoration: none;
+    padding : 10px;
     color: white;
-    padding: 10px;
     text-align: center;
 }
 
+
 .navbar {
+
+	
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #00421f;
+    width: 100%;
 
 }
 
@@ -51,7 +59,8 @@ a {
 
 .navbar__menu li {
    margin-right: 150px;
-} 
+}
+
 .navbar__menu li:hover {
     background-color: grey;
     border-radius: 4px;
@@ -80,20 +89,24 @@ a {
         flex-direction: column;
         align-items: flex-start;
         padding: 8px 24px;
-     
     }
+    img {
+	width: 80%;
+	height: 50px;
+	}
     
     .navbar__menu {
         display: none;
         flex-direction: column;
         align-items: center;
         width: 100%;
-		margin: 100px;        
+        margin : 10px;
     }
     .navbar__menu li {
         width: 100%;
         text-align: center;
-       margin-right: 20px; /* 각 메뉴 항목 사이의 우측 여백 설정 */
+        margin-right: 0px;
+        margin-bottom: 15px;
     }
     .navbar__links {
         display: none;
@@ -128,7 +141,7 @@ a {
 
         <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i></a>
     </nav>
-    
+    <!-- 헤더 수정완료 -->
 
 </body>
 </html>
