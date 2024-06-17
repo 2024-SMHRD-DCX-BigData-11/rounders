@@ -21,9 +21,6 @@ body {
     font-family: 'Jua';
 }
 
-.navbar__menu {
-  margin-right: 150px;
-}
 
 img {
 	width: 80%;
@@ -55,6 +52,10 @@ a {
   display: flex; /* 내부 요소들을 Flexbox로 배치 */
   list-style-type: none; /* 리스트의 기본 마커를 제거 */
   padding: 0; /* 내부 패딩 초기화 */
+}
+
+.navbar__menu li {
+   margin-right: 150px;
 }
 
 .navbar__menu li:hover {
@@ -101,6 +102,8 @@ a {
     .navbar__menu li {
         width: 100%;
         text-align: center;
+        margin-right: 0px;
+        margin-bottom: 15px;
     }
     .navbar__links {
         display: none;
