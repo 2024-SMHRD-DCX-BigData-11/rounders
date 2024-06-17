@@ -24,9 +24,9 @@ public class MemberDAO {
 		return result;
 	}
 	
-	public boolean nickCheck(String inputNick) {
+	public boolean nickCheck(String input_nick) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		boolean result = session.selectOne("com.baseballtalk.database.MemberMapper.emailCheck", inputNick);
+		boolean result = session.selectOne("com.baseballtalk.database.MemberMapper.emailCheck", input_nick);
 		session.close();
 		return result;
 	}
@@ -60,12 +60,6 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public MemberDTO getPW(MemberDTO member) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-		MemberDTO reMove_member = session.selectOne("com.baseballtalk.database.MemberMapper.getPW", member);
-		session.close();
-		return reMove_member;
-	}
 	
 	
 }
