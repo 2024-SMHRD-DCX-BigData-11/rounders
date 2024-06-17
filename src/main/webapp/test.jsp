@@ -60,14 +60,14 @@
 		left : 70%;
 		margin:auto;
 		width: 25%;
-		height: 500px;
+		height: 400px;
 		background-color: red;
 	}
 	
 	#hotplayer{
 		padding:10px;
 		position:absolute;
-		top : 500px;
+		top : 100px;
 		left : 35%;
 		margin:auto;
 		width: 30%;
@@ -78,12 +78,12 @@
 	#team_wrap{
 		padding:10px;
 		position:absolute;
-		top : 500px;
+		top : 600px;
 		left : 2%;
 		margin:auto;
-		width: 30%;
-		height: 150px;
-		background-color: green;
+		width: 90%;
+		height: 400px;
+		background-color:#00421f;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap; 
@@ -284,6 +284,9 @@
 		background-color: cyan;
 		margin: 5px;
 	}
+	.team_box{
+		
+	}
 }
 
 </style>
@@ -320,18 +323,51 @@
 	</div>
 	<div id = "rank">순위표
 	</div>
+	<!-- 팀 로고 클릭 시 팀게시판으로 링크 -->
 	<div id = 'team_wrap'>
-	<div class = 'team_board'>기아</div>
-	<div class = 'team_board'>한화</div>
-	<div class = 'team_board'>kt</div>
-	<div class = 'team_board'>키움</div>
-	<div class = 'team_board'>두산</div>
-	<div class = 'team_board'>lg</div>
+	<div class = 'team_board'>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
+    </div>
 	<div class = 'team_board'>삼성</div>
+		<a href="#">
+                <img src="/img/삼성로고.svg" alt="삼성로고" id="samsung">
+            </a>
+	<div class = 'team_board'>kt</div>
+		<a href="#">
+        	<img src="/img/롯데.svg" alt="기아로고" id="kia">
+       	</a>
+	<div class = 'team_board'>키움</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
+	<div class = 'team_board'>두산</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
+	<div class = 'team_board'>lg</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
+	<div class = 'team_board'>삼성</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
 	<div class = 'team_board'>NC</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
 	<div class = 'team_board'>SSG</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
 	<div class = 'team_board'>롯데</div>
+		<a href="#">
+        	<img src="/img/기아.svg" alt="기아로고" id="kia">
+       	</a>
 	</div>
+	
 	<div id = "hotplayer">핫플레이어</div>
 
 
