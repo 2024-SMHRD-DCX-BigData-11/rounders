@@ -10,11 +10,11 @@
 <body>
 	<div class="login">
             <img alt="logo" src="./image/btlogo.png">
-            <form action="LoginCon" method="post">
+            <form action="SearchPwCon" method="post">
             	<fieldset>
 		            <div class="login_id">
 		                <h4>E-mail</h4>
-		                <input type="email" name="email" placeholder="이메일" autofocus required>
+		                <input ty+pe="email" name="email" placeholder="이메일" autofocus required>
 		            </div>
 		            <div class="login_name">
 		                <h4>Name</h4>

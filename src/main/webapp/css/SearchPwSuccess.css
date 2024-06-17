@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+  
+}
+
+#SuccessSearchPw {
+    width: 50%;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    unicode-bidi: isolate;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#SuccessSearchPw {
+    text-align: center; /* 내부 요소들 가운데 정렬 */
+    line-height: 80px; 
+}
+
+
+fieldset {
+    border-radius: 20px;
+    border: 3px solid #00421f;
+    margin-top: 10px;
+    width: calc(300px);
+    height: 300px;
+    text-align: center; /* 내부 요소들을 가운데 정렬 */
+    display: flex; /* 내부 요소들을 수평으로 정렬하기 위해 flex 사용 */
+    flex-direction: column; /* 내부 요소들을 세로로 배열 */
+    justify-content: center; /* 수직 가운데 정렬 */
+    align-items: center; /* 수평 가운데 정렬 */
+}
