@@ -1,3 +1,4 @@
+
 package com.baseballtalk.controller;
 
 import java.io.IOException;
@@ -16,27 +17,26 @@ import com.baseballtalk.model.MemberDTO;
 @WebServlet("/PwCheckCon")
 public class PwCheckCon extends HttpServlet {
 
-   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      HttpSession session = request.getSession();
-      request.setCharacterEncoding("UTF-8");
-      String pw = request.getParameter("pw");
-      MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
-      
-      boolean result = true;
-      if(pw.equals(login_member.getMem_pw())) {
-         result = true;
-      }else {
-         result = false;
-      }
-      PrintWriter out;
-      try {
-         out = response.getWriter();
-         out.print(result);
-      } catch (IOException e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-      }
-   }
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		request.setCharacterEncoding("UTF-8");
+		String pw = request.getParameter("pw");
+		MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+		
+		boolean result = true;
+		if(pw.equals(login_member.getMem_pw())) {
+			result = true;
+		}else {
+			result = false;
+		}
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+			out.print(result);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
-

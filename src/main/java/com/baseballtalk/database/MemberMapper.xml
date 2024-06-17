@@ -31,5 +31,9 @@
   		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}
   	</select>
   	
+  	<delete id="removemember" parameterType="Member">
+  		delete from tbl_member where mem_id = #{mem_id} and mem_pw = #{mem_pw}
+  	</delete>
+  	
  
 </mapper>

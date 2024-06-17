@@ -54,6 +54,13 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+	public int memberRemove(MemberDTO remove_member) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.delete("com.baseballtalk.database.MemberMapper.removemember", remove_member);
+		session.close();
+		return cnt;
+	}
+	
 	
 	
 }
