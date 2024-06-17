@@ -86,6 +86,18 @@ function member_leave() {
 						</div>
 						<div id="check_leave_pw">
 							<input type="button" value="확인" onclick="check_pw()">
+<<<<<<< HEAD
+							
+						<%
+						
+						MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+						
+						%>
+							
+						
+		
+=======
+>>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 						</div>
 						<div align="center">
 						<span id="result_pw_check"></span>

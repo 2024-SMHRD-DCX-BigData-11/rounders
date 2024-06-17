@@ -36,10 +36,13 @@ a {
 
 
 .navbar {
+
+	
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #00421f;
+    width: 100%;
 
 }
 

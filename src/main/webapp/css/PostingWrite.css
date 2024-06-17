@@ -29,8 +29,9 @@ list{
 
 #list {
     width: 100%;
-	height : auto;
+	height : 500px;
     border-collapse: collapse;
+    margin-top: 50px;
 
 }
 
