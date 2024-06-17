@@ -11,7 +11,7 @@
 <body>
 	<div class="wrap">
         <div class="login">
-            <img alt="logo" src="./image/logo.jpg">
+            <img alt="logo" src="./image/btlogo.png">
             <form action="LoginCon" method="post">
             	<fieldset>
 		            <div class="login_id">

@@ -18,33 +18,40 @@ body {
     font-family: 'Jua';
 }
 
+img {
+	width: 80%;
+	height: 80px;
+}
+
 a {
     text-decoration: none;
-    color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#f89b00;
-    padding: 8px 12px;
+    background-color: #00421f;
+
 }
 
 .navbar__logo {
-    font-size: 24px;
+
     color: white;
 }
 
 .navbar__menu {
-    display: flex;
-    list-style: none;
-    padding-left: 0;
+  display: flex; /* 내부 요소들을 Flexbox로 배치 */
+  list-style-type: none; /* 리스트의 기본 마커를 제거 */
+  padding: 0; /* 내부 패딩 초기화 */
 }
 
 .navbar__menu li {
-    padding: 8px 12px;
-}
+   margin-right: 150px;
+} 
 .navbar__menu li:hover {
     background-color: grey;
     border-radius: 4px;
@@ -81,11 +88,12 @@ a {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        
+		margin: 100px;        
     }
     .navbar__menu li {
         width: 100%;
         text-align: center;
+       margin-right: 20px; /* 각 메뉴 항목 사이의 우측 여백 설정 */
     }
     .navbar__links {
         display: none;
@@ -106,8 +114,7 @@ a {
 <body>
  <nav class="navbar">
         <div class="navbar__logo">
-            <i class="fa-solid fa-baseball"></i>
-            <a href="">YAtalk</a>
+            <a href=""><img alt="logo" src="./image/logo.jpg"></a>
         </div>
         <ul class="navbar__menu">
             <li><a href="">기록실</a></li>
