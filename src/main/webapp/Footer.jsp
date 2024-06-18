@@ -28,5 +28,6 @@
 	        <span>경석, 승주, 주휘, 유리 in 스마트인재개발원 순천점</span>
 	    </div>
 </footer>
+
 </body>
 </html>
