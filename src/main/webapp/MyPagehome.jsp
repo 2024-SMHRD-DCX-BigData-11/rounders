@@ -13,7 +13,8 @@
             <h2>My-Page</h2>
             	<fieldset>
 		            <div class="mypage_home">
-		                <a href="UpdateMypage.jsp">회원정보 수정</a><br><br>
+		                <a href="UpdateMypage.jsp">회원정보 수정</a><br>
+		                <a href="MyPosting.jsp">내가 작성한 게시물</a><br>
 		                <a href="MemberLeave.jsp">회원 탈퇴</a>
 		            </div>
             	</fieldset>
