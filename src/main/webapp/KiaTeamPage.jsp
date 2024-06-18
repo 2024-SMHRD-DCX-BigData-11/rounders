@@ -9,8 +9,8 @@
 </head>
 <body>
 	<%@ include file="header.jsp"%>
-
 	<img alt="logo" src="./image/kiaimg.jpg" class="kia_img">
+<div class = "wrap">
 	<div class="all">
 		<div class="left">
 		<div id="team">
@@ -91,17 +91,73 @@
 						<td>eeee</td>
 						<td>aaaaa</td>
 					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
+					<tr>
+						<td>dsfassssssssssvsDDDDDDDD</td>
+						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
+						<td>sssssssss</td>
+						<td>seeeeeeeeee</td>
+						<td>eeee</td>
+						<td>aaaaa</td>
+					</tr>
 				</tbody>
 			</table>
-			<div class="write">
-				<a href="PostingWrite.jsp"><input type="button" name="write" value="글 쓰기" id="write"></a>
-			</div>
-			<div class="page">
-				<a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a>
-				<a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a>
-				<a href="#">9</a> <a href="#">10</a> <a href="#" class="next"
-					title="다음"><input type="button" name="next" value="다음"></a>
-			</div>
+		</div>
 		</div>
 			<div class="right">
 				<div class="rightone">
@@ -126,7 +182,23 @@
 				</div>
 			</div>
 		</div>
-
+	<div class = "write_wrap">
+		<div class="write">
+				<a href="PostingWrite.jsp"><input type="button" name="write" value="글 쓰기" id="write"></a>
+			</div>
+	</div>
+	<div class = "page_wrap">
+			<div class="page">
+				<a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a>
+				<a href="#">5</a> <a href="#">6</a> <a href="#">7</a> <a href="#">8</a>
+				<a href="#">9</a> <a href="#">10</a> <a href="#" class="next"
+					title="다음"><input type="button" name="next" value="다음"></a>
+			</div>
+	</div>
+		<div>
+		<%@ include file="Footer.jsp"%>
+		</div>
+</div>
 		<!-- 팝업 창 -->
 		<div class="overlay" id="overlay"></div>
 		<div class="popup" id="popup">
@@ -144,7 +216,7 @@
 				style="color: red">CLICK!</span>
 			<button onclick="closePopup()">닫기</button>
 		</div>
-
+	
 
 		<script>
 			function openPopup() {

@@ -31,6 +31,10 @@
   		select mem_pw from tbl_member where mem_id = #{mem_id} and mem_name = #{mem_name} and mem_phone = #{mem_tel}
   	</select>
   	
+  	<select id="getNick" parameterType="String" resultType = "String">
+  		select mem_nick from tbl_member where mem_id = #{mem_id}
+  	</select>
+  	
   	<delete id="removemember" parameterType="Member">
   		delete from tbl_member where mem_id = #{mem_id} and mem_pw = #{mem_pw}
   	</delete>
