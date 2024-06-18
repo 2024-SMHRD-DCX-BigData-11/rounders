@@ -23,11 +23,10 @@
 		<typeAlias type="com.baseballtalk.model.RecoredCommentDTO" alias="RecoredComment"/>
 		<typeAlias type="com.baseballtalk.model.FreeBoardCommentDTO" alias="FreeBoardComment"/>
 		<typeAlias type="com.baseballtalk.model.TeamBoardCommentDTO" alias="TeamBoardComment"/>
-		<typeAlias type="com.baseballtalk.model.TeamBoardCommentDTO" alias="TeamBoardComment"/>
 		<typeAlias type="com.baseballtalk.model.PlayerDTO" alias="Player"/>
 		<typeAlias type="com.baseballtalk.model.MatchDTO" alias="Match"/>
 		<typeAlias type="com.baseballtalk.model.HitterStatDTO" alias="HitterStat"/>
-
+		<typeAlias type="com.baseballtalk.model.PitcherStatDTO" alias="PitcherStat"/>
 	</typeAliases>
 
   <environments default="development">
