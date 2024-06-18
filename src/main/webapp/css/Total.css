@@ -1,37 +1,31 @@
 @charset "UTF-8";
 #total{
-	 width: 80%; /* 적절한 너비 조정 */
-    margin: 0 auto; /* 가운데 정렬 */
-     display: flex; /* 요소를 플렉스 컨테이너로 만듭니다. */
-    align-items: center; /* 요소들을 수직으로 가운데 정렬합니다. */
-    flex-direction: column; /* 내부 요소들을 세로로 배열합니다. */
-    unicode-bidi: isolate;
-    height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+   width: 100%; /* 적절한 너비 조정 */
+   display: flex; /* 요소를 플렉스 컨테이너로 만듭니다. */
+   align-items: center; /* 요소들을 수직으로 가운데 정렬합니다. */
+   flex-direction: column; /* 내부 요소들을 세로로 배열합니다. */
+   unicode-bidi: isolate;
+   height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
 }
 td {
+
     padding: 8px; /* 내부 여백 설정 */
     border: 1px solid #ccc; /* 테이블 셀 경계선 설정 */
 }
 
-/* 화면 너비가 768px 이상일 때 */
-@media (min-width: 768px) {
-  table {
-    width: 100%; /* 테이블 너비를 100%로 설정하여 부모 요소에 맞춤 */
-    border-collapse: collapse; /* 테이블 셀 경계선이 서로 붙도록 설정 */
-  }
-  
-  #total {
-    padding: 20px; /* 좌우 여백을 추가 */
-  }
-  
-  td {
-    white-space: nowrap; /* 텍스트가 길 경우 줄바꿈 방지 */
-  }
+
+#stat_con{
+   width: 100%;
+   display:flex;
+   justify-content:center;
+   flex-direction: row; /* 내부 요소를 가로로 배치 */
 }
 
-/* 화면 너비가 768px 이상이고 1200px 이하일 때 */
-@media (min-width: 768px) and (max-width: 1200px) {
-  #total {
-    width: 90%; /* 너비를 좀 더 줄여서 브라우저 크기에 맞춤 */
-  }
+table {
+  table-layout: fixed;
+}
+
+#p_info{
+	float: left;
+	width:25%;
 }

@@ -9,5 +9,21 @@
 		select * from tbl_player where team_name = (select team_name from tbl_team where team_idx = #{team_num})
 		
 	</select>
+	
+	
+	<select id="showHitter_info" resultType = "Player">
+	
+		SELECT * FROM tbl_player WHERE player_position NOT LIKE '투수'
+	order by player_idx
+		
+	</select>
+	
+	<select id="showPitcher_info" resultType = "Player">
+	
+		select * from tbl_player where player_position = '투수' order BY player_idx
+		
+	</select>
+	
+	
   	
 </mapper>

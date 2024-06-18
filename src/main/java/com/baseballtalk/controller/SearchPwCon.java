@@ -3,8 +3,10 @@ package com.baseballtalk.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -12,12 +14,12 @@ import javax.servlet.http.HttpSession;
 import com.baseballtalk.model.MemberDAO;
 import com.baseballtalk.model.MemberDTO;
 
-
-public class SearchPwCon{
+@WebServlet("/SearchPwCon")
+public class SearchPwCon extends HttpServlet{
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String id = request.getParameter("id");
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("email");
 		String name = request.getParameter("name");
 		String tel = request.getParameter("tel");
 		
@@ -25,24 +27,21 @@ public class SearchPwCon{
 		
 		System.out.println(id + " " + name + " " + tel);
 	
-		int SearchPw = new MemberDAO().SerchPw(member);
+		MemberDTO SearchPw = new MemberDAO().SerchPw(member);
 		
-		if(SearchPw > 0) {
+		if(SearchPw != null) {
 			System.out.println("비밀번호 찾기 성공!!");
 			
-			HttpSession session = request.getSession();
+			request.setAttribute("SearchPw", SearchPw);
 			
-			session.setAttribute("SearchPw", SearchPw);
-			
-			response.sendRedirect("searchPwSuccess.jsp");
-			
-			
+			 RequestDispatcher rd = request.getRequestDispatcher("SearchPwSuccess.jsp");
+			 rd.forward(request, response);
 		}
 		else {
 			System.out.println("비밀번호 찾기 실패 ㅠㅠ");
 		}
 		
-		response.sendRedirect("Login.jsp");
+		response.sendRedirect("SerchPassword.jsp");
 		
 	}
 

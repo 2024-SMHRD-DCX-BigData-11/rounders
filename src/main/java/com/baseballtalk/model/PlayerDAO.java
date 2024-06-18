@@ -22,5 +22,29 @@ public class PlayerDAO {
 		return player;
 
 	}
+	
+	public List<PlayerDTO> showHitter_info() {
+		
+		// Connection 하나 빌려오기
+		SqlSession session = sqlSessionFactory.openSession(true);
+		
+		List <PlayerDTO> hitter_info = session.selectList("com.baseballtalk.database.PlayerMapper.showHitter_info");
+		session.close();
+		
+		return hitter_info;
+
+	}
+	
+	public List<PlayerDTO> showPitcher_info() {
+		
+		// Connection 하나 빌려오기
+		SqlSession session = sqlSessionFactory.openSession(true);
+		
+		List <PlayerDTO> pitcher_info = session.selectList("com.baseballtalk.database.PlayerMapper.showPitcher_info");
+		session.close();
+		
+		return pitcher_info;
+
+	}
 
 }

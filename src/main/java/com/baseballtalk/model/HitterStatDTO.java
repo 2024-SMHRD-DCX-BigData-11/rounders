@@ -14,13 +14,13 @@ import lombok.ToString;
 
 public class HitterStatDTO {
 	private int hitter_idx;
-	private int war;
+	private float war;
 	private int game_played;
-	private int avg;
+	private float avg;
 	private int homerun;
-	private int slg;
-	private int obp;
+	private float slg;
+	private float obp;
 	private int stealbase;
 	private int rbi;
-	private int ops;
+	private float ops;
 }
