@@ -29,3 +29,25 @@ table {
 	float: left;
 	width:25%;
 }
+/* 화면 너비가 768px 이상일 때 */
+@media (min-width: 768px) {
+  table {
+    width: 100%; /* 테이블 너비를 100%로 설정하여 부모 요소에 맞춤 */
+    border-collapse: collapse; /* 테이블 셀 경계선이 서로 붙도록 설정 */
+  }
+  
+  #total {
+    padding: 20px; /* 좌우 여백을 추가 */
+  }
+  
+  td {
+    white-space: nowrap; /* 텍스트가 길 경우 줄바꿈 방지 */
+  }
+}
+
+/* 화면 너비가 768px 이상이고 1200px 이하일 때 */
+@media (min-width: 768px) and (max-width: 1200px) {
+  #total {
+    width: 90%; /* 너비를 좀 더 줄여서 브라우저 크기에 맞춤 */
+  }
+}
