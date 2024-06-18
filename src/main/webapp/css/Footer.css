@@ -2,25 +2,12 @@
 footer {
   /* footer를 aside위에 올리기 위해 사용(부유객체) */
       /* height: 60px; */
-<<<<<<< Upstream, based on branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
     width: 100%;
     padding: 0 25px;
     line-height: 20px;
     color: white;
-=======
-    width: 90%;
-    margin:auto;
-    line-height: 60px;
-    color: #8a8c8f;
->>>>>>> 245e5e4 06-18전승주 커밋
     border-top: 1px solid #dee5e7;
-<<<<<<< Upstream, based on branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
     background-color: rgb(20, 24, 39);
     position: absolute;
-    top: 525px;
-    left: 0;
-=======
-    background-color: #f2f2f2;
-    font-size: 12px;
->>>>>>> 245e5e4 06-18전승주 커밋
+    list-style: none;
 }
