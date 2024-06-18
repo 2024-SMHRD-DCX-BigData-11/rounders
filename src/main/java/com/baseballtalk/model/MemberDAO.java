@@ -61,6 +61,13 @@ public class MemberDAO {
 		return cnt;
 	}
 	
+	public String getNick(String id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		String nick = session.selectOne("com.baseballtalk.database.MemberMapper.getNick", id);
+		session.close();
+		return nick;
+	}
+	
 	
 	
 }
