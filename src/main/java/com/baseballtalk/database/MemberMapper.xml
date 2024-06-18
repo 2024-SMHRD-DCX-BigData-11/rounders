@@ -26,9 +26,9 @@
   	<update id="kakaoupdate" parameterType = "Member">
   		update tbl_member set mem_nick = #{mem_nick} where mem_id = #{mem_id}
   	</update>
-  	
+ 
   	<select id="serchPw" parameterType="Member" resultType = "Member">
-  		select mem_pw from tbl_member where mem_id = #{id} and mem_name = #{name} and mem_phone = #{tel}
+  		select mem_pw from tbl_member where mem_id = #{mem_id} and mem_name = #{mem_name} and mem_phone = #{mem_tel}
   	</select>
   	
   	<delete id="removemember" parameterType="Member">

@@ -47,11 +47,11 @@ public class MemberDAO {
 		return cnt;
 	}
 	
-	public int SerchPw(MemberDTO member) {
+	public MemberDTO SerchPw(MemberDTO member) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.selectOne("com.baseballtalk.database.MemberMapper.serchPw", member);
+		MemberDTO serchPw = session.selectOne("com.baseballtalk.database.MemberMapper.serchPw", member);
 		session.close();
-		return cnt;
+		return serchPw;
 	}
 	
 	public int memberRemove(MemberDTO remove_member) {
