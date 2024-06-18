@@ -5,16 +5,16 @@
 <mapper namespace="com.baseballtalk.database.CommentMapper">
 
 
-	<insert id="insertRecoredComment">
+	<insert id="insertRecoredComment" parameterType="RecoredComment">
 	
 		INSERT INTO tbl_recored_comment
-    (rcmt_content, 
+    (rcmt_content,
     created_at, 
     mem_id)
 VALUES
-    (#{content}, 
+    (#{rcmt_content},
     sysdate, 
-    #{writer});
+    #{mem_id})
 	
 	</insert>
 	
@@ -29,7 +29,7 @@ VALUES
     (#{comment_Num}, 
     #{content}, 
     sysdate, 
-    #{writer});
+    #{writer})
 	
 	</insert>
 	
@@ -44,7 +44,7 @@ VALUES
     (#{comment_Num}, 
     #{content}, 
     sysdate, 
-    #{writer});
+    #{writer})
 	
 	</insert>
 	
@@ -85,5 +85,9 @@ VALUES
 		delete from tbl_team_comment where mem_id=#{writer} and cmt_idx=#{comment_Num}
 	
 	</delete>
+	
+	<select id="showRecoredComment" resultType = "RecoredComment">
+		select * from tbl_recored_comment
+	</select>
  
 </mapper>

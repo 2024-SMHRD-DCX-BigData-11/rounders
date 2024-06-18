@@ -1,5 +1,8 @@
+<%@page import="com.baseballtalk.model.FreeBoardCommentDTO"%>
 <%@page import="com.baseballtalk.model.CommentDAO"%>
 <%@page import="com.baseballtalk.model.RecoredCommentDTO"%>
+<%@page import="com.baseballtalk.model.PitcherStatDTO"%>
+<%@page import="com.baseballtalk.model.PitcherStatDAO"%>
 <%@page import="com.baseballtalk.model.HitterStatDAO"%>
 <%@page import="com.baseballtalk.model.HitterStatDTO"%>
 <%@page import="com.baseballtalk.model.PlayerDTO"%>
@@ -14,21 +17,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>타자 기록</title>
+<title>투수 기록</title>
 	<link href="./css/Total.css" rel="stylesheet" type="text/css">
 	<link href="./css/CommentTable.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<% List<PlayerDTO> showHitter_info = new PlayerDAO().showHitter_info();%>
-<% List<HitterStatDTO> showHitter_stat = new HitterStatDAO().showHitterStat(); %>
+<% List<PlayerDTO> showPitcher_info = new PlayerDAO().showPitcher_info(); %>
+<% List<PitcherStatDTO> showPitcher_stat = new PitcherStatDAO().showPitcherStat();%>
 <% List<RecoredCommentDTO> showRecoredComment = new CommentDAO().show_RecoredComment();%>
  <!-- 로그인 세션 값 가져오기 -->
  <% MemberDTO login_member = (MemberDTO) session.getAttribute("login_member");%>
- 
+	     
 	<%@ include file = "header.jsp" %>
-<div id = "wrap">
 	<div id="total">
-		<h4>타자 기록</h4>
+		<h4>투수 기록</h4>
 		<div id="stat_con">
 			<table id="p_info">
 				<tr>
@@ -38,7 +40,7 @@
 					<td>포지션</td>
 				</tr>
 				<%int i = 0;%>
-				<%for(PlayerDTO p : showHitter_info){i++;%>
+				<%for(PlayerDTO p : showPitcher_info){i++;%>
 				<tr>
 					<td><%=i%></td>
 					<td><%=p.getPlayer_name()%></td>
@@ -50,49 +52,68 @@
 			</table>
 			<table id="p_stat">
 				<tr>
-					<td>승리기여도(WAR)</td>
-					<td>경기 출전 수</td>
-					<td>타율</td>
-					<td>홈런</td>
-					<td>장타율</td>
-					<td>출루율</td>
-					<td>도루</td>
-					<td>타점</td>
-					<td>OPS(장타율+출루율)</td>
+					<td>승</td>
+					<td>패</td>
+					<td>이닝</td>
+					<td>평균 자책점</td>
+					<td>경기 출장 수</td>
+					<td>선발 등판 횟수</td>
+					<td>홀드</td>
+					<td>세이브</td>
+					<td>K/9</td>
+					<td>B/9</td>
+					<td>HR/9</td>
+					<td>BABIP</td>
+					<td>FIP</td>
+					<td>FIP_WAR</td>
+					<td>RA9_WAR</td>
+					
 				</tr>
-				<%for(HitterStatDTO ht : showHitter_stat){%>
+				<%for(PitcherStatDTO pt : showPitcher_stat){%>
 				<tr>
-					<td><%=ht.getWar()%></td>
-					<td><%=ht.getGame_played()%></td>
-					<td><%=ht.getAvg()%></td>
-					<td><%=ht.getHomerun() %></td>
-					<td><%=ht.getSlg() %></td>
-					<td><%=ht.getObp() %></td>
-					<td><%=ht.getStealbase() %></td>
-					<td><%=ht.getRbi() %></td>
-					<td><%=ht.getOps() %></td>
+					<td><%=pt.getPlayer_win()%></td>
+					<td><%=pt.getPlayer_lose()%></td>
+					<td><%=pt.getIp()%></td>
+					<td><%=pt.getEra()%></td>
+					<td><%=pt.getGame_played()%></td>
+					<td><%=pt.getGs()%></td>
+					<td><%=pt.getHold()%></td>
+					<td><%=pt.getSaves()%></td>
+					<td><%=pt.getK_per_9()%></td>
+					<td><%=pt.getB_per_9()%></td>
+					<td><%=pt.getHr_per_9()%></td>
+					<td><%=pt.getBabip()%></td>
+					<td><%=pt.getFip()%></td>
+					<td><%=pt.getFip_war()%></td>
+					<td><%=pt.getRa9_war()%></td>
 				</tr>
 				<%} %>
 			</table>
 	</div>
 	</div>
 	
-	
 	<!-- 세션에서 닉네임값 가져오기 -->
 	
-	<% String mem_id = login_member.getMem_id();%>
+	<% String nick = login_member.getMem_nick();%>
+		
 	
 	<div class = "Comment">
 	
-		<form id = "Input_Comment" action="RecoredCommentInsertCon?stat=1&nick=<%=mem_id%>" method = "post">
+		<form id = "Input_Comment" action="CommentCon" method = "post" encType = "multipart/form-data" onsubmit="return false">
 		
 			<table class = "CommentTable">
 				
 				<tr>
 					
-					<td><br><br><br><%=login_member.getMem_nick()%></td>
-					<td><input type="text" class="CommentMain" name = "rcmt_content" placeholder="댓글을 입력하세요." ></td>
-					<td><br><br><input type="submit"class="WriteButton" value="댓글 작성" onclick="login_check()"></td>
+					<td><br><br><br><%=nick%></td>
+					<td><input type="text" class="CommentMain" name = "CommentContent" placeholder="상대방을 존중하는 댓글을 남깁시다." ></td>
+					<td><br><br><input type="submit" class="WriteButton" value="댓글 작성" onclick="login_check()"></td>
+				
+				</tr>
+				
+				<tr>
+				
+					<td colspan="3"><input type="file" name="FileName"></td>
 				
 				</tr>
 				
@@ -123,7 +144,7 @@
 		</table>
 	<%} %>
 	</div>
-</div>	
+	
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	    <script type="text/javascript">
 	     
@@ -132,12 +153,13 @@
 					
 					var login_member = <%=login_member%>;
 					
-					if (login_member == null) {
+					if (!login_member) {
 		                alert("로그인이 필요합니다. 로그인 페이지로 이동합니다.");
 		                window.location.href = "Login.jsp"; // 로그인 페이지의 URL로 변경
+		                return false;
 		            }
 					
-					 
+					 document.getElementById("Input_Comment").submit();
 					
 				}
 				
@@ -145,7 +167,7 @@
 			        var newContent = prompt("수정할 내용을 입력하세요:", commentContent);
 			        if (newContent != null) {
 			            $.ajax({
-			                url: "RecoredCommentUpdateCon",
+			                url: "CommentCon",
 			                type: "POST",
 			                data: {
 			                	Rcmt_idx: Rcmt_idx,
@@ -165,7 +187,7 @@
 				function deleteComment(Rcmt_idx) {
 			        if (confirm("정말로 댓글을 삭제하시겠습니까?")) {
 			            $.ajax({
-			                url: "RecoredCommentDeleteCon",
+			                url: "CommentCon",
 			                type: "POST",
 			                data: { Rcmt_idx: Rcmt_idx },
 			                success: function(response) {

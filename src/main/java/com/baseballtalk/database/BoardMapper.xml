@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.batalk.database.BoardMapper">
+<mapper namespace="com.baseballtalk.database.BoardMapper">
 
 	<insert id="insertNoticeBoard">
 	
@@ -37,8 +37,8 @@ VALUES
     (#{title}, 
     #{content}, 
     sysdate, 
-    #{views}, 
-    #{likes}, 
+    0, 
+    0, 
     #{filename}, 
     #{writer});
 	
@@ -104,5 +104,11 @@ VALUES
 		delete from tbl_team_board where mem_id=#{writer} and team_idx=#{teamNum} and board_idx=#{boardNum} and board_title=#{title}
 	
 	</delete>
+	
+	<select id="selectTeamBoard" resultType="TeamBoard">
+	 	<![CDATA[
+			select * from tbl_team_board where rownum<=10 ORDER by board_likes DESC
+		]]>
+	</select>
  
 </mapper>

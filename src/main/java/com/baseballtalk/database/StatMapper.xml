@@ -3,7 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.baseballtalk.database.StatMapper">
+
 	<select id="showHitterStat" resultType="HitterStat">
 	SELECT * FROM TBL_HITTER_STAT order by hitter_idx
 	</select>
+	
+	<select id="showPitcherStat" resultType="PitcherStat">
+	select * from tbl_pitcher_stat order by pitcher_idx
+	</select>
+	
 </mapper>

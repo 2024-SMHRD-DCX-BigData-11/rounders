@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.CommentTable{
+	text-align: center;
+	 border: 1px solid #dddddd;
+}
+
+.CommentList{
+	display: flex;
+	justify-content: center;
+}
+
+.CommentMain{
+
+	height: 30px;
+	width: 500px;
+	
+}
+
+#wrap{
+	display: flex;
+	flex-direction: column;
+}
+
+.Comment{
+	display: flex;
+	justify-content: center;
+}
+
+td{
+	border-bottom:none;
+}

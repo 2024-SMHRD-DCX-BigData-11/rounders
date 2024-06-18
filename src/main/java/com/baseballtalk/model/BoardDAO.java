@@ -1,5 +1,7 @@
 package com.baseballtalk.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -15,7 +17,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertNoticeBoard(NoticeBoardDTO noticeBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.database.BoardMapper.insertNoticeBoard",noticeBoard);
+		int cnt = session.insert("com.baseballtalk.database.BoardMapper.insertNoticeBoard",noticeBoard);
 		session.close();
 		return cnt;
 	}
@@ -23,7 +25,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertFreeBoard(FreeBoardDTO freeBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.database.BoardMapper.insertFreeBoard",freeBoard);
+		int cnt = session.insert("com.baseballtalk.database.BoardMapper.insertFreeBoard",freeBoard);
 		session.close();
 		return cnt;
 	}
@@ -31,7 +33,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertTeamBoard(TeamBoardDTO teamBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.smhrd.database.BoardMapper.insertTeamBoard",teamBoard);
+		int cnt = session.insert("com.baseballtalk.database.BoardMapper.insertTeamBoard",teamBoard);
 		session.close();
 		return cnt;
 	}
@@ -41,7 +43,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int updateNoticeBoard(NoticeBoardDTO noticeBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.update("com.smhrd.database.BoardMapper.updateNoticeBoard",noticeBoard);
+		int cnt = session.update("com.baseballtalk.database.BoardMapper.updateNoticeBoard",noticeBoard);
 		session.close();
 		return cnt;
 		
@@ -50,7 +52,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int updateFreeBoard(FreeBoardDTO freeBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.update("com.smhrd.database.BoardMapper.updateFreeBoard",freeBoard);
+		int cnt = session.update("com.baseballtalk.database.BoardMapper.updateFreeBoard",freeBoard);
 		session.close();
 		return cnt;
 		
@@ -59,7 +61,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int updateTeamBoard(TeamBoardDTO teamBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.update("com.smhrd.database.BoardMapper.updateTeamBoard",teamBoard);
+		int cnt = session.update("com.baseballtalk.database.BoardMapper.updateTeamBoard",teamBoard);
 		session.close();
 		return cnt;
 		
@@ -68,7 +70,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int deleteNoticeBoard(NoticeBoardDTO noticeBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.smhrd.database.BoardMapper.deleteNoticeBoard",noticeBoard);
+		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteNoticeBoard",noticeBoard);
 		session.close();
 		return cnt;
 		
@@ -77,7 +79,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int deleteFreeBoard(FreeBoardDTO freeBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.smhrd.database.BoardMapper.deleteFreeBoard",freeBoard);
+		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteFreeBoard",freeBoard);
 		session.close();
 		return cnt;
 		
@@ -86,9 +88,17 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int deleteTeamBoard(TeamBoardDTO teamBoard) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.smhrd.database.BoardMapper.deleteTeamBoard",teamBoard);
+		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteTeamBoard",teamBoard);
 		session.close();
 		return cnt;
+		
+	}
+	
+	public List<TeamBoardDTO> selectTeamBoard() {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> board = session.selectList("com.baseballtalk.database.BoardMapper.selectTeamBoard");
+		session.close();
+		return board;
 		
 	}
 	

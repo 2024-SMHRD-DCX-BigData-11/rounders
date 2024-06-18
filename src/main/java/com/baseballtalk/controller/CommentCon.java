@@ -1,7 +1,9 @@
 package com.baseballtalk.controller;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,40 +34,61 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 			
 		request.setCharacterEncoding("UTF-8");
 			
-			int rcmt_idx = Integer.parseInt(request.getParameter("rcmt_idx"));
-			int cmt_idx = Integer.parseInt(request.getParameter("cmt_idx"));
 			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
-			String mem_id = request.getParameter("mem_id");
-			String rcmt_content = request.getParameter("rcmt_content");
+			String mem_id = request.getParameter("nick");
 			String cmt_content = request.getParameter("cmt_content");
-			String created_at = request.getParameter("create_at");
 			
-			System.out.println(rcmt_idx + "" + cmt_idx + "" + mem_id + "" + rcmt_content + "" + cmt_content + "" + created_at);
+			System.out.println(mem_id + "" + cmt_content);
 			
-			RecoredCommentDTO recoredComment = new RecoredCommentDTO(rcmt_idx, rcmt_content, created_at, mem_id);
 			
-			FreeBoardCommentDTO freeBoardComment = new FreeBoardCommentDTO(cmt_idx, board_idx, cmt_content, created_at, mem_id);
 			
-			TeamBoardCommentDTO teamBoardComment = new TeamBoardCommentDTO(cmt_idx, board_idx, cmt_content, created_at, mem_id);
+			FreeBoardCommentDTO freeBoardComment = new FreeBoardCommentDTO(board_idx, cmt_content, mem_id);
+			
+			TeamBoardCommentDTO teamBoardComment = new TeamBoardCommentDTO(board_idx, cmt_content, mem_id);
 			
 			// System.out.println(member.toString());
 			
-			int i_cnt1 = new CommentDAO().insertRecoredComment(recoredComment);//i_cnt = insert_cnt
 			
-			int i_cnt2 = new CommentDAO().insertFreeBoardComment(freeBoardComment); 
+			int i_cnt1 = new CommentDAO().insertFreeBoardComment(freeBoardComment); //i_cnt = insert_cnt
 			
-			int i_cnt3 = new CommentDAO().insertTeamBoardComment(teamBoardComment);
+			int i_cnt2 = new CommentDAO().insertTeamBoardComment(teamBoardComment);
+			
 			
 			if(i_cnt1 > 0) {
-				System.out.println("자유게시판 댓글 달기 성공!!");
-				
-				response.sendRedirect("FreeBoardDetail.jsp");
-			}
-			else {
-				System.out.println("자유게시판 댓글 달기 실패 ㅠㅠ");
+				System.out.println("댓글 작성 성공!!");
+				String stat = (String)request.getParameter("stat");
+				System.out.println(stat);
+				RequestDispatcher rd1 = request.getRequestDispatcher("Hitter_stat.jsp");
+			}else {
+				System.out.println("댓글 작성 실패...ㅠㅠ");
+				RequestDispatcher rd2 = request.getRequestDispatcher("Hitter_stat.jsp");
+	
 			}
 			
-			response.sendRedirect("FreeBoardDetail.jsp");
+			int u_cnt1 = new CommentDAO().updateFreeBoardComment(freeBoardComment);
+			int u_cnt2 = new CommentDAO().updateTeamBoardComment(teamBoardComment);
+			
+			if(u_cnt1 > 0) {
+				System.out.println("댓글 수정 성공!!");
+				RequestDispatcher rd1 = request.getRequestDispatcher("Hitter_stat.jsp");
+			}else {
+				System.out.println("댓글 수정 실패...ㅠㅠ");
+				RequestDispatcher rd2 = request.getRequestDispatcher("Hitter_stat.jsp");
+	
+			}
+			
+			int d_cnt1 = new CommentDAO().deleteFreeBoardComment(freeBoardComment);
+			int d_cnt2 = new CommentDAO().deleteTeamBoardComment(teamBoardComment);
+			
+			if(d_cnt1 > 0) {
+				System.out.println("댓글 수정 성공!!");
+				RequestDispatcher rd1 = request.getRequestDispatcher("Hitter_stat.jsp");
+			}else {
+				System.out.println("댓글 수정 실패...ㅠㅠ");
+				RequestDispatcher rd2 = request.getRequestDispatcher("Hitter_stat.jsp");
+	
+			}
+			
 			
 		}
 

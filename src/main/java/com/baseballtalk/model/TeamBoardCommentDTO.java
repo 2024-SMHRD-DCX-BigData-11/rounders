@@ -20,4 +20,11 @@ public class TeamBoardCommentDTO {
 	private String created_at;
 	private String mem_id;
 
+	public TeamBoardCommentDTO(int board_idx, String cmt_content, String mem_id) {
+		super();
+		this.board_idx = board_idx;
+		this.cmt_content = cmt_content;
+		this.mem_id = mem_id;
+	}
+
 }

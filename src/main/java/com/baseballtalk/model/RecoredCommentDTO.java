@@ -15,10 +15,23 @@ import lombok.ToString;
 @ToString
 
 public class RecoredCommentDTO {
-	
+
 	private int rcmt_idx;
 	private String rcmt_content;
 	private String created_at;
 	private String mem_id;
+
+	public RecoredCommentDTO(String rcmt_content, String mem_id) {
+		super();
+		this.rcmt_content = rcmt_content;
+		this.mem_id = mem_id;
+	}
+
+	public RecoredCommentDTO(String rcmt_content) {
+		super();
+		this.rcmt_content = rcmt_content;
+	}
 	
+	
+
 }

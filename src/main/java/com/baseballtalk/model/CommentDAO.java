@@ -1,5 +1,8 @@
 package com.baseballtalk.model;
 
+import java.util.List;
+
+import org.apache.catalina.Session;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -15,7 +18,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertRecoredComment(RecoredCommentDTO Recoredcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.baseballtalk.database.CommentMapper.RecoredComment",Recoredcomment);
+		int cnt = session.insert("com.baseballtalk.database.CommentMapper.insertRecoredComment",Recoredcomment);
 		session.close();
 		return cnt;
 	}
@@ -90,6 +93,12 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		session.close();
 		return cnt;
 		
+	}
+	
+	public List<RecoredCommentDTO> show_RecoredComment(){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<RecoredCommentDTO> show_RecoredComment = session.selectList("com.baseballtalk.database.CommentMapper.showRecoredComment");
+		return show_RecoredComment;
 	}
 	
 
