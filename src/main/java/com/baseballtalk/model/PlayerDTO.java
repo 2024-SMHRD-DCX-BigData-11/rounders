@@ -15,12 +15,12 @@ import lombok.ToString;
 
 public class PlayerDTO {
 	
-	private int player_idx;
+	@NonNull int player_idx;
 	private String player_name;
 	private String team_name;
 	private String player_born;
 	private String player_position;
-	private int player_likes;
+	@NonNull int player_likes;
 	private String player_img;
 	private String player_number;
 

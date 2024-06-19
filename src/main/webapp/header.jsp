@@ -186,8 +186,6 @@ a {
 			menu.classList.toggle('active');
 			links.classList.toggle('active');
 		})
-
-		console.log(size)
 	</script>
 
 </body>

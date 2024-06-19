@@ -113,13 +113,20 @@ img {
 	background-color: white;
 	text-align: center;
 }
-
+.p_detail{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
 .hp_wrap {
 	display : flex;
 	flex-direction: row;
 	display: flex;
 	width: 100%;
 	padding-left: 10px;
+}
+.p_img{
+	width: 80%;
 }
 
 .player {
@@ -131,13 +138,15 @@ img {
 
 .p_info {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
 
 .p_rank,.p_name,.vote{
 	font-size:20px;
 	text-align: center;
 	}
+	
+.
 
 
 #match_date {

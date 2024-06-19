@@ -5,13 +5,44 @@
 <mapper namespace="com.baseballtalk.database.HotPlayerMapper">
 
   	<insert id="insertHotplayer" parameterType="HotPlayer">
-  	
-  		insert into tbl_hot_player (mem_id, player_idx, created_at) VALUES(#{id}, #{player_id}, sysdate);
+  		insert into tbl_hot_player (mem_id, player_idx, created_at) VALUES(#{mem_id}, #{player_idx}, sysdate)
   	</insert>
   	
   	<select id="selectPlayer" parameterType="int" resultType="Player">
   		select * from tbl_player where team_name = (select team_name from tbl_team where team_idx = #{team_idx}) 
-  		order by player_likes
+  		order by player_likes desc
   	</select>
+  	
+  	<select id="VoteCheck" parameterType="String" resultType="boolean">
+	select case when count(*)>0 then 1 
+		else 0
+		end result
+	from tbl_hot_player where mem_id = #{mem_id}
+	</select>
+	
+	<select id="votedPlayer" parameterType="String" resultType="String">
+select player_name from tbl_player where player_idx = (select player_idx from tbl_hot_player where mem_id = #{mem_id})
+	</select>
+	
+	<select id="MainAll" resultType="Player">
+		<![CDATA[
+			 select * from(select * from tbl_player order by player_likes desc) where rownum<=3
+		]]>
+	</select>
+	
+	<select id="MainMyteam" parameterType="int" resultType="Player">
+		<![CDATA[
+			select * from(select * from tbl_player where team_name = (
+ 		select team_name from tbl_team where team_idx = #{team_idx}) order by player_likes desc) where rownum<=3
+		]]>
+	</select>
+	
+	<update id="updateLikes" parameterType="Player">
+		update tbl_player set player_likes = #{player_likes} where player_idx = #{player_idx}
+	</update>
+	
+	<select id="selectLikes" parameterType = "int" resultType="int">
+		select player_likes from tbl_player where player_idx = #{player_idx}
+	</select>
   	
 </mapper>

@@ -1,3 +1,6 @@
+<%@page import="com.baseballtalk.model.HotPlayerDTO"%>
+<%@page import="com.baseballtalk.model.HotPlayerDAO"%>
+<%@page import="com.baseballtalk.model.PlayerDTO"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.TeamDAO"%>
 <%@page import="com.baseballtalk.model.BoardDAO"%>
@@ -26,6 +29,29 @@
 	List<RankDTO> rank = new RankDAO().View();
 	MemberDTO member = (MemberDTO) session.getAttribute("login_member");
 	List<TeamBoardDTO> teamboard = new BoardDAO().selectTeamBoard();
+	List<PlayerDTO> hotplayer = null;
+	Integer team_idx = null;
+	if(member != null){
+		team_idx = member.getTeam_idx();
+	}
+	String View = request.getParameter("view");
+	if(View == null){
+		View = "0";
+	}
+	System.out.println(View);
+	if(View.equals("all") || View.equals("0")){
+		hotplayer = new HotPlayerDAO().MainAll();
+	}else if(View.equals("my")){
+		if(member == null){
+		out.println("<script>alert('로그인이 필요한 서비스입니다.');" + "location.href='test.jsp';</script>");
+		}else{
+			if(team_idx == null){
+			out.println("<script>alert('팀 선택이 필요합니다.');" + "location.href='test.jsp';</script>");
+			}else{
+				hotplayer = new HotPlayerDAO().MainMyteam(team_idx);
+			}
+		}
+	}
 	%>
 	<div id="wrap1">
 		<div id="rank">
@@ -78,65 +104,39 @@
 					<%} %>
 				</table>
 			</div>
+			
 			<div id="hotplayer">
 				<div id="rank_name" style="background-color: #f07d0c"><a href="hotplayer.jsp" style="color:black">지금 핫한 선수</a></div>
-				<div id="hotplayer_link"><a href="test.jsp?view=1">전체</a><a href="test.jsp?view=2">my</a></div>
+				<div id="hotplayer_link"><a href="test.jsp?view=all">전체</a>
+				<a href = "test.jsp?view=my">my</a></div>
 				<div class="hp_wrap">
+					<% int i = 0; %>
+					<% for(PlayerDTO ht:hotplayer) { i++;%>
 					<div class="player">
-						<div class ="p_rank">순위</div>
+						<div class ="p_rank"><%=i %></div> 
 						<div class="p_name">
-							<span>선수이름</span>
+							<span><%=ht.getPlayer_name() %></span>
 						</div>
 						<div class="p_info">
 							<div class="p_img">
-								<img src="./image/kia.svg">
+							<% if(ht.getTeam_name().equals("한화")){ %>
+								<img class = "p_img" src="./hanwha/<%=ht.getPlayer_img()%>">
+							<%}else{ %>
+								<img class = "p_img" src=<%=ht.getPlayer_img()%>>
+							<%} %>
 							</div>
 							<div class="p_detail">
-								<div>팀</div>
-								<div>포지션</div>
-								<div>등번호</div>
+								<div><span><%=ht.getPlayer_position() %></div> &nbsp
+								<div><%=ht.getPlayer_number() %></div>
 							</div>
 						</div>
-						<div class="vote">투표수</div>
+						<div class="vote"><%=ht.getPlayer_likes() %></div>
+						
 					</div>
-					<div class="player">
-						<div class ="p_rank">순위</div>
-						<div class="p_name">
-							<span>선수이름</span>
-						</div>
-						<div class="p_info">
-							<div class="p_img">
-								<img src="./image/kia.svg">
-							</div>
-							<div class="p_detail">
-								<div>팀</div>
-								<div>포지션</div>
-								<div>등번호</div>
-							</div>
-						</div>
-						<div class="vote">투표수</div>
-					</div>
-					<div class="player">
-						<div class ="p_rank">순위</div>
-						<div class="p_name">
-							<span>선수이름</span>
-						</div>
-						<div class="p_info">
-							<div class="p_img">
-								<img src="./image/kia.svg">
-							</div>
-							<div class="p_detail">
-								<div>팀</div>
-								<div>포지션</div>
-								<div>등번호</div>
-							</div>
-						</div>
-						<div class="vote">투표수</div>
+					<%} %>
 					</div>
 				</div>
 			</div>
-		</div>
-
 			<div id="hot_board">
 				<div id="rank_name" style="background-color: #f07d0c">핫게시글</div>
 				<table class="hot_board_box">
@@ -167,6 +167,7 @@
 				</table>
 			</div>
 		</div>
+	</div>
 		<!-- 팀 로고 클릭 시 팀게시판으로 링크 윗줄 5개 'team_wrap01' -->
 		<div id="warp2">
 			<div class='team_wrap01'>
