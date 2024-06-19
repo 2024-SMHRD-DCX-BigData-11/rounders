@@ -33,7 +33,8 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 		request.setCharacterEncoding("UTF-8");
-			
+		
+			String rcmt_idx = request.getParameter("rcmt_idx");
 			String rcmt_content = request.getParameter("rcmt_content");
 			
 			System.out.println("rcmt_content : " + rcmt_content);

@@ -20,8 +20,9 @@ public class PlayerDAO {
 		session.close();
 		
 		return player;
-
 	}
+	
+	
 	
 	public List<PlayerDTO> showHitter_info() {
 		

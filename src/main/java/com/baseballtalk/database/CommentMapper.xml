@@ -18,7 +18,7 @@ VALUES
 	
 	</insert>
 	
-	<insert id="insertFreeBoardComment">
+	<insert id="insertFreeBoardComment" parameterType="FreeBoardComment">
 	
 		INSERT INTO tbl_freeboard_comment
     (board_idx, 
@@ -26,14 +26,14 @@ VALUES
     created_at, 
     mem_id)
 VALUES
-    (#{comment_Num}, 
-    #{content}, 
+    (#{board_idx}, 
+    #{cmt_content}, 
     sysdate, 
-    #{writer})
+    #{mem_id})
 	
 	</insert>
 	
-	<insert id="insertTeamComment">
+	<insert id="insertTeamBoardComment" parameterType="TeamBoardComment">
 	
 		INSERT INTO tbl_team_comment
     (board_idx, 
@@ -41,53 +41,61 @@ VALUES
     created_at, 
     mem_id)
 VALUES
-    (#{comment_Num}, 
-    #{content}, 
+    (#{board_idx}, 
+    #{cmt_content}, 
     sysdate, 
-    #{writer})
+    #{mem_id})
 	
 	</insert>
 	
 	
 	<update id="updateRecoredComment" parameterType = "RecoredComment">
 	
-		update tbl_recored_comment set rcmt_content=#{content} where rcmt_idx =#{comment_Num} and mem_id=#{writer}
+		update tbl_recored_comment set rcmt_content=#{rcmt_content} where rcmt_idx =#{rcmt_idx} and mem_id=#{mem_id}
 	
 	</update>
 	
 	<update id="updateFreeBoardComment" parameterType = "FreeBoardComment">
 	
-		update tbl_freeboard_comment set cmt_content=#{content} where cmt_idx =#{comment_Num} and mem_id=#{writer}
+		update tbl_freeboard_comment set cmt_content=#{cmt_content} where cmt_idx =#{cmt_idx} and mem_id=#{mem_id}
 	
 	</update>
 
 	<update id="updateTeamBoardComment" parameterType = "TeamBoardComment">
 	
-		update tbl_team_comment set cmt_content=#{content} where cmt_idx =#{comment_Num} and mem_id=#{writer}
+		update tbl_team_comment set cmt_content=#{cmt_content} where cmt_idx =#{cmt_idx} and mem_id=#{mem_id}
 	
 	</update>
 	
 	
-	<delete id="deleteRecoredBoardComment">
+	<delete id="deleteRecoredBoardComment" parameterType = "RecoredComment">
 	
-		delete from tbl_recored_comment where mem_id=#{writer} and rcmt_idx=#{comment_Num}
+		delete from tbl_recored_comment where mem_id=#{mem_id} and rcmt_idx=#{rcmt_idx}
 	
 	</delete>
 
-	<delete id="deleteFreeBoardComment">
+	<delete id="deleteFreeBoardComment" parameterType = "FreeBoardComment">
 	
-		delete from tbl_freeboard_comment where mem_id=#{writer} and cmt_idx=#{comment_Num}
+		delete from tbl_freeboard_comment where mem_id=#{mem_id} and cmt_idx=#{cmt_idx}
 	
 	</delete>
 	
-	<delete id="deleteTeamComment">
+	<delete id="deleteTeamBoardComment" parameterType = "TeamBoardComment">
 	
-		delete from tbl_team_comment where mem_id=#{writer} and cmt_idx=#{comment_Num}
+		delete from tbl_team_comment where mem_id=#{mem_id} and cmt_idx=#{cmt_idx}
 	
 	</delete>
 	
 	<select id="showRecoredComment" resultType = "RecoredComment">
 		select * from tbl_recored_comment
+	</select>
+	
+	<select id="showFreeBoardComment" resultType = "FreeBoardComment">
+		select * from tbl_freeboard_comment
+	</select>
+	
+	<select id="showTeamBoardComment" resultType = "TeamBoardComment">
+		select * from tbl_team_comment
 	</select>
  
 </mapper>

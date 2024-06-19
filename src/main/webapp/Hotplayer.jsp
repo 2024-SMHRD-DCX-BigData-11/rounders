@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="com.baseballtalk.model.PlayerDTO"%>
+<%@page import="com.baseballtalk.model.MemberDTO"%>
+<%@page import="com.baseballtalk.model.HotPlayerDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -50,31 +54,66 @@ p#selected-player {
 	margin-top: 10px;
 }
 
-#team_select h6 {
-    display: inline-block; 
-    width : 40px;
-	height : 20px;
+#team_select{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
+
+#team_select h2{
+ 	margin-right: 10px;
+}
+
+#team_select10{
+ 	height: 20px;
+ 	margin-top: 25px;
+}
+
+
+
 </style>
 </head>
 
 <body>
+<% 
+	String team = request.getParameter("team");
+	int idx = 0;
+	if(team == null){
+		MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+		if(login_member == null){
+			idx = 1;
+		}else{
+		idx = login_member.getTeam_idx();
+		}
+	}else{
+		idx = Integer.parseInt(team);
+	}
+	System.out.println(idx);
+	List<PlayerDTO> pi = new HotPlayerDAO().selectPlayer(idx);
+	for(PlayerDTO p : pi){
+	System.out.println(p.getPlayer_name());
+	}
+	%>
 	<div id="team_select">
-		<h6>팀선택</h6>
-		<select id="team_select10">
-			<option value="kia">기아</option>
-			<option value="samsung">삼성</option>
-			<option value="lotte">롯데</option>
-			<option value="nc">NC</option>
-			<option value="kt">KT</option>
-			<option value="hanwha">한화</option>
-			<option value="kiwoom">키움</option>
-			<option value="doosan">두산</option>
-			<option value="lg">엘지</option>
-			<option value="ssg">SSG</option>
+		<h2>팀선택</h2>
+		<select id="team_select10" onchange="if(this.value) location.href=(this.value);">
+			<option value="">팀을 선택하세요.</option>
+			<option value="Hotplayer.jsp?team=1">기아</option>
+			<option value="Hotplayer.jsp?team=3">삼성</option>
+			<option value="Hotplayer.jsp?team=8">롯데</option>
+			<option value="Hotplayer.jsp?team=6">NC</option>
+			<option value="Hotplayer.jsp?team=9">KT</option>
+			<option value="Hotplayer.jsp?team=7">한화</option>
+			<option value="Hotplayer.jsp?team=10">키움</option>
+			<option value="Hotplayer.jsp?team=3">두산</option>
+			<option value="Hotplayer.jsp?team=2">엘지</option>
+			<option value="Hotplayer.jsp?team=5">SSG</option>
 		</select>
 	</div>
 	<div id="hotplayer_box">
+	<p id="selected-player">선택한 선수:</p>
+	<form>
 		<div class="hotplayer_table">
 			<table>
 				<thead>
@@ -98,21 +137,20 @@ p#selected-player {
 						<td></td>
 						<td></td>
 						<td></td>
-						<td><input type="radio" name="player" value="player1"
+						<td><input type="radio" name="player" value='1,김도영'
 							onclick="toggleRadio(this)"></td>
 					</tr>
 				</tbody>
 
 			</table>
-
 		</div>
+		<div><input type="submit" value = "투표하기"></div>
+		</form>
+	
 	</div>
-
-	<p id="selected-player">선택한 선수:</p>
 
 	<script>
 		let lastSelectedPlayer = null; // 마지막 선택된 선수 저장 변수
-
 		// 라디오 버튼 선택 토글 함수
 		function toggleRadio(radio) {
 			if (radio === lastSelectedPlayer && radio.checked) {
@@ -121,14 +159,15 @@ p#selected-player {
 				updateSelectedPlayer(null);
 			} else {
 				lastSelectedPlayer = radio;
-				updateSelectedPlayer(radio.parentNode.nextElementSibling.textContent);
+				let radioval = radio.value.split(",");
+				let Name = radioval[1]
+				updateSelectedPlayer(Name);
 			}
 		}
 
 		// 선택된 선수 업데이트 함수
 		function updateSelectedPlayer(selectedPlayerName) {
-			const selectedPlayerElement = document
-					.getElementById('selected-player');
+			const selectedPlayerElement = document.getElementById('selected-player');
 			selectedPlayerElement.textContent = selectedPlayerName ? `선택한 선수: ${selectedPlayerName}`
 					: '선택한 선수: ';
 		}
