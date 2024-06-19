@@ -1,3 +1,4 @@
+<%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.FreeBoardCommentDTO"%>
 <%@page import="com.baseballtalk.model.CommentDAO"%>
 <%@page import="com.baseballtalk.model.RecoredCommentDTO"%>
@@ -27,8 +28,10 @@
 <% List<RecoredCommentDTO> showRecoredComment = new CommentDAO().show_RecoredComment();%>
  <!-- 로그인 세션 값 가져오기 -->
  <% MemberDTO login_member = (MemberDTO) session.getAttribute("login_member");%>
+
 	     
 	<%@ include file = "header.jsp" %>
+<div id = "wrap">
 	<div id="total">
 		<h4>투수 기록</h4>
 		<div id="stat_con">
@@ -56,8 +59,8 @@
 					<td>패</td>
 					<td>이닝</td>
 					<td>평균 자책점</td>
-					<td>경기 출장 수</td>
-					<td>선발 등판 횟수</td>
+					<td>경기 출장</td>
+					<td>선발 등판</td>
 					<td>홀드</td>
 					<td>세이브</td>
 					<td>K/9</td>
@@ -90,30 +93,21 @@
 				<%} %>
 			</table>
 	</div>
-	</div>
-	
 	<!-- 세션에서 닉네임값 가져오기 -->
 	
-	<% String nick = login_member.getMem_nick();%>
-		
-	
+	<% String mem_id = login_member.getMem_id();%>
 	<div class = "Comment">
+	<div class = "CommentWrite">
 	
-		<form id = "Input_Comment" action="CommentCon" method = "post" encType = "multipart/form-data" onsubmit="return false">
+		<form id = "Input_Comment" action="RecoredCommentInsertCon?stat=1&mem_id=<%=mem_id%>" method = "post">
 		
 			<table class = "CommentTable">
 				
 				<tr>
 					
-					<td><br><br><br><%=nick%></td>
-					<td><input type="text" class="CommentMain" name = "CommentContent" placeholder="상대방을 존중하는 댓글을 남깁시다." ></td>
-					<td><br><br><input type="submit" class="WriteButton" value="댓글 작성" onclick="login_check()"></td>
-				
-				</tr>
-				
-				<tr>
-				
-					<td colspan="3"><input type="file" name="FileName"></td>
+					<td><br><br><br><%=login_member.getMem_nick()%></td>
+					<td><input type="text" class="CommentMain" name = "rcmt_content" placeholder="댓글을 입력하세요." ></td>
+					<td><br><br><input type="submit"class="WriteButton" value="댓글 작성" onclick="login_check()"></td>
 				
 				</tr>
 				
@@ -124,27 +118,31 @@
 	</div>
 	
 	<div class = "CommentList">
-	 <% for (RecoredCommentDTO rcmt : showRecoredComment) { %>
+	 <% for (RecoredCommentDTO rcmt : showRecoredComment) {%>
+			 
+		 
 		<table class = "CommentTable">
 		
 			<tr>
-			
-				<td><%=rcmt.getMem_id()%></td>
+			 <% String mem_nick = new MemberDAO().getNick(rcmt.getMem_id());%>
+				<td><%=mem_nick%></td>
 				<td><%=rcmt.getRcmt_content()%></td>
-				<td>
-					<% if (login_member != null && rcmt.getMem_id().equals(login_member.getMem_nick())) { %>
-                        <button onclick="editComment('<%= rcmt.getRcmt_content()%>')">수정</button>
+				<%-- <td>
+					<% if (login_member != null && rcmt.getMem_id().equals(login_member.getMem_id())) { %>
+                        <button onclick="editComment('<%= rcmt.getRcmt_idx()%>','<%= rcmt.getRcmt_content()%>')">수정</button>
                         <button onclick="deleteComment('<%= rcmt.getRcmt_idx()%>')">삭제</button>
                     <% } %>
-				
-				</td>
+				</td> --%>
 			
 			</tr>
 			
 		</table>
 	<%} %>
 	</div>
+	</div>
+	</div>
 	
+</div>	
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	    <script type="text/javascript">
 	     
@@ -153,25 +151,25 @@
 					
 					var login_member = <%=login_member%>;
 					
-					if (!login_member) {
+					if (login_member == null) {
 		                alert("로그인이 필요합니다. 로그인 페이지로 이동합니다.");
 		                window.location.href = "Login.jsp"; // 로그인 페이지의 URL로 변경
-		                return false;
 		            }
 					
-					 document.getElementById("Input_Comment").submit();
+					 
 					
 				}
-				
-				function editComment(Rcmt_idx, Rcmt_content) {
-			        var newContent = prompt("수정할 내용을 입력하세요:", commentContent);
+				<%-- var rcmt_idx = <%=showRecoredComment.get(0).getRcmt_idx()%>;
+				var rcmt_content = $('.rcmt_content').val();
+				function editComment(rcmt_idx, rcmt_content) {
+			        var newContent = prompt("수정할 내용을 입력하세요:", rcmt_content);
 			        if (newContent != null) {
 			            $.ajax({
-			                url: "CommentCon",
+			                url: "RecoredCommentUpdateCon",
 			                type: "POST",
 			                data: {
-			                	Rcmt_idx: Rcmt_idx,
-			                    newContent: newContent
+			                	rcmt_idx: rcmt_idx,
+			                    rcmt_content: newContent
 			                },
 			                success: function(response) {
 			                    alert("댓글이 수정되었습니다.");
@@ -184,12 +182,12 @@
 			        }
 			    }
 				
-				function deleteComment(Rcmt_idx) {
+				function deleteComment(rcmt_idx) {
 			        if (confirm("정말로 댓글을 삭제하시겠습니까?")) {
 			            $.ajax({
-			                url: "CommentCon",
+			                url: "RecoredCommentDeleteCon",
 			                type: "POST",
-			                data: { Rcmt_idx: Rcmt_idx },
+			                data: { rcmt_idx: rcmt_idx },
 			                success: function(response) {
 			                    alert("댓글이 삭제되었습니다.");
 			                    location.reload();
@@ -199,7 +197,7 @@
 			                }
 			            });
 			        }
-			    }
+			    } --%>
 		
 
 					

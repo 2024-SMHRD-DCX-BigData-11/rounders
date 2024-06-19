@@ -1,19 +1,25 @@
 @charset "UTF-8";
 
+.Comment{
+	margin-top: 20px; /* 필요 시 간격 조정 */
+    padding: 10px;
+
+}
+
+
 .CommentTable{
 	text-align: center;
 	 border: 1px solid #dddddd;
 }
 
 .CommentList{
-	display: flex;
-	justify-content: center;
+	display: block;
 }
 
 .CommentMain{
 
 	height: 30px;
-	width: 500px;
+	width: 400px;
 	
 }
 
@@ -22,7 +28,7 @@
 	flex-direction: column;
 }
 
-.Comment{
+.CommentWrite{
 	display: flex;
 	justify-content: center;
 }

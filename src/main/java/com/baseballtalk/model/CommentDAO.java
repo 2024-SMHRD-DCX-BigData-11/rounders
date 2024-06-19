@@ -113,6 +113,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		List<FreeBoardCommentDTO> show_FreeBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showTeamBoardComment");
 		return show_FreeBoardComment;
 	}
+	
 
 
 }

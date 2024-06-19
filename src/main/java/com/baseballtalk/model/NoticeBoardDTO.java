@@ -21,5 +21,16 @@ public class NoticeBoardDTO {
 	private String mem_id;
 	private String notice_category;
 	private String created_at;
+	
+	public NoticeBoardDTO(String notice_title, String notice_content, String mem_id, String notice_category) {
+		super();
+		this.notice_title = notice_title;
+		this.notice_content = notice_content;
+		this.mem_id = mem_id;
+		this.notice_category = notice_category;
+	}
+	
+
+	
 
 }

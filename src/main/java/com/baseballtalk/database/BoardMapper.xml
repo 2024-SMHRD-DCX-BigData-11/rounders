@@ -14,12 +14,12 @@
     notice_category, 
     created_at)
 VALUES
-    (#{title}, 
-    #{content}, 
-    #{views}, 
-    #{writer}, 
-    #{category}, 
-    sysdate);
+    (#{notice_title}, 
+    #{notice_content}, 
+    0, 
+    #{mem_id}, 
+    #{notice_category}, 
+    sysdate)
 	
 	</insert>
 
@@ -34,13 +34,13 @@ VALUES
     board_file, 
     mem_id)
 VALUES
-    (#{title}, 
-    #{content}, 
+    (#{board_title}, 
+    #{board_content}, 
     sysdate, 
     0, 
     0, 
-    #{filename}, 
-    #{writer});
+    #{board_file}, 
+    #{mem_id})
 	
 	</insert>
 	
@@ -57,15 +57,15 @@ VALUES
     board_file, 
     mem_id)
 VALUES
-    (#{team_Num}, 
-    #{category}, 
-    #{title}, 
-    #{content}, 
+    (#{team_idx}, 
+    #{board_category}, 
+    #{board_title}, 
+    #{board_content}, 
     sysdate, 
-    #{views}, 
-    #{likes}, 
-    #{filename}, 
-    #{writer});
+    0, 
+    0, 
+    #{board_file}, 
+    #{mem_id})
 	
 	</insert>
 	
@@ -110,5 +110,14 @@ VALUES
 			select * from tbl_team_board where rownum<=10 ORDER by board_likes DESC
 		]]>
 	</select>
- 
+	
+	<select id="showNoticeBoard" resultType="NoticeBoard">
+	select * from tbl_notice
+ 	</select>
+ 	
+ 	<select id="showFreeBoard" resultType="FreeBoard">
+	select * from tbl_freeboard
+ 	</select>
+ 	
+ 	
 </mapper>

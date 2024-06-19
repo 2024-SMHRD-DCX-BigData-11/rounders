@@ -1,3 +1,4 @@
+<%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.fasterxml.jackson.databind.ser.impl.ReadOnlyClassToSerializerMap"%>
 <%@page import="com.baseballtalk.model.CommentDAO"%>
 <%@page import="com.baseballtalk.model.RecoredCommentDTO"%>
@@ -85,7 +86,7 @@
 	
 	<div class = "Comment">
 	
-		<form id = "Input_Comment" action="RecoredCommentInsertCon?stat=1&nick=<%=mem_id%>" method = "post">
+		<form id = "Input_Comment" action="RecoredCommentInsertCon?stat=2&mem_id=<%=mem_id%>" method = "post">
 		
 			<table class = "CommentTable">
 				
@@ -108,8 +109,8 @@
 		<table class = "CommentTable">
 		
 			<tr>
-			
-				<td><%=rcmt.getMem_id()%></td>
+			<% String mem_nick = new MemberDAO().getNick(rcmt.getMem_id()); %>
+				<td><%=mem_nick%></td>
 				<td><%=rcmt.getRcmt_content()%></td>
 				<td>
 					<% if (login_member != null && rcmt.getMem_id().equals(login_member.getMem_nick())) { %>
@@ -141,7 +142,7 @@
 					 
 					
 				}
-				var rcmt_idx = <%=showRecoredComment.get(0).getRcmt_idx()%>;
+<%-- 				var rcmt_idx = <%=showRecoredComment.get(0).getRcmt_idx()%>;
 				var rcmt_content = <%=showRecoredComment.get(0).getRcmt_content()%>;
 				function editComment(rcmt_idx, rcmt_content) {
 			        var newContent = prompt("수정할 내용을 입력하세요:", rcmt_content);
@@ -179,7 +180,7 @@
 			                }
 			            });
 			        }
-			    }
+			    } --%>
 		
 
 					
