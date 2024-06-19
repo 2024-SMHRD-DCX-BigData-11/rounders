@@ -1,3 +1,4 @@
+<%@page import="com.fasterxml.jackson.databind.ser.impl.ReadOnlyClassToSerializerMap"%>
 <%@page import="com.baseballtalk.model.CommentDAO"%>
 <%@page import="com.baseballtalk.model.RecoredCommentDTO"%>
 <%@page import="com.baseballtalk.model.HitterStatDAO"%>
@@ -112,7 +113,7 @@
 				<td><%=rcmt.getRcmt_content()%></td>
 				<td>
 					<% if (login_member != null && rcmt.getMem_id().equals(login_member.getMem_nick())) { %>
-                        <button onclick="editComment('<%= rcmt.getRcmt_content()%>')">수정</button>
+                        <button onclick="editComment('<%= rcmt.getRcmt_idx()%>','<%= rcmt.getRcmt_content()%>')">수정</button>
                         <button onclick="deleteComment('<%= rcmt.getRcmt_idx()%>')">삭제</button>
                     <% } %>
 				
@@ -140,16 +141,17 @@
 					 
 					
 				}
-				
-				function editComment(Rcmt_idx, Rcmt_content) {
-			        var newContent = prompt("수정할 내용을 입력하세요:", commentContent);
+				var rcmt_idx = <%=showRecoredComment.get(0).getRcmt_idx()%>;
+				var rcmt_content = <%=showRecoredComment.get(0).getRcmt_content()%>;
+				function editComment(rcmt_idx, rcmt_content) {
+			        var newContent = prompt("수정할 내용을 입력하세요:", rcmt_content);
 			        if (newContent != null) {
 			            $.ajax({
-			                url: "RecoredCommentUpdateCon",
+			                url: "RecoredCommentUpdateCon?",
 			                type: "POST",
 			                data: {
-			                	Rcmt_idx: Rcmt_idx,
-			                    newContent: newContent
+			                	rcmt_idx: rcmt_idx,
+			                    rcmt_content: newContent
 			                },
 			                success: function(response) {
 			                    alert("댓글이 수정되었습니다.");
@@ -162,12 +164,12 @@
 			        }
 			    }
 				
-				function deleteComment(Rcmt_idx) {
+				function deleteComment(rcmt_idx) {
 			        if (confirm("정말로 댓글을 삭제하시겠습니까?")) {
 			            $.ajax({
-			                url: "RecoredCommentDeleteCon",
+			                url: "RecoredCommentDeleteCon,
 			                type: "POST",
-			                data: { Rcmt_idx: Rcmt_idx },
+			                data: { rcmt_idx: rcmt_idx },
 			                success: function(response) {
 			                    alert("댓글이 삭제되었습니다.");
 			                    location.reload();
