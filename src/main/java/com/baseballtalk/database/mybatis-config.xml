@@ -26,13 +26,10 @@
 		<typeAlias type="com.baseballtalk.model.PlayerDTO" alias="Player"/>
 		<typeAlias type="com.baseballtalk.model.MatchDTO" alias="Match"/>
 		<typeAlias type="com.baseballtalk.model.HitterStatDTO" alias="HitterStat"/>
-<<<<<<< HEAD
 		<typeAlias type="com.baseballtalk.model.PitcherStatDTO" alias="PitcherStat"/>
-=======
 		<typeAlias type="com.baseballtalk.model.RankDTO" alias="Rank"></typeAlias>
 		<typeAlias type="com.baseballtalk.model.TeamDTO" alias="Team"></typeAlias>
 
->>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 	</typeAliases>
 
   <environments default="development">
