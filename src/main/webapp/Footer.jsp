@@ -10,13 +10,13 @@
 <body>
 <footer>
 	    <div>
-	        <p>청소년보호정책</p>
+	        <p>청소년보호정책</p><br>
 	            <li>본 웹사이트는 사업용 사이트가 아니며 교육용으로만 사용됩니다.</li>
 	        </ul>
 	                BaseBallTalk 기록실 상품의 저작권은 BaseBallTalk 및 ROUNDERS에 있으며
-	                이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.
+	                이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.<br>
 	            본 웹사이트는 사업용 사이트가 아니며 교육용으로만 사용됩니다.  
-	    </div>
+	    </div><br>
 	    <div class="copyright">
 	        copyright @ 2024-2030"
 	        <span>ALL rights reserved.</span>        

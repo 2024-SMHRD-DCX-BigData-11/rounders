@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* 게시판 스타일 */
+#board {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#list {
+    width: 100%;
+	height : 500px;
+    border-collapse: collapse;
+    margin-top: 50px;
+
+}
+
+#list td {
+    padding: 10px;
+    border: 2px solid #00421f;
+
+}
+/* img{
+	max-width:100% !important; 
+	max-height:100%
+} */
+.td{
+	width: 200px;
+}
+#rs input{
+    padding: 10px;
+    background-color: #00421f;
+    color: white;
+    border: none;
+	border-radius: 40px;
+}
