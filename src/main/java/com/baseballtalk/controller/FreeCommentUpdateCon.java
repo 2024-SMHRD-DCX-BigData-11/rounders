@@ -44,17 +44,17 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 						
 			// System.out.println(member.toString());
 			
-			int i_cnt = new CommentDAO().insertFreeBoardComment(freeComment);//i_cnt = insert_cnt
+			int u_cnt = new CommentDAO().updateFreeBoardComment(freeComment);//u_cnt = update_cnt
 			
 			
 			
-			if(i_cnt > 0) {
-				System.out.println("자유게시판 댓글 작성 성공!!");
+			if(u_cnt > 0) {
+				System.out.println("자유게시판 댓글 수정 성공!!");
 				String stat = (String)request.getParameter("stat");
 				System.out.println(stat);
 				RequestDispatcher rd1 = request.getRequestDispatcher("FreeBoard.jsp");
 			}else {
-				System.out.println("자유게시판 댓글 작성 실패...ㅠㅠ");
+				System.out.println("자유게시판 댓글 수정 실패...ㅠㅠ");
 				RequestDispatcher rd2 = request.getRequestDispatcher("FreeBoard.jsp");
 	
 			}

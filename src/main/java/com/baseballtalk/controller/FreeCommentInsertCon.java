@@ -25,7 +25,7 @@ import com.baseballtalk.model.CommentDAO;
 import com.baseballtalk.model.FreeBoardCommentDTO;
 import com.baseballtalk.model.TeamBoardCommentDTO;
 
-@WebServlet("/FreeCommentInsertCon")
+@WebServlet("/FreeCommentUpdateCon")
 	
 	public class FreeCommentInsertCon extends HttpServlet {
 
