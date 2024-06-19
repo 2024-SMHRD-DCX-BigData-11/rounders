@@ -1,8 +1,8 @@
 @charset "UTF-8";
 body	{overflow-y: scroll;}
-.kia_img{
+.img{
 	width: 100%;
-	height: 300px;
+	height: 350px;
 	display: block; /* 이미지를 블록 요소로 설정하여 가로폭을 확보 */
   margin: 0 auto; /* 좌우 여백을 auto로 설정하여 가운데 정렬 */
 }
@@ -100,7 +100,7 @@ select {
   border: 0;
   outline: none;
   border-radius: 40px;
-  background: #ea0029;
+  
   color: white;
   font-size: 1.2em;
   letter-spacing: 2px;
@@ -119,7 +119,7 @@ select {
   border: 0;
   outline: none;
   border-radius: 50px;
-  background: #ea0029;
+  
   color: white;
   text-transform: uppercase; /* Uppercase text */
   font-size: 1.2em;
@@ -138,7 +138,7 @@ select {
 		font-size:20px;
 		border-style: solid;
 		border-width: medium;
-		border: 3px solid #ea0029;
+		
 	/* 	display: flex; */
 	}
 	
@@ -168,6 +168,9 @@ select {
   	flex-direction : row;
     flex: 0 0 calc(50% - 20px); /* 반응형으로 아이템 너비 설정 */
     margin-bottom: 20px; /* 아이템들 사이의 여백 설정 */
+  }
+  #team{
+  	overflow-x:auto;
   }
 }
 
@@ -201,9 +204,17 @@ select {
     height: 50px; /* 버튼 높이 조정 */
     margin-top: 20px;
   }
+    td{
+  	word-wrap: break-word; /* 긴 단어들을 여러 줄로 자동 줄 바꿈 */
+  }
+  .table {
+    width: 100%; /* 또는 특정 너비로 설정 */
+    table-layout: fixed; /* 테이블 너비 고정 */
+}
+  
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (min-width: 768px) and (max-width: 1500px) {
   .all {
     display: flex;
     flex-direction: column; /* 요소들을 세로로 배치 */
@@ -232,6 +243,17 @@ select {
     height: 50px; /* 버튼 높이 조정 */
     margin-top: 20px;
   }
+   #team{
+  	overflow-x:auto;
+  }
+  td{
+  	word-wrap: break-word; /* 긴 단어들을 여러 줄로 자동 줄 바꿈 */
+  }
+  .table {
+    width: 100%; /* 또는 특정 너비로 설정 */
+    table-layout: fixed; /* 테이블 너비 고정 */
+}
+  
 }
 
 
@@ -288,7 +310,7 @@ select {
   border: 0;
   outline: none;
   border-radius: 40px;
-  background:#ea0029;
+  
   color: white;
   font-size: 1.2em;
   letter-spacing: 2px;
