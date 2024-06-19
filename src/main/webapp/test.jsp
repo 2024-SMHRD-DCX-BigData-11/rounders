@@ -7,7 +7,6 @@
 <%@page import="com.baseballtalk.model.MatchDAO"%>
 <%@page import="com.baseballtalk.model.MatchDTO"%>
 <%@page import="java.util.List"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.baseballtalk.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>

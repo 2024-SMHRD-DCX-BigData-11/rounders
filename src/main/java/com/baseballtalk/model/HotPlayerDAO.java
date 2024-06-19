@@ -1,5 +1,7 @@
 package com.baseballtalk.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -14,6 +16,13 @@ public class HotPlayerDAO {
 		int cnt = session.insert("com.baseballtalk.database.HotPlayerMapper.insertHotPlayer", hotPlayer);
 		session.close();
 		return cnt;
+	}
+	
+	public List<PlayerDTO> selectPlayer(int team_idx) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<PlayerDTO> Selcetplayer = session.selectList("com.baseballtalk.database.HotPlayerMapper.selectPlayer", team_idx);
+		session.close();
+		return Selcetplayer;
 	}
 	
 	

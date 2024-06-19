@@ -7,7 +7,11 @@
   	<insert id="insertHotplayer" parameterType="HotPlayer">
   	
   		insert into tbl_hot_player (mem_id, player_idx, created_at) VALUES(#{id}, #{player_id}, sysdate);
-  		
   	</insert>
+  	
+  	<select id="selectPlayer" parameterType="int" resultType="Player">
+  		select * from tbl_player where team_name = (select team_name from tbl_team where team_idx = #{team_idx}) 
+  		order by player_likes
+  	</select>
   	
 </mapper>

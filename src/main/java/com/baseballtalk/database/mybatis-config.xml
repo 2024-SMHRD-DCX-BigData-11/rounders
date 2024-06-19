@@ -29,6 +29,7 @@
 		<typeAlias type="com.baseballtalk.model.PitcherStatDTO" alias="PitcherStat"/>
 		<typeAlias type="com.baseballtalk.model.RankDTO" alias="Rank"></typeAlias>
 		<typeAlias type="com.baseballtalk.model.TeamDTO" alias="Team"></typeAlias>
+		<typeAlias type="com.baseballtalk.model.HotPlayerDTO" alias="HotPlayer"/>
 
 	</typeAliases>
 
@@ -56,6 +57,7 @@
 	<mapper resource="com/baseballtalk/database/StatMapper.xml"/>
 	<mapper resource="com/baseballtalk/database/RankMapper.xml"/>
 	<mapper resource="com/baseballtalk/database/TeamMapper.xml"/>
+	<mapper resource="com/baseballtalk/database/HotPlayerMapper.xml"/>
   </mappers>
   
 </configuration>
