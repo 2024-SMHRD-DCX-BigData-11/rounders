@@ -65,7 +65,7 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	background-color: #00421f;
-	width: 100%;
+/* 	width: 100%; */
 }
 
 .navbar__logo {

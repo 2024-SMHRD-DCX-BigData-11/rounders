@@ -1,21 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" isELIgnored="false"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>기아 팀 페이지</title>
-<link href="./css/TeamPage.css" rel="stylesheet" type="text/css">
+<title>롯데 팀 페이지</title>
+	<link href="./css/TeamPage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<%@ include file="header.jsp"%>
-	<img alt="logo" src="./image/kiaimg.jpg" class="img">
+<%@ include file="header.jsp"%>
+	<img alt="logo" src="./image/lotteimg.png" class="img">
 <div class = "wrap">
 	<div class="all">
 		<div class="left">
 		<div  id="team">
 			<h1>
-				기아 타이거즈 게시판 <select>
+				롯데 자이언츠 게시판 <select>
 					<option value="category">카테고리</option>
 					<option value="category">잡담</option>
 					<option value="category">정보</option>
@@ -161,7 +161,7 @@
 		</div>
 			<div class="right">
 				<div class="rightone">
-					<table id="schedule_wrap" style="border: 3px solid #ea0029">
+					<table id="schedule_wrap" style="border: 3px solid #041e42 ">
 						<tr>
 							<th colspan="3" id="match_date">오늘의 경기<br> <span>${match.get(0).getMatch_date()}</span></th>
 						</tr>
@@ -178,13 +178,13 @@
 				</div>
 				<!-- 버튼 -->
 				<div class="rightone">
-					<input style="background: #ea0029" type="button" value="응원하기" onclick="openPopup()">
+					<input style="background: #041e42" type="button" value="응원하기" onclick="openPopup()">
 				</div>
 			</div>
 		</div>
 	<div class = "write_wrap">
 		<div class="write">
-				<a href="PostingWrite.jsp"><input style="background: #ea0029" type="button" name="write" value="글 쓰기" id="write"></a>
+				<a href="PostingWrite.jsp"><input style="background: #041e42" type="button" name="write" value="글 쓰기" id="write"></a>
 			</div>
 	</div>
 	<div class = "page_wrap">
@@ -205,16 +205,12 @@
 			<h2>응원하기</h2>
 			<div>팀 응원가</div>
 			<div>
-				<iframe width="560" height="315"
-					src="https://www.youtube.com/embed/cGs5swSDvJ8?si=7xh4_WbYPHFuOThA"
-					title="YouTube video player" frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/vVJmpR2YU0Y?si=GfNIDTNpzxlNCZAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</div>
-			<a target="_blank" href="https://teamstore.tigers.co.kr/"><img
-				id="logo" src="./image/kia.svg"></a> <span><< 굿즈 사러가기 </span> <span
+			<a target="_blank" href="https://www.lottegiantsshop.com/"><img
+				id="logo" src="./image/lotte.svg"></a> <span><< 굿즈 사러가기 </span> <span
 				style="color: red">CLICK!</span>
-			<button style="background: #ea0029" onclick="closePopup()">닫기</button>
+			<button style="background: #041e42" onclick="closePopup()">닫기</button>
 		</div>
 	
 
