@@ -17,12 +17,13 @@ public class NickCheckCon extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		request.setCharacterEncoding("UTF-8");
 		
+		System.out.println("NickCheckCon 접속 완료");
 		String input_nick = request.getParameter("nick");
 		
 		System.out.println(input_nick);
 	
 		boolean result = new MemberDAO().nickCheck(input_nick);
-		
+		System.out.println("출력 성공");
 		System.out.println(result);
 		
 		PrintWriter out;
