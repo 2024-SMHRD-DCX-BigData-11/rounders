@@ -4,18 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>NC 팀 페이지</title>
+<title>한화 팀 페이지</title>
 	<link href="./css/TeamPage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%@ include file="header.jsp"%>
-	<img alt="logo" src="./image/ncimg.png" class="img">
+	<img alt="logo" src="./image/hanwhaimg.jpg" class="img">
 <div class = "wrap">
 	<div class="all">
 		<div class="left">
 		<div  id="team">
 			<h1>
-				NC 다이노스 게시판 <select>
+				한화 이글스 게시판 <select>
 					<option value="category">카테고리</option>
 					<option value="category">잡담</option>
 					<option value="category">정보</option>
@@ -161,7 +161,7 @@
 		</div>
 			<div class="right">
 				<div class="rightone">
-					<table id="schedule_wrap" style="border: 3px solid #315288">
+					<table id="schedule_wrap" style="border: 3px solid #f60">
 						<tr>
 							<th colspan="3" id="match_date">오늘의 경기<br> <span>${match.get(0).getMatch_date()}</span></th>
 						</tr>
@@ -178,13 +178,13 @@
 				</div>
 				<!-- 버튼 -->
 				<div class="rightone">
-					<input style="background: #315288" type="button" value="응원하기" onclick="openPopup()">
+					<input style="background: #f60" type="button" value="응원하기" onclick="openPopup()">
 				</div>
 			</div>
 		</div>
 	<div class = "write_wrap">
 		<div class="write">
-				<a href="PostingWrite.jsp"><input style="background: #315288" type="button" name="write" value="글 쓰기" id="write"></a>
+				<a href="PostingWrite.jsp"><input style="background: #f60" type="button" name="write" value="글 쓰기" id="write"></a>
 			</div>
 	</div>
 	<div class = "page_wrap">
@@ -205,12 +205,12 @@
 			<h2>응원하기</h2>
 			<div>팀 응원가</div>
 			<div>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/-k1QchhdvAc?si=Hwx13oGJ9j3eHmzq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/2J7ZOEWPHJs?si=FNCj0cHALNJ_79F1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 			</div>
-			<a target="_blank" href="https://store.ncdinos.com/"><img
-				id="logo" src="./image/nc.svg"></a> <span><< 굿즈 사러가기 </span> <span
+			<a target="_blank" href="https://spyder-baseball.co.kr/"><img
+				id="logo" src="./image/hanwha.svg"></a> <span><< 굿즈 사러가기 </span> <span
 				style="color: red">CLICK!</span>
-			<button style="background: #315288" onclick="closePopup()">닫기</button>
+			<button style="background: #f60" onclick="closePopup()">닫기</button>
 		</div>
 	
 
