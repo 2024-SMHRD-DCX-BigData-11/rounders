@@ -71,25 +71,25 @@ VALUES
 	
 	<update id="updateNoticeBoard" parameterType = "NoticeBoard">
 	
-		update tbl_notice set notice_category=#{category}, notice_title=#{title}, notice_content=#{content}  where mem_id=#{writer} and notice_idx=#{borad_Num}
+		update tbl_notice set notice_category=#{notice_category}, notice_title=#{notice_title}, notice_content=#{notice_content}  where notice_idx=#{notice_idx}
 	
 	</update>
 
 	<update id="updateFreeBoard" parameterType = "FreeBoard">
 	
-		update tbl_freeboard set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{writer}
+		update tbl_freeboard set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{mem_id}
 	
 	</update>
 
 	<update id="updateTeamBoard" parameterType = "TeamBoard">
 	
-		update tbl_team_board set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{writer}
+		update tbl_team_board set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{mem_id}
 	
 	</update>
 
-	<delete id="deleteNoticeBoard">
+	<delete id="deleteNoticeBoard" parameterType="int">
 	
-		delete from tbl_notice where mem_id=#{writer} and notice_idx=#{boardNum} and notice_title=#{title}
+		delete from tbl_notice where notice_idx = #{notice_idx}
 	
 	</delete>
 	

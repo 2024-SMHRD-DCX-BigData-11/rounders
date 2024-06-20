@@ -30,7 +30,7 @@
 				<%String mem_nick = new MemberDAO().getNick(fb.getMem_id()); %>
 				<tbody>
 				<tr>
-					<td><%= fb.getBoard_title()%></td>
+					<td onclick="location.href='FreeBoardPostingDetail.jsp?board_idx=<%=fb.getBoard_idx()%>'"><%= fb.getBoard_title()%></td>
 					<td><%= mem_nick%></td>
 					<td><%= fb.getCreated_at()%></td>
 					<td><%= fb.getBoard_likes()%></td>

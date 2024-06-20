@@ -30,7 +30,6 @@ import com.baseballtalk.model.BoardDAO;
 			// 2. 파일을 저장할 경로(상대경로)
 			String path = request.getServletContext().getRealPath("./file");
 			System.out.println(path);
-			
 			// 3. 파일 허용 용량
 			int maxSize = 10*1024*1024; // 10MB
 			
@@ -58,15 +57,15 @@ import com.baseballtalk.model.BoardDAO;
 			
 			System.out.println(notice_category + " " + notice_title + " " + notice_content + " " + mem_id);
 			
-			
 			if(i_cnt == 1) {
-				System.out.println("공지사항 게시글 업로드 성공");
+				System.out.println("공지사항 게시글 업데이트 성공");
 				response.sendRedirect("Notice.jsp");
 			}
 			else {
-				System.out.println("공지사항 게시글 업로드 실패");
+				System.out.println("공지사항 게시글 업데이트 실패");
 				response.sendRedirect("NoticePostingWrite.jsp");
 			}
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

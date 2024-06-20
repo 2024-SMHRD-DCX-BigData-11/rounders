@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.BoardDAO"%>
 <%@page import="com.baseballtalk.model.NoticeBoardDTO"%>
@@ -13,12 +14,14 @@
 <body>
 <%
 	int notice_idx = Integer.parseInt(request.getParameter("notice_idx"));
+
 	NoticeBoardDTO noticeBoard = new BoardDAO().noticeDetail(notice_idx);
 	String mem_nick = new MemberDAO().getNick(noticeBoard.getMem_id());
+	MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 %>
 <%@ include file = "header.jsp" %>
 	<div id = "board">
-				<form action="#" method="post" enctype="multipart/form-data">
+				<form action="" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr><td class="td">카테고리</td>
 						
@@ -50,19 +53,25 @@
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">
-							<a href="#"><input type="button" value="뒤로가기"></a>
+							<a href="#"><input type="button" value="뒤로가기" id = "backButton"></a>
+							
+							<% if(login_member != null && login_member.getMem_id().equals(noticeBoard.getMem_id())){%>
+							<a href = "NoticePostingUpdate.jsp?notice_idx=<%= notice_idx %>">"><button id ="updateButton" color="black">수정</button></a>
+							<a href="NoticePostingDeleteCon?notice_idx=<%=notice_idx%>"><button id = "deleteButton">삭제</button></a>
+							<%} %>
 						</td>
 					</tr>
 				</table>
 				</form>
 			</div>
 		<div>
-			<%@ include file="Footer.jsp"%>
+			<%@ include file="Footer.jsp" %>
 		</div>
+		
 	<script>
 		document.getElementById('backButton').addEventListener('click',
 				function() {
-					window.history.back(); // 브라우저의 뒤로 가기 기능을 실행합니다.
+					window.history.back(); 
 				});
 	</script>
 </body>

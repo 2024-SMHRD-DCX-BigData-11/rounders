@@ -67,10 +67,10 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
 	}
 	
-	public int deleteNoticeBoard(NoticeBoardDTO noticeBoard) {
+	public int deleteNoticeBoard(int notice_idx) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteNoticeBoard",noticeBoard);
+		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteNoticeBoard",notice_idx);
 		session.close();
 		return cnt;
 		

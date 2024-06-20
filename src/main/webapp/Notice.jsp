@@ -43,7 +43,7 @@
 				<tbody>
 					<tr>
 						<td><%=nb.getNotice_category()%></td>
-						<td><%=nb.getNotice_title()%></td>
+						<td onclick="location.href='NoticeBoardPostingDetail.jsp?notice_idx=<%=nb.getNotice_idx()%>'"><%=nb.getNotice_title()%></td>
 						<td><%=mem_nick%></td>
 						<td><%=nb.getCreated_at()%></td>
 						<td><%=nb.getNotice_views()%></td>

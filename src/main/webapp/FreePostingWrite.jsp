@@ -15,7 +15,7 @@
  <%String mem_id = login_member.getMem_id();%>
   <%String nick = login_member.getMem_nick();%>
 	<div id = "board">
-				<form action="FreeBoardInsertCon?mem_id=<%= mem_id %>&board_idx=0" method="post" enctype="multipart/form-data">
+				<form action="FreeBoardInsertCon?mem_id=<%= mem_id %>" method="post" enctype="multipart/form-data">
 				<table id="list">
 					<tr>
 						<td>제목</td>
