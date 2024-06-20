@@ -8,13 +8,10 @@
 	<link href="./css/Join.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
- 		
-
-
 	<div class="wrap">
+
         <div class="join">
-            <img alt="logo" src="./image/btlogo.png">
+            <a href="Main.jsp"><img alt="logo" src="./image/btlogo.png"></a>
             <form action="JoinCon" method="post">
             	<fieldset>
 		            <div class="join_id">
@@ -69,7 +66,7 @@
             </form>
 		  </div>
 	    </div>
-	    
+
 	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	    <script type="text/javascript">
 		    
@@ -96,7 +93,7 @@
 					
 				}
 				
-				
+							
 				function nick_check(){
 					
 					document.getElementById('result_nick_check').style.display = 'block'

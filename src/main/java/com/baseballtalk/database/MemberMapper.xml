@@ -39,5 +39,16 @@
   		delete from tbl_member where mem_id = #{mem_id} and mem_pw = #{mem_pw}
   	</delete>
   	
+  	<select id="getPoint" parameterType="String" resultType="int">
+  		select mem_point from tbl_member where mem_id = #{mem_id}
+  	</select>
+  	
+  	<update id="updatePoint" parameterType="Member">
+  		update tbl_member set mem_point = #{mem_point} where mem_id = #{mem_id}
+  	</update>
+  	
+  	<update id="updateGrade" parameterType="Member">
+  		update tbl_member set mem_grade = #{mem_grade} where mem_id = #{mem_id}
+  	</update>
  
 </mapper>

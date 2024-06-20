@@ -90,7 +90,12 @@
 		</div>
 	<div class = "write_wrap">
 		<div class="write">
-				<a href="PostingWrite.jsp"><input style="background: #c30452" type="button" name="write" value="글 쓰기" id="write"></a>
+		<%MemberDTO mem_login = (MemberDTO)session.getAttribute("login_member");
+			if(mem_login == null){%>
+				<a href="Login.jsp"><input style="background: #c30452" type="button" name="write" value="글 쓰기" id="write"></a>
+				<%}else if(mem_login != null){%>
+				<a href="TeamPostingWrite.jsp"><input style="background: #c30452" type="button" name="write" value="글 쓰기" id="write"></a>
+				<%}%>
 			</div>
 	</div>
 	<div class = "page_wrap">

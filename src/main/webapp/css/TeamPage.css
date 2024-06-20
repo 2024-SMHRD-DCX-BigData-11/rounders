@@ -1,5 +1,10 @@
 @charset "UTF-8";
 body	{overflow-y: scroll;}
+html, body {
+    height: 2000px;
+    margin: 0;
+    padding: 0;
+}
 .img{
 	width: 100%;
 	height: 350px;
@@ -8,23 +13,26 @@ body	{overflow-y: scroll;}
 }
 .left{
 	display: flex;
-	/* flex-direction: column; */
+	 flex-direction: column; 
+	 flex : 1;
 }
 .all{
 	display: flex;
 	flex-direction : row;
-	
+	min-height: 100%;
 } 
 
 .wrap{
 	display: flex;
 	flex-direction: column;
+	min-height: 100%;
 }
 .right{
 	display: flex;
 	flex-direction: column;
 	padding-top: 100px;
 	margin-left: 50px;
+	margin-right: 100px;
 }
 
 .rightone{
@@ -38,14 +46,14 @@ body	{overflow-y: scroll;}
     align-items: center; /* 요소들을 수직으로 가운데 정렬합니다. */
     flex-direction: column; /* 내부 요소들을 세로로 배열합니다. */
     unicode-bidi: isolate;
-    height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+   
    /*  position:absolute;
     left :0%;
     top:500px; */
     table-layout: fixed;
     padding-left: 100px;
 }
-td {
+th,td {
     padding: 8px; /* 내부 여백 설정 */
     border: 1px solid #00421f;/* 테이블 셀 경계선 설정 */
 }
@@ -155,7 +163,7 @@ select {
 		margin-top: 200px;
 	}
 	.table{
-		width: 500px;
+		width: 100%;
 	}
 	/* 화면 너비가 768px 이상일 때 */
 @media (width<=768px) {
@@ -314,6 +322,12 @@ select {
   color: white;
   font-size: 1.2em;
   letter-spacing: 2px;
-  margin-left: 60px;
+  margin-left: 10px;
   }
+  
+  .con-wrap{
+      display: flex;
+    flex-direction: column;
+    }
+  
   
