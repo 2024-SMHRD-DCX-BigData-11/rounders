@@ -19,7 +19,21 @@
 	MatchDTO mymatch = new MatchDAO().myView(1);
 	%>
 	<%@ include file="header.jsp"%>
-	<img alt="logo" src="./image/kiaimg.jpg" class="img">
+<div class="container">
+<img alt="logo" src="./image/kiaimg.jpg" class="img">
+		<div id="smhrd">
+			<div id="sm_logo">
+				<a target="_blank" href="https://smhrd.or.kr/"> <img alt="logo"
+					src="./image/sm.jpg" id="img">
+				</a>
+				<div id="sm_text">
+					<p>↑↑↑↑↑↑↑↑↑↑↑↑</p>
+					<p>개발자가 되고싶다면!!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class = "con-wrap">
 	<div class="wrap">
 		<div class="all">
