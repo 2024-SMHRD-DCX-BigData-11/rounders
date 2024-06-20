@@ -43,10 +43,10 @@
 		hotplayer = new HotPlayerDAO().MainAll();
 	}else if(View.equals("my")){
 		if(member == null){
-		out.println("<script>alert('로그인이 필요한 서비스입니다.');" + "location.href='test.jsp';</script>");
+		out.println("<script>alert('로그인이 필요한 서비스입니다.');" + "location.href='Main.jsp';</script>");
 		}else{
 			if(team_idx == null){
-			out.println("<script>alert('팀 선택이 필요합니다.');" + "location.href='test.jsp';</script>");
+			out.println("<script>alert('팀 선택이 필요합니다.');" + "location.href='Main.jsp';</script>");
 			}else{
 				hotplayer = new HotPlayerDAO().MainMyteam(team_idx);
 			}
@@ -107,8 +107,8 @@
 			
 			<div id="hotplayer">
 				<div id="rank_name" style="background-color: #f07d0c"><a href="hotplayer.jsp" style="color:black">지금 핫한 선수</a></div>
-				<div id="hotplayer_link"><a href="test.jsp?view=all">전체</a>
-				<a href = "test.jsp?view=my">my</a></div>
+				<div id="hotplayer_link"><a href="Main.jsp?view=all">전체</a>
+				<a href = "Main.jsp?view=my">my</a></div>
 				<div class="hp_wrap">
 					<% int i = 0; %>
 					<%

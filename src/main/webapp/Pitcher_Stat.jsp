@@ -156,7 +156,9 @@
    </div>
    </div>
    </div>
-   
+  <div>
+   	 <%@ include file = "Footer.jsp" %>
+   </div> 
 </div>   
    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
        <script type="text/javascript">

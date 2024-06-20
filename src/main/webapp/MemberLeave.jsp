@@ -58,7 +58,7 @@ function member_leave() {
 		// 요청-응답-성공
 		success : function(){
 			 alert("회원 탈퇴가 완료되었습니다.");
-			 location.href="test.jsp";
+			 location.href="Main.jsp";
 		},
 		error : function(){
 			alert('error');
@@ -87,11 +87,7 @@ function member_leave() {
 						<div id="check_leave_pw">
 							<input type="button" value="확인" onclick="check_pw()">
 							
-						<%
-						
-						MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
-						
-						%>
+					
 	
 						</div>
 						<div align="center">

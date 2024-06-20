@@ -104,6 +104,7 @@ font-weight: bold;
 </head>
 
 <body>
+   	 <%@ include file = "header.jsp" %>
 	<%
 	MemberDTO login_member = (MemberDTO) session.getAttribute("login_member");
 	String team = request.getParameter("team");
@@ -205,7 +206,9 @@ font-weight: bold;
 				<input class="smitbutton" type="submit" value="투표하기">
 			</div>
 		</form>
-
+	<div>
+   	 <%@ include file = "Footer.jsp" %>
+   </div> 
 	</div>
 
 	<script>

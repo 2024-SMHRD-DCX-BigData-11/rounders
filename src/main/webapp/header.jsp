@@ -1,3 +1,4 @@
+<%@page import="com.baseballtalk.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -143,10 +144,10 @@ a {
 <body>
 	<nav class="navbar">
 		<div class="navbar__logo">
-			<a href=""><img alt="logo" src="./image/logo.jpg"></a>
+			<a href="Main.jsp"><img alt="logo" src="./image/logo.jpg"></a>
 		</div>
 		<ul class="navbar__menu">
-			<li><a href="#">기록실</a>
+			<li><a href="Hitter_Stat.jsp">기록실</a>
 				<ul>
 					<li><a href="Hitter_Stat.jsp">타자</a></li>
 					<li><a href="Pitcher_Stat.jsp">투수</a></li>
@@ -169,8 +170,17 @@ a {
 			</li>
 		</ul>
 		<ul class="navbar__links">
+			<%MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+			if(login_member == null){%>
 			<li><a href="Join.jsp">회원가입</a></li>
 			<li><a href="Login.jsp">로그인</a></li>
+			<%}else if(login_member != null && login_member.getMem_pw() != null){%>
+			<li><a href="MyPagehome.jsp">회원정보</a></li>
+			<li><a href="LogoutCon">로그아웃</a></li>
+			<%}else if(login_member != null && login_member.getMem_pw() == null){%>
+			<li><a href="MyPagehome.jsp">회원정보</a></li>
+			<li><a href="LogoutCon">로그아웃</a></li>
+			<%} %>
 		</ul>
 
 
