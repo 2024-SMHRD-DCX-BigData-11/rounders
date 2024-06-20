@@ -10,19 +10,20 @@ import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 @ToString
 
 public class TeamBoardDTO {
 	
-	private int board_idx;
+	@NonNull int board_idx;
 	private int team_idx;
 	private String board_category;
 	private String board_title;
 	private String board_content;
 	private String created_at;
-	private int board_views;
+	@NonNull int board_views;
 	private int board_likes;
 	private String board_file;
 	private String mem_id;
@@ -37,6 +38,12 @@ public class TeamBoardDTO {
 		this.board_content = board_content;
 		this.board_file = board_file;
 		this.mem_id = mem_id;
+	}
+
+	public TeamBoardDTO(String mem_id,@NonNull int board_idx, int board_likes) {
+		super();
+		this.board_idx = board_idx;
+		this.board_likes = board_likes;
 	}
 	
 	

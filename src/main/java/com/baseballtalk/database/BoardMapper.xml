@@ -99,6 +99,14 @@ VALUES
 	
 	</delete>
 	
+	<select id="showFreeWriter" parameterType="int" resultType="Member">
+		select * from tbl_member where mem_id=(select mem_id from tbl_freeboard where board_idx = #{board_idx})
+	</select>
+	
+	<select id="showTeamWriter" parameterType="int" resultType="Member">
+		select * from tbl_member where mem_id=(select mem_id from tbl_team_board where board_idx = #{board_idx})
+	</select>
+	
 	<delete id="deleteTeamBoard">
 	
 		delete from tbl_team_board where mem_id=#{writer} and team_idx=#{teamNum} and board_idx=#{boardNum} and board_title=#{title}
@@ -114,6 +122,34 @@ VALUES
 	<select id="showNoticeBoard" resultType="NoticeBoard">
 	select * from tbl_notice
  	</select>
+ 	
+ 	<update id="updateNoticeView" parameterType="NoticeBoard">
+ 	update tbl_notice set notice_views = #{notice_views} where notice_idx = #{notice_idx}
+ 	</update>
+ 	
+ 	<update id="updateFreeView" parameterType="FreeBoard">
+ 	update tbl_freeboard set board_views = #{board_views} where board_idx = #{board_idx}
+ 	</update>
+ 	
+ 	<update id="updateTeamView" parameterType="TeamBoard">
+ 	update tbl_team_board set board_views = #{board_views} where board_idx = #{board_idx}
+ 	</update>
+ 	
+ 	<select id="showFreeLike" parameterType="int" resultType="int">
+ 		select board_likes from tbl_freeboard where board_idx = #{board_idx}
+ 	</select>
+ 	
+ 	<select id="showTeamLike" parameterType="int" resultType="int">
+ 		select board_likes from tbl_team_board where board_idx = #{board_idx}
+ 	</select>
+ 	
+ 	<update id="updateFreeLike" parameterType="FreeBoard">
+ 	update tbl_freeboard set board_likes = #{board_likes} where board_idx = #{board_idx}
+ 	</update>
+ 	
+ 	<update id="updateTeamLike" parameterType="TeamBoard">
+ 	update tbl_team_board set board_likes = #{board_likes} where board_idx = #{board_idx}
+ 	</update>
  	
  	<select id="showFreeBoard" resultType="FreeBoard">
 	select * from tbl_freeboard

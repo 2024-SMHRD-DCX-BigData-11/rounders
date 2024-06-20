@@ -3,6 +3,8 @@ package com.baseballtalk.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -14,10 +16,10 @@ import lombok.ToString;
 
 public class NoticeBoardDTO {
 	
-	private int notice_idx;
+	int notice_idx;
 	private String notice_title;
 	private String notice_content;
-	private int notice_views;
+	int notice_views;
 	private String mem_id;
 	private String notice_category;
 	private String created_at;
@@ -38,8 +40,12 @@ public class NoticeBoardDTO {
 		this.mem_id = mem_id;
 		this.notice_category = notice_category;
 	}
-	
 
+	public NoticeBoardDTO(int notice_idx, int notice_views) {
+		super();
+		this.notice_idx = notice_idx;
+		this.notice_views = notice_views;
+	}
 	
 
 }

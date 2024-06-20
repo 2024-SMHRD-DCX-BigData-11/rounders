@@ -254,6 +254,73 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		return	myfreeBoard;
 	}
 	
+public int updateNoticeView(NoticeBoardDTO ntbt){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt =  session.update("com.baseballtalk.database.BoardMapper.updateNoticeView",ntbt);
+		session.close();
+		return	cnt;
+	}
+
+public int updateFreeView(FreeBoardDTO ntbt){
+	
+	SqlSession session = sqlSessionFactory.openSession(true);
+	int cnt =  session.update("com.baseballtalk.database.BoardMapper.updateFreeView",ntbt);
+	session.close();
+	return	cnt;
+}
+
+public int updateTeamView(TeamBoardDTO ntbt){
+	SqlSession session = sqlSessionFactory.openSession(true);
+	int cnt =  session.update("com.baseballtalk.database.BoardMapper.updateTeamView",ntbt);
+	session.close();
+	return	cnt;
+}
+
+
+public int updateFreeLikes(FreeBoardDTO ntbt){
+	
+	SqlSession session = sqlSessionFactory.openSession(true);
+	int cnt =  session.update("com.baseballtalk.database.BoardMapper.updateFreeLike",ntbt);
+	session.close();
+	return	cnt;
+}
+
+public int updateTeamLikes(TeamBoardDTO tbt){
+	SqlSession session = sqlSessionFactory.openSession(true);
+	int cnt =  session.update("com.baseballtalk.database.BoardMapper.updateTeamLike",tbt);
+	session.close();
+	return	cnt;
+}
+
+public int showFreeLike(int frbd) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	int cnt =  session.selectOne("com.baseballtalk.database.BoardMapper.showFreeLike",frbd);
+	session.close();
+	return	cnt;
+}
+
+public int showTeamLike(int tbd) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	int cnt =  session.selectOne("com.baseballtalk.database.BoardMapper.showTeamLike",tbd);
+	session.close();
+	return	cnt;
+}
+
+public MemberDTO showFreeWriter(int board_idx) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	MemberDTO cnt =  session.selectOne("com.baseballtalk.database.BoardMapper.showFreeWriter",board_idx);
+	session.close();
+	return	cnt;
+}
+
+public MemberDTO showTeamWriter(int board_idx) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	MemberDTO cnt =  session.selectOne("com.baseballtalk.database.BoardMapper.showTeamWriter",board_idx);
+	session.close();
+	return	cnt;
+}
+	
 
 
 }
