@@ -27,6 +27,20 @@ public class TeamBoardDTO {
 	private String board_file;
 	private String mem_id;
 	
+	public TeamBoardDTO(int board_idx, int team_idx, String board_category, String board_title, String board_content,
+			String board_file, String mem_id) {
+		super();
+		this.board_idx = board_idx;
+		this.team_idx = team_idx;
+		this.board_category = board_category;
+		this.board_title = board_title;
+		this.board_content = board_content;
+		this.board_file = board_file;
+		this.mem_id = mem_id;
+	}
+	
+	
+	
 	
 
 }

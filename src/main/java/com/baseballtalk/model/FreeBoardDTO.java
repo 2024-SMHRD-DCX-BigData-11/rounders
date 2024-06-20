@@ -23,4 +23,17 @@ public class FreeBoardDTO {
 	private String board_file;
 	private String mem_id;
 	
+	public FreeBoardDTO(int board_idx, String board_title, String board_content, String board_file, String mem_id) {
+		super();
+		this.board_idx = board_idx;
+		this.board_title = board_title;
+		this.board_content = board_content;
+		this.board_file = board_file;
+		this.mem_id = mem_id;
+	}
+	
+
+	
+	
+	
 }

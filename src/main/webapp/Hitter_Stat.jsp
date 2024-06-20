@@ -1,4 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.fasterxml.jackson.databind.ser.impl.ReadOnlyClassToSerializerMap"%>
 <%@page import="com.baseballtalk.model.CommentDAO"%>
@@ -126,17 +125,9 @@
       <table class = "CommentTable">
       
          <tr>
-         <% String mem_nick = new MemberDAO().getNick(rcmt.getMem_id()); %>
+         	<% String mem_nick = new MemberDAO().getNick(rcmt.getMem_id()); %>
             <td><%=mem_nick%></td>
             <td><%=rcmt.getRcmt_content()%></td>
-            <td>
-               <% if (login_member != null && rcmt.getMem_id().equals(login_member.getMem_nick())) { %>
-                        <button onclick="editComment('<%= rcmt.getRcmt_idx()%>','<%= rcmt.getRcmt_content()%>')">수정</button>
-                        <button onclick="deleteComment('<%= rcmt.getRcmt_idx()%>')">삭제</button>
-                    <% } %>
-            
-            </td>
-         
          </tr>
          
       </table>

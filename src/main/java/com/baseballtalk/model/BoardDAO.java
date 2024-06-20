@@ -102,6 +102,25 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
 	}
 	
+	public List<NoticeBoardDTO> showNoticeBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<NoticeBoardDTO> noticeBoard = session.selectList("com.baseballtalk.database.BoardMapper.showNoticeBoard");
+		session.close();
+		return noticeBoard;
+		
+	}
+	
+	public List<FreeBoardDTO> showFreeBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<FreeBoardDTO> freeBoard = session.selectList("com.baseballtalk.database.BoardMapper.showFreeBoard");
+		session.close();
+		return freeBoard;
+		
+	}
+	
+	
 
 
 }
