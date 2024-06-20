@@ -14,7 +14,21 @@
 <body>
 <%List<TeamBoardDTO> showLgBoard = new BoardDAO().showLgBoard();%>
 <%@ include file="header.jsp"%>
+<div class="container">
 	<img alt="logo" src="./image/lgimg.jpg" class="img">
+		<div id="smhrd">
+			<div id="sm_logo">
+				<a target="_blank" href="https://smhrd.or.kr/"> <img alt="logo"
+					src="./image/sm.jpg" id="img">
+				</a>
+				<div id="sm_text">
+					<p>↑↑↑↑↑↑↑↑↑↑↑↑</p>
+					<p>개발자가 되고싶다면!!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <div class = "wrap">
 	<div class="all">
 		<div class="left">

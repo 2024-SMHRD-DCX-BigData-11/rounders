@@ -34,7 +34,7 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	public int insertTeamBoardComment(TeamBoardCommentDTO Teamcomment) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.insert("com.baseballtalk.database.BoardMapper.insertTeamComment",Teamcomment);
+		int cnt = session.insert("com.baseballtalk.database.CommentMapper.insertTeamBoardComment",Teamcomment);
 		session.close();
 		return cnt;
 	}
@@ -108,10 +108,10 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		return show_FreeBoardComment;
 	}
 	
-	public List<FreeBoardCommentDTO> show_TeamBoardComment(){
+	public List<TeamBoardCommentDTO> show_TeamBoardComment(){
 		SqlSession session = sqlSessionFactory.openSession(true);
-		List<FreeBoardCommentDTO> show_FreeBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showTeamBoardComment");
-		return show_FreeBoardComment;
+		List<TeamBoardCommentDTO> show_TeamBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showTeamBoardComment");
+		return show_TeamBoardComment;
 	}
 	
 

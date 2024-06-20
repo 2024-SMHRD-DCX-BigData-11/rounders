@@ -44,30 +44,30 @@ th, td {
 	table-layout:fixed;
 }
 
-/* #stat_con{
+#stat_con{
    width: 100%;
    display:flex;
    justify-content:center;
-   flex-direction: row; 내부 요소를 가로로 배치
-} */
+   flex-direction: row; /* 내부 요소를 가로로 배치 */
+}
 
 table {
   table-layout: fixed;
 }
 
-/* #p_info{
+#p_info{
    float: left;
-   width:25%;
+/*    width:25%; */
 }
 #p_stat{
    float: right;
-   width:50%;
-} */
+/*    width:50%; */
+}
 
 /* 화면 너비가 768px 이상일 때 */
 @media (min-width: 768px) {
   table {
-    width: 100%;  /* 테이블 너비를 100%로 설정하여 부모 요소에 맞춤 */
+    /* width: 100%; */  /* 테이블 너비를 100%로 설정하여 부모 요소에 맞춤 */
     border-collapse: collapse; /* 테이블 셀 경계선이 서로 붙도록 설정 */
   }
 
