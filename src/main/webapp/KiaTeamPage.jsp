@@ -83,7 +83,7 @@
 								<a href="Login.jsp"><input style="background: #ea0029"
 										type="button" name="write" value="글 쓰기" id="write"></a>
 							<%}else if(mem_login != null){%>
-								<a href="TeamBoardPostingWrite.jsp"><input style="background: #ea0029"
+								<a href="TeamPostingWrite.jsp"><input style="background: #ea0029"
 										type="button" name="write" value="글 쓰기" id="write"></a>
 							
 							<%}%>

@@ -35,28 +35,37 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 		request.setCharacterEncoding("UTF-8");
 			
 			String mem_id = request.getParameter("mem_id");
-			int board_idx = Integer.parseInt("board_idx");
+			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 			String cmt_content = request.getParameter("cmt_content");
+
 			
 			System.out.println("nick : " + mem_id);
+			System.out.println("board_idx : " + board_idx);
 			System.out.println("cmt_content : " + cmt_content);
 			
-			TeamBoardCommentDTO teamBoardComment = new TeamBoardCommentDTO(0, cmt_content, mem_id);
+			TeamBoardCommentDTO teamBoardComment = new TeamBoardCommentDTO(board_idx, cmt_content, mem_id);
 						
 			// System.out.println(member.toString());
 			
 			int i_cnt = new CommentDAO().insertTeamBoardComment(teamBoardComment);//i_cnt = insert_cnt
+
 			
 			
 			
 			if(i_cnt > 0) {
 				System.out.println("팀게시판 댓글 작성 성공!!");
-				RequestDispatcher rd1 = request.getRequestDispatcher("TeamBoard.jsp");
-			}else {
-				System.out.println("팀게시판 댓글 작성 실패...ㅠㅠ");
-				RequestDispatcher rd2 = request.getRequestDispatcher("TeamBoard.jsp");
+				response.sendRedirect(request.getHeader("referer"));
+//				request.getRequestDispatcher("TeamBoardCommentInsertCon").forward(request, response);
 	
+			}else {
+				
+				System.out.println("팀게시판 댓글 작성 실패...ㅠㅠ");
+				RequestDispatcher rd2 = request.getRequestDispatcher("TeamBoardPostingDetail.jsp");
+				
 			}
+				
+	
+			
 			
 			
 		}
