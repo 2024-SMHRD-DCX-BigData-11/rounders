@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.baseballtalk.database.SqlSessionManager;
 import com.baseballtalk.model.TeamBoardDTO;
-import com.smhrd.model.Board;
 import com.baseballtalk.model.FreeBoardDTO;
 import com.baseballtalk.model.NoticeBoardDTO;
 
@@ -228,6 +227,22 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		session.close();
 		return TeamBoard;
 		
+	}
+	
+	public List<TeamBoardDTO> myteamBoard(String mem_id){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> myteamBoard = session.selectList("com.baseballtalk.database.BoardMapper.myteamBoard",mem_id);
+		session.close();
+		return	myteamBoard;
+	}
+	
+	public List<FreeBoardDTO> myfreeBoard(String mem_id){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<FreeBoardDTO> myfreeBoard = session.selectList("com.baseballtalk.database.BoardMapper.myfreeBoard",mem_id);
+		session.close();
+		return	myfreeBoard;
 	}
 	
 

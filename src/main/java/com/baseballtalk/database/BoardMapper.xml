@@ -171,5 +171,13 @@ VALUES
  	select * from tbl_team_board where board_idx = #{board_idx}
  	</select>
  	
+ 	<select id="myteamBoard" parameterType="String" resultType="TeamBoard">
+ 		select * from tbl_team_board where mem_id = #{mem_id} order by created_at desc
+ 	</select>
+ 	
+ 	<select id="myfreeBoard" parameterType="String" resultType="FreeBoard">
+ 		select * from tbl_free_board where mem_id = #{mem_id} order by created_at desc
+ 	</select>
+ 	
  	
 </mapper>
