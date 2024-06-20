@@ -1,3 +1,5 @@
+<%@page import="com.baseballtalk.model.MemberDAO"%>
+<%@page import="com.baseballtalk.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,6 +8,14 @@
 <meta charset="UTF-8">
 <title>마이페이지</title>
 <link href="./css/Mypagehome.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#mygrade {
+	image-rendering: auto;
+	width: 100px;
+	height: 100px;
+}
+
+</style>
 </head>
 <body>
 	<div class="wrap">
@@ -14,6 +24,12 @@
 			<fieldset>
 				<div class="mypage_home">
 					<table class="mypage_table">
+						<%
+						MemberDTO member = (MemberDTO) session.getAttribute("login_member");
+						if (member == null) {
+							out.println("<script>alert('로그인이 필요한 서비스입니다.');" + "location.href='Main.jsp';</script>");
+						}
+						%>
 						<thead>
 							<tr>
 								<th>닉네임</th>
@@ -23,15 +39,26 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
+							<%if(member != null){ %>
+								<td><%=member.getMem_nick()%></td>
+								<td><%=member.getMem_point()%></td>
+								<td>
+								<img id="mygrade"
+									src="./grade/<%=member.getMem_grade()%>.png"
+									alt=<%=member.getMem_grade()%>></td>
+							<%} %>
 							</tr>
 						</tbody>
 					</table>
-					<a href="UpdateMypage.jsp">회원정보 수정</a><br> <a
-						href="MyPosting.jsp">내가 작성한 게시물</a><br> <a
-						href="MemberLeave.jsp">회원 탈퇴</a>
+					<%if(member != null && member.getMem_pw() != null){%>
+					<a href="UpdateMypage.jsp">회원정보 수정</a>
+					<%}else if(member != null && member.getMem_pw() == null) {%>
+					<a href="Main.jsp">회원정보 수정</a>
+					<%} %>
+					<br><a href="MyPosting.jsp">내가 작성한 게시물</a>
+					<%if(member != null && member.getMem_pw() != null){%>
+					<br> <a href="MemberLeave.jsp">회원 탈퇴</a>
+					<%} %>
 				</div>
 			</fieldset>
 		</div>

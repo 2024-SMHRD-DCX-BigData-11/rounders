@@ -18,7 +18,7 @@
 <style type="text/css">
 body {
 	margin: 0;
-	font-family: 'Noto Sans KR',sans-serif;
+	font-family: "Noto Sans KR", sans-serif;
 }
 
 img {
@@ -174,13 +174,10 @@ a {
 			if(lm == null){%>
 			<li><a href="Join.jsp">회원가입</a></li>
 			<li><a href="Login.jsp">로그인</a></li>
-			<%}else if(lm != null && lm.getMem_pw() != null){%>
+			<%}else if(lm != null){%>
 			<li><a href="MyPagehome.jsp">회원정보</a></li>
 			<li><a href="LogoutCon">로그아웃</a></li>
-			<%}else if(lm != null && lm.getMem_pw() == null){%>
-			<li><a href="MyPagehome.jsp">회원정보</a></li>
-			<li><a href="LogoutCon">로그아웃</a></li>
-			<%} %>
+			<%}%>
 		</ul>
 
 

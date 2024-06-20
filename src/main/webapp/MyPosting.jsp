@@ -11,6 +11,12 @@
 <meta charset="UTF-8">
 <title>내가 작성한 게시물</title>
 	<link href="./css/Total.css" rel="stylesheet" type="text/css">
+	<style>
+		#wrap{
+		display: flex;
+		flex-direction: column;
+		}
+	</style>
 </head>
 <body>
 	<%@ include file = "header.jsp" %>
@@ -29,7 +35,7 @@
 			%>
 			<table>
 				<tr>
-					<td>게시판<td>
+					<td>게시판</td>
 					<td>카테고리</td>
 					<td>글 제목</td>
 					<td>작성자</td>
@@ -37,8 +43,8 @@
 					<td>조회수</td>
 					<td>좋아요</td>
 				</tr>
-				<tr>
 				<% for(TeamBoardDTO mtb : myteamboard){ %>
+				<tr>
 					<td><%=team[mtb.getTeam_idx()-1]%></td>
 					<td><%=mtb.getBoard_category() %></td>
 					<td><%=mtb.getBoard_title() %></td>
@@ -47,6 +53,18 @@
 					<td><%= mtb.getCreated_at() %></td>
 					<td><%= mtb.getBoard_views() %></td>
 					<td><%= mtb.getBoard_likes() %></td>
+				</tr>
+				<%} %>
+				<% for(FreeBoardDTO frb : myfreeboard){ %>
+				<tr>
+					<td>자유</td>
+					<td>자유</td>
+					<td><%=frb.getBoard_title() %></td>
+					<% String nick = new MemberDAO().getNick(frb.getMem_id()); %>
+					<td><%=nick%></td>
+					<td><%= frb.getCreated_at() %></td>
+					<td><%= frb.getBoard_views() %></td>
+					<td><%= frb.getBoard_likes() %></td>
 				</tr>
 				<%} %>
 			</table>
