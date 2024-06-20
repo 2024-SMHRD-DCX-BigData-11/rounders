@@ -28,7 +28,7 @@
 				</select>
 			</h1>
 			<table class="table">
-			<span style="color: red">!! 지금 핫한 게시물 !! >>> zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzdsfffffffffffffffffffffffzz</span>
+			<span style="color: red">!! 지금 핫한 게시물 !! >>></span>
 				<colgroup>
 					<col width="60px">
 					<col width>
@@ -45,6 +45,7 @@
 						<th>작성일자</th>
 						<th>조회수</th>
 						<th>좋아요</th>
+						<th>첨부파일</th>
 					</tr>
 				</thead>
 				<%for(TeamBoardDTO tb : showSsgBoard){%>
@@ -57,6 +58,7 @@
 						<td><%=tb.getCreated_at()%></td>
 						<td><%=tb.getBoard_views()%></td>
 						<td><%=tb.getBoard_likes()%></td>
+						<td><%=tb.getBoard_file()%></td>
 					</tr>
 				</tbody>
 				<%}%>

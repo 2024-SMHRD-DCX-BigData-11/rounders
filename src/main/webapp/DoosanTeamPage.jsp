@@ -45,6 +45,7 @@
 						<th>작성일자</th>
 						<th>조회수</th>
 						<th>좋아요</th>
+						<th>첨부파일</th>
 					</tr>
 				</thead>
 				<%for(TeamBoardDTO tb : showDoosanBoard){%>
@@ -57,6 +58,7 @@
 						<td><%=tb.getCreated_at()%></td>
 						<td><%=tb.getBoard_views()%></td>
 						<td><%=tb.getBoard_likes()%></td>
+						<td><%=tb.getBoard_file()%></td>
 					</tr>
 				</tbody>
 				<%}%>

@@ -202,6 +202,15 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
 	}
 	
+	public List<TeamBoardDTO> showKiwoomBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> kiwoomBoard = session.selectList("com.baseballtalk.database.BoardMapper.showKiwoomBoard");
+		session.close();
+		return kiwoomBoard;
+		
+	}
+	
 	public NoticeBoardDTO noticeDetail(int notice_idx) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
