@@ -1,4 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.BoardDAO"%>
 <%@page import="com.baseballtalk.model.NoticeBoardDTO"%>
@@ -18,6 +17,12 @@
 	NoticeBoardDTO noticeBoard = new BoardDAO().noticeDetail(notice_idx);
 	String mem_nick = new MemberDAO().getNick(noticeBoard.getMem_id());
 	MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+	int View = noticeBoard.getNotice_views();
+	View++;
+	NoticeBoardDTO ntbt = new NoticeBoardDTO(noticeBoard.getNotice_idx(),
+			View);
+	int cnt = new BoardDAO().updateNoticeView(ntbt);
+			
 %>
 <%@ include file = "header.jsp" %>
 	<div id = "board">
@@ -37,7 +42,7 @@
 					</tr>
 					<tr>
 						<td class="td">조회수</td>
-						<td><%= noticeBoard.getNotice_views()%></td>
+						<td><%= View%></td>
 					</tr>
 					<tr>
 						<td class="td">등록일</td>

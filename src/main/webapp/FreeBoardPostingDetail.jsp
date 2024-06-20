@@ -17,6 +17,13 @@
 	int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 	FreeBoardDTO freeBoard = new BoardDAO().FreeDetail(board_idx);
 	String mem_nick = new MemberDAO().getNick(freeBoard.getMem_id());
+	int View = freeBoard.getBoard_views();
+	View++;
+	FreeBoardDTO frbd = new FreeBoardDTO(freeBoard.getBoard_idx(),
+			View);
+	int cnt = new BoardDAO().updateFreeView(frbd);
+	MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
+	
 	 %>
 <%@ include file = "header.jsp" %>
 	<div id = "board">
@@ -40,11 +47,11 @@
 					</tr>
 					<tr>
 						<td class="td">추천</td>
-						<td><button id = "btn_like" onclick="">추천</button></td>
+						<td><span><%=freeBoard.getBoard_likes() %></span><a href="FreeUpCon?board_idx=<%=board_idx%>"><button id = "btn_like">추천</button></td></a>
 					</tr>
 					<tr>
 						<td class="td">조회수</td>
-						<td><%=freeBoard.getBoard_views()%></td>
+						<td><%=View%></td>
 					</tr>
 					<tr>
 						<td colspan="2">내용</td>
@@ -55,8 +62,10 @@
 					<tr>
 						<td colspan="2" id="rs">
 							<a href="#"><input type="button" value="뒤로가기" id = "backButton"></a>
-							<a><button id = "updateButton" onclick = "">수정</button></a>
-							<a><button id = "deleteButton">삭제</button></a>
+							<% if(login_member != null && login_member.getMem_id().equals(freeBoard.getMem_id())){%>
+							<a href = "#"><button id ="updateButton" color="black">수정</button></a>
+							<a href="#"><button id = "deleteButton">삭제</button></a>
+							<%} %>
 						</td>
 					</tr>
 				</table>
@@ -69,11 +78,6 @@
 		document.getElementById('backButton').addEventListener('click',
 				function() {
 					window.history.back(); // 브라우저의 뒤로 가기 기능을 실행합니다.
-				});
-		
-		document.getElementById('btn_like').addEventListener('click',
-				function() {// 추천 기능
-					
 				});
 		
 	</script>

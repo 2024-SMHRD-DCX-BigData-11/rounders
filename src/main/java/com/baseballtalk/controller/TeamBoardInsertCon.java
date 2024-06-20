@@ -24,7 +24,8 @@ import com.baseballtalk.model.BoardDAO;
 
 
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+			HttpSession session = request.getSession();
+			MemberDTO login_member = (MemberDTO)session.getAttribute("login_member")
 			// 파일 업로드를 위한 변수 설정
 			// 1. request
 			// 2. 파일을 저장할 경로(상대경로)
@@ -58,6 +59,41 @@ import com.baseballtalk.model.BoardDAO;
 			TeamBoardDTO TeamBoard = new TeamBoardDTO(board_idx, team_idx, board_category, board_title, board_content, board_file, mem_id);
 			
 			int i_cnt = new BoardDAO().insertTeamBoard(TeamBoard); //i_cnt = insert_cnt
+			int getpoint = new MemberDAO().getPoint(mem_id);
+			getpoint += 20;
+			MemberDTO updatemem = login_member;
+			System.out.println(getpoint);
+			if(getpoint >= 200) {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"minor",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else if(getpoint>=1000){
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"major",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else if(getpoint>=5000) {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"allstar",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else if(getpoint>=10000) {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"worldclass",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"rookie",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}
+			System.out.println(updatemem);
+			int updatePoint = new MemberDAO().updatePoint(updatemem);
+			System.out.println(updatePoint);
+			session.setAttribute("login_member", updatemem);
+			
 			
 			
 			if(i_cnt > 0 && team_idx == 1) {

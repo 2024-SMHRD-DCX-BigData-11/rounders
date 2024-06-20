@@ -2,6 +2,7 @@ package com.baseballtalk.controller;
 
 import java.io.IOException;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,10 +22,9 @@ import com.baseballtalk.model.BoardDAO;
 @WebServlet("/FreeBoardInsertCon")
 	
 	public class FreeBoardInsertCon extends HttpServlet {
-
-
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+			HttpSession session = request.getSession();
+			MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 			// 파일 업로드를 위한 변수 설정
 			// 1. request
 			// 2. 파일을 저장할 경로(상대경로)
@@ -46,17 +46,49 @@ import com.baseballtalk.model.BoardDAO;
 			multi = new MultipartRequest(request, path, maxSize, encoding, rename);
 			
 			request.setCharacterEncoding("UTF-8");
-			
-			int board_idx = Integer.parseInt(multi.getParameter("board_idx"));
 			String board_title = multi.getParameter("board_title");
 			String board_content = multi.getParameter("board_content");
 			String board_file = multi.getParameter("board_file");
 			String mem_id = multi.getParameter("mem_id");
 			
-			FreeBoardDTO freeBoard = new FreeBoardDTO(board_idx, board_title, board_content, board_file, mem_id);
+			
+			FreeBoardDTO freeBoard = new FreeBoardDTO(board_title, board_content, board_file, mem_id);
 			
 			int i_cnt = new BoardDAO().insertFreeBoard(freeBoard); //i_cnt = insert_cnt
-			
+			int getpoint = new MemberDAO().getPoint(mem_id);
+			MemberDTO updatemem = login_member;
+			getpoint += 20;
+			System.out.println(getpoint);
+			if(getpoint >= 200) {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"minor",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else if(getpoint>=1000){
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"major",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else if(getpoint>=5000) {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"allstar",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else if(getpoint>=10000) {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"worldclass",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}else {
+				updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+						login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+						login_member.getTeam_idx(),"rookie",getpoint);
+				int updategrade = new MemberDAO().updateGrade(updatemem);
+			}
+			System.out.println(updatemem);
+			int updatePoint = new MemberDAO().updatePoint(updatemem);
+			System.out.println(updatePoint);
+			session.setAttribute("login_member", updatemem);
 			
 			if(i_cnt == 1) {
 				System.out.println("자유 게시판글 업로드 성공");

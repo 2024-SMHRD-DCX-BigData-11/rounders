@@ -34,7 +34,7 @@
 					<td><%= mem_nick%></td>
 					<td><%= fb.getCreated_at()%></td>
 					<td><%= fb.getBoard_likes()%></td>
-					<td><%= fb.getBoard_likes()%></td>
+					<td><%= fb.getBoard_views()%></td>
 				</tr>
 				</tbody>
 				<%}%>
@@ -43,7 +43,7 @@
 			if(mem_login == null){%>
 				<button id = Notwrite onclick="location.href='Login.jsp'">글쓰기</button>
 			<%}else if(mem_login != null){%>
-				<button id = write onclick="location.href='NoticePostingWrite.jsp'">글쓰기</button>
+				<button id = write onclick="location.href='FreePostingWrite.jsp'">글쓰기</button>
 			
 			<%}%>
 		</div>
