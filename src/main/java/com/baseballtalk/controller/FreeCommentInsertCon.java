@@ -25,7 +25,7 @@ import com.baseballtalk.model.CommentDAO;
 import com.baseballtalk.model.FreeBoardCommentDTO;
 import com.baseballtalk.model.TeamBoardCommentDTO;
 
-@WebServlet("/FreeCommentUpdateCon")
+@WebServlet("/FreeCommentInsertCon")
 	
 	public class FreeCommentInsertCon extends HttpServlet {
 
@@ -35,26 +35,32 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 		request.setCharacterEncoding("UTF-8");
 			
 			String mem_id = request.getParameter("mem_id");
+			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 			String cmt_content = request.getParameter("cmt_content");
 			
 			System.out.println("nick : " + mem_id);
+			System.out.println("board_idx : " + board_idx);
 			System.out.println("rcmt_content : " + cmt_content);
 			
-			FreeBoardCommentDTO freeComment = new FreeBoardCommentDTO(cmt_content, mem_id);
-						
+			FreeBoardCommentDTO freeBoardComment = new FreeBoardCommentDTO(board_idx, cmt_content, mem_id);
+			
 			// System.out.println(member.toString());
 			
-			int i_cnt = new CommentDAO().insertFreeBoardComment(freeComment);//i_cnt = insert_cnt
+			int i_cnt = new CommentDAO().insertFreeBoardComment(freeBoardComment);//i_cnt = insert_cnt
+
 			
 			
 			
 			if(i_cnt > 0) {
 				System.out.println("자유게시판 댓글 작성 성공!!");
-				response.sendRedirect("FreeBoard.jsp");
-			}else {
-				System.out.println("자유게시판 댓글 작성 실패...ㅠㅠ");
-				response.sendRedirect("FreeBoard.jsp");
+				response.sendRedirect(request.getHeader("referer"));
+//				request.getRequestDispatcher("TeamBoardCommentInsertCon").forward(request, response);
 	
+			}else {
+				
+				System.out.println("자유게시판 댓글 작성 실패...ㅠㅠ");
+				RequestDispatcher rd2 = request.getRequestDispatcher("TeamBoardPostingDetail.jsp");
+				
 			}
 			
 			

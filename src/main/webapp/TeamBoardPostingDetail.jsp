@@ -71,6 +71,8 @@
 					<tr>
 						<td colspan="2" id="rs">
 
+
+
 							<a href="#"><input type="button" value="뒤로가기"></a>
 							<% if(login_member != null && login_member.getMem_id().equals(teamBoard.getMem_id())){%>
 							<a href = "#""><button id ="updateButton" color="black">수정</button></a>

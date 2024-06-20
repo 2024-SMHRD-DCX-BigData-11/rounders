@@ -1,3 +1,6 @@
+<%@page import="com.baseballtalk.model.CommentDAO"%>
+<%@page import="com.baseballtalk.model.FreeBoardCommentDTO"%>
+<%@page import="java.util.List"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.BoardDAO"%>
 <%@page import="com.baseballtalk.model.FreeBoardDTO"%>
@@ -16,6 +19,7 @@
 <%
 	int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 	FreeBoardDTO freeBoard = new BoardDAO().FreeDetail(board_idx);
+	List<FreeBoardCommentDTO> showFreeBoardComment = new CommentDAO().show_FreeBoardComment();
 	String mem_nick = new MemberDAO().getNick(freeBoard.getMem_id());
 	int View = freeBoard.getBoard_views();
 	View++;
@@ -71,6 +75,85 @@
 				</table>
 				</form>
 			</div>
+				<!-- 세션에서 닉네임값 가져오기 -->
+
+		<% String mem_id = "";
+   if(login_member != null){
+	   mem_id = login_member.getMem_id();
+   }   
+   System.out.println(mem_id);
+   String commentlink = "Login.jsp";
+   if(login_member != null){
+	   commentlink = "FreeCommentInsertCon";
+   }
+   System.out.println(commentlink);
+	%>
+			<div id="all">
+		 <h3>댓글</h3>
+			<form id="Input_Comment" action=<%=commentlink%> method="post">
+				<fieldset>
+					
+
+			<div class="CommentList">
+				<%
+				for (FreeBoardCommentDTO tbc : showFreeBoardComment) {
+				%>
+				<table class="CommentTable">
+
+					<tr>
+						<td><%=mem_nick%></td>
+						<td><%=tbc.getCmt_content()%></td>
+					</tr>
+
+				</table>
+				<%
+				}
+				%>
+				
+			</div>
+				<div class="Comment">
+
+						<table class="CommentTable">
+
+							<tr>
+								<%
+								if (login_member != null) {%>
+								<td><br> <br> <br><%=login_member.getMem_nick()%></td>
+								<%} else {%>
+								<td><br> <br> <br>익명</td>
+								<%
+								}
+								%>
+								<input type="hidden" name="mem_id" value=<%=mem_id%>>
+								<input type="hidden" name="board_idx" value=<%=board_idx %>>
+								<td><input type="text" class="CommentMain"
+									name="cmt_content" placeholder="댓글을 입력하세요."></td>
+								<td><br> <br> <input type="submit"
+									class="WriteButton" value="댓글 작성" onclick="login_check()"></td>
+
+							</tr>
+
+						</table>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript">
+        
+          
+            function login_check() {
+               
+               var login_member = <%=login_member%>;
+               
+               if (login_member == null) {
+                      alert("로그인이 필요합니다. 로그인 페이지로 이동합니다.");
+                      window.location.href = "Login.jsp"; // 로그인 페이지의 URL로 변경
+                  }
+               
+                
+               
+            }
 		<div>
 			<%@ include file="Footer.jsp"%>
 		</div>
