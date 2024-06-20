@@ -43,7 +43,7 @@ import com.baseballtalk.model.MemberDAO;
 				System.out.println("로그인 실패ㅠㅠ");
 			}
 			
-			response.sendRedirect("test.jsp");
+			response.sendRedirect("Main.jsp");
 			
 		}
 

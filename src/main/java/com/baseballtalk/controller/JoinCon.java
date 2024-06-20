@@ -44,8 +44,8 @@ import com.baseballtalk.model.MemberDAO;
 				
 				session.setAttribute("join_member", join_member);
 				
-				 response.sendRedirect("test.jsp"); } else { System.out.println("회원가입 실패ㅠㅠ");
-				 response.sendRedirect("test.jsp"); }
+				 response.sendRedirect("Main.jsp"); } else { System.out.println("회원가입 실패ㅠㅠ");
+				 response.sendRedirect("Main.jsp"); }
 			 
 			
 		}

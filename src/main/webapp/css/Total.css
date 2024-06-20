@@ -5,7 +5,7 @@
    align-items: center; /* 요소들을 수직으로 가운데 정렬합니다. */
    flex-direction: column; /* 내부 요소들을 세로로 배열합니다. */
    unicode-bidi: isolate;
-   height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+   /* height: 100vh; 화면 전체 높이를 차지하도록 설정 */
 }
 td {
 
@@ -26,17 +26,17 @@ table {
 }
 
 #p_info{
-	float: left;
-	width:25%;
+   float: left;
+   width:25%;
 }
-<<<<<<< HEAD
-=======
+
 /* 화면 너비가 768px 이상일 때 */
 @media (min-width: 768px) {
   table {
     width: 100%; /* 테이블 너비를 100%로 설정하여 부모 요소에 맞춤 */
     border-collapse: collapse; /* 테이블 셀 경계선이 서로 붙도록 설정 */
   }
+
   
   #total {
     padding: 20px; /* 좌우 여백을 추가 */
@@ -53,4 +53,4 @@ table {
     width: 90%; /* 너비를 좀 더 줄여서 브라우저 크기에 맞춤 */
   }
 }
->>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
+

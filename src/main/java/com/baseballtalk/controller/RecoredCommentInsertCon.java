@@ -46,16 +46,22 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 			
 			int i_cnt = new CommentDAO().insertRecoredComment(recoredComment);//i_cnt = insert_cnt
 			
-			
-			
+			String stat = (String)request.getParameter("stat");
+			System.out.println(stat);
 			if(i_cnt > 0) {
 				System.out.println("기록페이지 댓글 작성 성공!!");
-				String stat = (String)request.getParameter("stat");
-				System.out.println(stat);
-				RequestDispatcher rd1 = request.getRequestDispatcher("Hitter_stat.jsp");
+				if(stat.equals("1")) {
+					response.sendRedirect("Hitter_Stat.jsp");
+				}else if(stat.equals("2")){
+					response.sendRedirect("Pitcher_Stat.jsp");
+				}
 			}else {
 				System.out.println("기록페이지 댓글 작성 실패...ㅠㅠ");
-				RequestDispatcher rd2 = request.getRequestDispatcher("Hitter_stat.jsp");
+				if(stat.equals("1")) {
+					response.sendRedirect("Hitter_Stat.jsp");
+				}else if(stat.equals("2")) {
+					response.sendRedirect("Pitcher_Stat.jsp");
+				}
 	
 			}
 			

@@ -50,12 +50,10 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 			
 			if(i_cnt > 0) {
 				System.out.println("자유게시판 댓글 작성 성공!!");
-				String stat = (String)request.getParameter("stat");
-				System.out.println(stat);
-				RequestDispatcher rd1 = request.getRequestDispatcher("FreeBoard.jsp");
+				response.sendRedirect("FreeBoard.jsp");
 			}else {
 				System.out.println("자유게시판 댓글 작성 실패...ㅠㅠ");
-				RequestDispatcher rd2 = request.getRequestDispatcher("FreeBoard.jsp");
+				response.sendRedirect("FreeBoard.jsp");
 	
 			}
 			

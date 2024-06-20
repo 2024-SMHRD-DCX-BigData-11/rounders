@@ -17,7 +17,7 @@
 <style type="text/css">
 body {
 	margin: 0;
-	font-family: 'Jua';
+	font-family: 'Noto Sans KR',sans-serif;
 }
 
 img {
@@ -148,11 +148,11 @@ a {
 		<ul class="navbar__menu">
 			<li><a href="#">기록실</a>
 				<ul>
-					<li><a href="">타자</a></li>
-					<li><a href="">투수</a></li>
+					<li><a href="Hitter_Stat.jsp">타자</a></li>
+					<li><a href="Pitcher_Stat.jsp">투수</a></li>
 				</ul>
 			</li>
-			<li><a href="">핫플레이어</a></li>
+			<li><a href="Hotplayer.jsp">핫플레이어</a></li>
 			<li><a href="">게시판</a>
 				<ul>
 					<li><a href="">기아</a></li>
@@ -169,8 +169,8 @@ a {
 			</li>
 		</ul>
 		<ul class="navbar__links">
-			<li><a href="">회원가입</a></li>
-			<li><a href="">로그인</a></li>
+			<li><a href="Join.jsp">회원가입</a></li>
+			<li><a href="Login.jsp">로그인</a></li>
 		</ul>
 
 
