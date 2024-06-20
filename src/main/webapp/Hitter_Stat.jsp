@@ -27,7 +27,7 @@
  <!-- 로그인 세션 값 가져오기 -->
  <% MemberDTO login_member = (MemberDTO) session.getAttribute("login_member");%>
  
-   <%@ include file = "header.jsp" %>
+<%@ include file = "header.jsp" %>   
 <div id = "wrap">
    <div id="total">
       <h4>타자 기록</h4>

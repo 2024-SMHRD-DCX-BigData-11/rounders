@@ -1,3 +1,7 @@
+<%@page import="com.baseballtalk.model.MemberDAO"%>
+<%@page import="com.baseballtalk.model.BoardDAO"%>
+<%@page import="com.baseballtalk.model.TeamBoardDTO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
@@ -8,6 +12,7 @@
 	<link href="./css/TeamPage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<%List<TeamBoardDTO> showDoosanBoard = new BoardDAO().showDoosanBoard();%>
 <%@ include file="header.jsp"%>
 	<img alt="logo" src="./image/doosanimg.jpg" class="img">
 <div class = "wrap">
@@ -23,7 +28,7 @@
 				</select>
 			</h1>
 			<table class="table">
-			<span style="color: red">!! 지금 핫한 게시물 !! >>> zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzdsfffffffffffffffffffffffzz</span>
+			<span style="color: red">!! 지금 핫한 게시물 !! >>></span>
 				<colgroup>
 					<col width="60px">
 					<col width>
@@ -34,128 +39,27 @@
 				</colgroup>
 				<thead>
 					<tr>
-						<td>카테고리</td>
-						<td>제목</td>
-						<td>작성자</td>
-						<td>작성일자</td>
-						<td>조회수</td>
-						<td>좋아요</td>
+						<th>카테고리</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일자</th>
+						<th>조회수</th>
+						<th>좋아요</th>
 					</tr>
 				</thead>
+				<%for(TeamBoardDTO tb : showDoosanBoard){%>
+				<%String mem_nick = new MemberDAO().getNick(tb.getMem_id());%>
 				<tbody>
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>vsDDDDDDDD</td>
-						<td>vsdhtrsshssdddddddddddddddddddddddddgagggggggggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>vsDDDDDDDD</td>
-						<td>vsdhtrsshssdddddddddddddddddddddddddgagggggggggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>vsDDDDDDDD</td>
-						<td>vsdhtrsshssdddddddddddddddddddddddddgagggggggggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>vsDDDDDDDD</td>
-						<td>vsdhtrsshssddddddddddggggggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
-					</tr>
-					<tr>
-						<td>dsfassssssssssvsDDDDDDDD</td>
-						<td>dddddddddddddgagggggggddddddddddddddddddddddddddddddddddddddggggggggggggggggg</td>
-						<td>sssssssss</td>
-						<td>seeeeeeeeee</td>
-						<td>eeee</td>
-						<td>aaaaa</td>
+						<td><%=tb.getBoard_category()%></td>
+						<td onclick="location.href='TeamBoardPostingDetail.jsp?board_idx=<%=tb.getBoard_idx()%>'"><%=tb.getBoard_title()%></td>
+						<td><%=mem_nick%></td>
+						<td><%=tb.getCreated_at()%></td>
+						<td><%=tb.getBoard_views()%></td>
+						<td><%=tb.getBoard_likes()%></td>
 					</tr>
 				</tbody>
+				<%}%>
 			</table>
 		</div>
 		</div>
