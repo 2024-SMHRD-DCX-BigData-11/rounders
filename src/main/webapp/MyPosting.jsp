@@ -20,6 +20,14 @@
 					<td>조회수</td>
 					<td>좋아요</td>
 				</tr>
+				<tr>
+					<td>카테고리</td>
+					<td>글 제목</td>
+					<td>작성자</td>
+					<td>작성일</td>
+					<td>조회수</td>
+					<td>좋아요</td>
+				</tr>
 			</table>
 		</div>
 		<div>

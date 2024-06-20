@@ -119,5 +119,65 @@ VALUES
 	select * from tbl_freeboard
  	</select>
  	
+ 	<select id="showKiaBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 1 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showLgBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 2 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showSamsungBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 3 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showDoosanBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 4 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showSsgBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 5 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showNcBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 6 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showHanwhaBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 7 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showLotteBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 8 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showKtBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 9 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="showKiwoonBoard" resultType="TeamBoard">
+	select * from tbl_team_board where team_idx = 10 order by created_at desc
+ 	</select>
+ 	
+ 	<select id="NoticeBoardDetail" resultType = "NoticeBoard">
+ 	select * from tbl_notice where notice_idx = #{notice_idx}
+ 	</select>
+ 	
+ 	<select id="FreeBoardDetail" resultType = "FreeBoard">
+ 	select * from tbl_freeboard where board_idx = #{board_idx}
+ 	</select>
+ 	
+ 	<select id="TeamBoardDetail" resultType = "TeamBoard">
+ 	select * from tbl_team_board where board_idx = #{board_idx}
+ 	</select>
+ 	
+ 	<select id="myteamBoard" parameterType="String" resultType="TeamBoard">
+ 		select * from tbl_team_board where mem_id = #{mem_id} order by created_at desc
+ 	</select>
+ 	
+ 	<select id="myfreeBoard" parameterType="String" resultType="FreeBoard">
+ 		select * from tbl_free_board where mem_id = #{mem_id} order by created_at desc
+ 	</select>
+ 	
  	
 </mapper>

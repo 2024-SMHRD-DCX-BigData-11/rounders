@@ -120,6 +120,130 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
 	}
 	
+	public List<TeamBoardDTO> showKiaBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> kiaBoard = session.selectList("com.baseballtalk.database.BoardMapper.showKiaBoard");
+		session.close();
+		return kiaBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showLgBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> LgBoard = session.selectList("com.baseballtalk.database.BoardMapper.showLgBoard");
+		session.close();
+		return LgBoard;
+		
+	}
+	
+	
+	public List<TeamBoardDTO> showSamsungBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> SansungBoard = session.selectList("com.baseballtalk.database.BoardMapper.showSamsungBoard");
+		session.close();
+		return SansungBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showDoosanBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> DoosanBoard = session.selectList("com.baseballtalk.database.BoardMapper.showDoosanBoard");
+		session.close();
+		return DoosanBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showSsgBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> SsgBoard = session.selectList("com.baseballtalk.database.BoardMapper.showSsgBoard");
+		session.close();
+		return SsgBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showNcBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> NcBoard = session.selectList("com.baseballtalk.database.BoardMapper.showNcBoard");
+		session.close();
+		return NcBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showHanwhaBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> HanwhaBoard = session.selectList("com.baseballtalk.database.BoardMapper.showHanwhaBoard");
+		session.close();
+		return HanwhaBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showLotteBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> LotteBoard = session.selectList("com.baseballtalk.database.BoardMapper.showLotteBoard");
+		session.close();
+		return LotteBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> showKtBoard(){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> ktBoard = session.selectList("com.baseballtalk.database.BoardMapper.showKtBoard");
+		session.close();
+		return ktBoard;
+		
+	}
+	
+	public NoticeBoardDTO noticeDetail(int notice_idx) {
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		NoticeBoardDTO noticeBoard = session.selectOne("com.baseballtalk.database.BoardMapper.NoticeBoardDetail", notice_idx);
+		session.close();
+		return noticeBoard;
+		
+	}
+	
+	public FreeBoardDTO FreeDetail(int board_idx) {
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		FreeBoardDTO FreeBoard = session.selectOne("com.baseballtalk.database.BoardMapper.FreeBoardDetail", board_idx);
+		session.close();
+		return FreeBoard;
+		
+	}
+	
+	public TeamBoardDTO TeamDetail(int board_idx) {
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		TeamBoardDTO TeamBoard = session.selectOne("com.baseballtalk.database.BoardMapper.TeamBoardDetail", board_idx);
+		session.close();
+		return TeamBoard;
+		
+	}
+	
+	public List<TeamBoardDTO> myteamBoard(String mem_id){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<TeamBoardDTO> myteamBoard = session.selectList("com.baseballtalk.database.BoardMapper.myteamBoard",mem_id);
+		session.close();
+		return	myteamBoard;
+	}
+	
+	public List<FreeBoardDTO> myfreeBoard(String mem_id){
+		
+		SqlSession session = sqlSessionFactory.openSession(true);
+		List<FreeBoardDTO> myfreeBoard = session.selectList("com.baseballtalk.database.BoardMapper.myfreeBoard",mem_id);
+		session.close();
+		return	myfreeBoard;
+	}
 	
 
 

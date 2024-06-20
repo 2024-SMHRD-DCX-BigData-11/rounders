@@ -82,11 +82,10 @@
 					var pwcheck = $('#pwcheck').val();
 					console.log(pwcheck);
 					
-					if(pw == pwcheck & pw == !null & pwcheck == !null){
+					if(pw === pwcheck & pw != null & pwcheck != null){
 						
 						$('#result_pw_check').text('비밀번호가 일치합니다.');
 						$('#result_pw_check').css('color', 'blue');
-						
 					}
 					else{
 						

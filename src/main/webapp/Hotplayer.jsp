@@ -1,3 +1,4 @@
+<%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.baseballtalk.model.PlayerDTO"%>
 <%@page import="com.baseballtalk.model.MemberDTO"%>
@@ -104,8 +105,9 @@ font-weight: bold;
 </head>
 
 <body>
+   	 <%@ include file = "header.jsp" %>
 	<%
-	MemberDTO login_member = (MemberDTO) session.getAttribute("login_member");
+	MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 	String team = request.getParameter("team");
 	int idx = 0;
 	if (team == null) {
@@ -205,7 +207,9 @@ font-weight: bold;
 				<input class="smitbutton" type="submit" value="투표하기">
 			</div>
 		</form>
-
+	<div>
+   	 <%@ include file = "Footer.jsp" %>
+   </div> 
 	</div>
 
 	<script>

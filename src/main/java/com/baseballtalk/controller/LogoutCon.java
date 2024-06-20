@@ -18,7 +18,6 @@ import com.baseballtalk.model.MemberDAO;
 
 
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
 			HttpSession session = request.getSession();
 			session.invalidate();
 			response.sendRedirect("Main.jsp");

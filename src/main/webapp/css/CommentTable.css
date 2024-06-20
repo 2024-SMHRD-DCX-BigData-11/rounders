@@ -1,38 +1,57 @@
 @charset "UTF-8";
 
 .Comment{
+<<<<<<< HEAD
+   margin-top: 20px; /* 필요 시 간격 조정 */
+=======
 	margin-top: 20px; /* 필요 시 간격 조정 */
+>>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
     padding: 10px;
 
 }
 
 
 .CommentTable{
-	text-align: center;
-	 border: 1px solid #dddddd;
+   text-align: center;
+    border: 1px solid #dddddd;
 }
 
 .CommentList{
+<<<<<<< HEAD
+   display: block;
+=======
 	display: block;
+>>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 }
 
 .CommentMain{
 
+<<<<<<< HEAD
+   height: 30px;
+   width: 400px;
+   
+=======
 	height: 30px;
 	width: 400px;
 	
+>>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 }
 
 #wrap{
-	display: flex;
-	flex-direction: column;
+   display: flex;
+   flex-direction: column;
 }
 
 .CommentWrite{
+<<<<<<< HEAD
+   display: flex;
+   justify-content: center;
+=======
 	display: flex;
 	justify-content: center;
+>>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 }
 
 td{
-	border-bottom:none;
+   border-bottom:none;
 }
