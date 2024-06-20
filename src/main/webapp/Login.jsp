@@ -9,6 +9,7 @@
 
 </head>
 <body>
+	 <%@ include file = "header.jsp" %>
 	<div class="wrap">
         <div class="login">
             <img alt="logo" src="./image/btlogo.png">
@@ -16,7 +17,7 @@
             	<fieldset>
 		            <div class="login_id">
 		                <h4>E-mail</h4>
-		                <input type="email" name="email" placeholder="이메일" autofocus required>
+		                <input type="text" name="email" placeholder="이메일" autofocus required>
 		            </div>
 		            <div class="login_pw">
 		                <h4>Password</h4>
@@ -43,6 +44,9 @@
 			<li><a target="_blank" href="SerchPassword.jsp" class="find_text">비밀번호 찾기</a></li>
 			<li><a target="_blank" href="Join.jsp" class="find_text">회원가입</a></li>
 		</ul>
+		<div>
+		<%@ include file = "Footer.jsp" %>
+		</div>
 		
 			<script src = "https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 	

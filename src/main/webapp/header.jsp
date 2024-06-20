@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.baseballtalk.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -174,9 +175,15 @@ a {
 			if(lm == null){%>
 			<li><a href="Join.jsp">회원가입</a></li>
 			<li><a href="Login.jsp">로그인</a></li>
-			<%}else if(lm != null){%>
+			<%}else if(lm != null){
+				if(lm.getMem_id().equals("admin")){
+			%>
+			<li><a href="Manager.jsp">회원정보</a></li>
+			<li><a href="LogoutCon">로그아웃</a></li>
+			<%}else{ %>
 			<li><a href="MyPagehome.jsp">회원정보</a></li>
 			<li><a href="LogoutCon">로그아웃</a></li>
+			<%} %>
 			<%}%>
 		</ul>
 

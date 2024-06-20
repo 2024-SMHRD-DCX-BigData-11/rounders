@@ -14,8 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.expr.NewExpr;
+
 import com.baseballtalk.model.MemberDTO;
 import com.baseballtalk.model.PlayerDTO;
+import com.baseballtalk.model.PointDTO;
 import com.baseballtalk.model.HotPlayerDAO;
 import com.baseballtalk.model.HotPlayerDTO;
 import com.baseballtalk.model.MatchDAO;
@@ -85,6 +88,41 @@ public class HotPlayerCon extends HttpServlet {
 						HotPlayerDTO hotPlayer = new HotPlayerDTO(login_member.getMem_id(), player_idx);
 						int insert_hotPlayer = new HotPlayerDAO().insertHotPlayer(hotPlayer);
 						if (insert_hotPlayer > 0) {
+							int getpoint = new MemberDAO().getPoint(login_member.getMem_id());
+							getpoint += 100;
+							System.out.println(getpoint);
+							MemberDTO updatemem = login_member;
+							if(getpoint >= 200) {
+								updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+										login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+										login_member.getTeam_idx(),"minor",getpoint);
+								int updategrade = new MemberDAO().updateGrade(updatemem);
+							}else if(getpoint>=1000){
+								updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+										login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+										login_member.getTeam_idx(),"major",getpoint);
+								int updategrade = new MemberDAO().updateGrade(updatemem);
+							}else if(getpoint>=5000) {
+								updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+										login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+										login_member.getTeam_idx(),"allstar",getpoint);
+								int updategrade = new MemberDAO().updateGrade(updatemem);
+							}else if(getpoint>=10000) {
+								updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+										login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+										login_member.getTeam_idx(),"worldclass",getpoint);
+								int updategrade = new MemberDAO().updateGrade(updatemem);
+							}else {
+								updatemem= new MemberDTO(login_member.getMem_id(),login_member.getMem_pw(),
+										login_member.getMem_name(),login_member.getMem_nick(),login_member.getMem_tel(),
+										login_member.getTeam_idx(),"rookie",getpoint);
+								int updategrade = new MemberDAO().updateGrade(updatemem);
+							}
+							System.out.println(updatemem);
+							int updatePoint = new MemberDAO().updatePoint(updatemem);
+							System.out.println(updatePoint);
+							session.setAttribute("login_member", updatemem);
+							
 							int player_likes = new HotPlayerDAO().selectLikes(player_idx);
 							player_likes+=1;
 							PlayerDTO player = new PlayerDTO(player_idx, player_likes);

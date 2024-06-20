@@ -68,6 +68,27 @@ public class MemberDAO {
 		return nick;
 	}
 	
+	public int updatePoint(MemberDTO member){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.update("com.baseballtalk.database.MemberMapper.updatePoint", member);
+		session.close();
+		return cnt;
+	}
+	
+	public int getPoint(String id) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int point = session.selectOne("com.baseballtalk.database.MemberMapper.getPoint", id);
+		session.close();
+		return point;
+	}
+	
+	public int updateGrade(MemberDTO updatemem){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int cnt = session.update("com.baseballtalk.database.MemberMapper.updateGrade",updatemem);
+		session.close();
+		return cnt;
+	}
+	
 	
 	
 }

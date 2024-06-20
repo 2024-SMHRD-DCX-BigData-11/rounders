@@ -18,6 +18,7 @@
 </style>
 </head>
 <body>
+<%@ include file="header.jsp"%>
 	<div class="wrap">
 		<div class="mypagehome">
 			<h2>My-Page</h2>
@@ -53,15 +54,16 @@
 					<%if(member != null && member.getMem_pw() != null){%>
 					<a href="UpdateMypage.jsp">회원정보 수정</a>
 					<%}else if(member != null && member.getMem_pw() == null) {%>
-					<a href="Main.jsp">회원정보 수정</a>
+					<a class = "link" href="Main.jsp">회원정보 수정</a>
 					<%} %>
-					<br><a href="MyPosting.jsp">내가 작성한 게시물</a>
+					<br><a class = "link" href="MyPosting.jsp">내가 작성한 게시물</a>
 					<%if(member != null && member.getMem_pw() != null){%>
-					<br> <a href="MemberLeave.jsp">회원 탈퇴</a>
+					<br> <a class = "link" href="MemberLeave.jsp">회원 탈퇴</a>
 					<%} %>
 				</div>
 			</fieldset>
 		</div>
 	</div>
+<div><%@ include file="Footer.jsp"%></div>
 </body>
 </html>
