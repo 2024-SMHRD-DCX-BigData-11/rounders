@@ -25,7 +25,7 @@ import com.baseballtalk.model.BoardDAO;
 
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			HttpSession session = request.getSession();
-			MemberDTO login_member = (MemberDTO)session.getAttribute("login_member")
+			MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 			// 파일 업로드를 위한 변수 설정
 			// 1. request
 			// 2. 파일을 저장할 경로(상대경로)
