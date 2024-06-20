@@ -115,7 +115,7 @@ VALUES
 	
 	<select id="selectTeamBoard" resultType="TeamBoard">
 	 	<![CDATA[
-			select * from tbl_team_board where rownum<=10 ORDER by board_likes DESC
+			select * from (select * from tbl_team_board ORDER by board_likes DESC)where rownum<=10
 		]]>
 	</select>
 	
