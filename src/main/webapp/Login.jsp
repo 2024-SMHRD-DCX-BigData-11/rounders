@@ -30,12 +30,12 @@
 		                <input type="submit" value="로그인">
 		            </div>
 		            
+            	</fieldset>
 		            <div class="button-login" align ="center" >
 	                <a id="kakao-login-btn" >
-	    				<img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300px" height ="50px" />
+	    				<img src="//k.kakaocdn.net/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="100%" height ="100px" />
 	    			</a>
 					</div>
-            	</fieldset>
             </form>
 		  </div>
 	    </div>
