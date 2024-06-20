@@ -170,14 +170,14 @@ a {
 			</li>
 		</ul>
 		<ul class="navbar__links">
-			<%MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
-			if(login_member == null){%>
+			<%MemberDTO lm = (MemberDTO)session.getAttribute("login_member");
+			if(lm == null){%>
 			<li><a href="Join.jsp">회원가입</a></li>
 			<li><a href="Login.jsp">로그인</a></li>
-			<%}else if(login_member != null && login_member.getMem_pw() != null){%>
+			<%}else if(lm != null && lm.getMem_pw() != null){%>
 			<li><a href="MyPagehome.jsp">회원정보</a></li>
 			<li><a href="LogoutCon">로그아웃</a></li>
-			<%}else if(login_member != null && login_member.getMem_pw() == null){%>
+			<%}else if(lm != null && lm.getMem_pw() == null){%>
 			<li><a href="MyPagehome.jsp">회원정보</a></li>
 			<li><a href="LogoutCon">로그아웃</a></li>
 			<%} %>
