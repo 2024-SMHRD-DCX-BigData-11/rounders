@@ -110,9 +110,9 @@
 				for (TeamBoardCommentDTO tbc : showTeamBoardComment) {
 				%>
 				<table class="CommentTable">
-
+	<%String comment_mem_nick = new MemberDAO().getNick(tbc.getMem_id()); %>
 					<tr>
-						<td><%=mem_nick%></td>
+						<td><%=comment_mem_nick%></td>
 						<td><%=tbc.getCmt_content()%></td>
 					</tr>
 

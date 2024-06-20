@@ -45,6 +45,14 @@ public class MemberDTO {
 		this.mem_tel = tel;
 		this.team_idx = team_Num;
 	}
+	public MemberDTO(String id,String pw, String nick, String tel, Integer team_Num) {
+		super();
+		this.mem_id = id;
+		this.mem_pw = pw;
+		this.mem_nick = nick;
+		this.mem_tel = tel;
+		this.team_idx = team_Num;
+	}
 	public MemberDTO(String id,String pw, String name, String nick, String tel, Integer team_Num,String grade, int point) {
 		super();
 		this.mem_id = id;

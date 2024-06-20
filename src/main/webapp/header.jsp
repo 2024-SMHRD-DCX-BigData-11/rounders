@@ -172,9 +172,9 @@ a {
 				</ul>
 			</li>
 		</ul>
+			<%MemberDTO lm = (MemberDTO)session.getAttribute("login_member");%>
 		<ul class="navbar__links">
-			<%MemberDTO lm = (MemberDTO)session.getAttribute("login_member");
-			if(lm == null){%>
+			<%if(lm == null){%>
 			<li><a href="Join.jsp">회원가입</a></li>
 			<li><a href="Login.jsp">로그인</a></li>
 			<%}else if(lm != null){

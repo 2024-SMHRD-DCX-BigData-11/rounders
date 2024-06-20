@@ -47,6 +47,15 @@
   		update tbl_member set mem_point = #{mem_point} where mem_id = #{mem_id}
   	</update>
   	
+  	<update id="updateMember" parameterType="Member">
+  		update tbl_member set mem_pw = #{mem_pw},mem_nick = #{mem_nick},mem_phone=#{mem_tel},
+  		team_idx = #{team_idx} where mem_id = #{mem_id}
+  	</update>
+  	
+  	<update id="updateMemberTeam" parameterType="Member">
+  		update tbl_member set team_idx = #{team_idx} where mem_id = #{mem_id}
+  	</update>
+  	
   	<update id="updateGrade" parameterType="Member">
   		update tbl_member set mem_grade = #{mem_grade} where mem_id = #{mem_id}
   	</update>

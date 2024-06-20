@@ -12,33 +12,10 @@
 <!-- 	<div class="wrap"> -->
         <div class="update">
             <h2>회원정보 수정</h2>
-            <form action="UpdateCon" method="post">
+            <form action="UpdateKakaoCon" method="post">
             	<fieldset>
 			            <div class="update_id">
 			                <input type="email"  placeholder="이메일 변경 불가능" name = "update_email" readonly>
-			            </div>
-			            <div class="update_pw">
-							<input type="password"  placeholder="변경할 비밀번호를 입력해주세요" name = "update_pw" id = "password" autofocus>
-			            </div>
-			            <div class="update_pw">
-							<input type="password"  placeholder="비밀번호를 다시 입력해주세요" name = "pw" id = "pwcheck">
-			            </div>
-			            <div class="join_pw_check">
-							<a href="#"><input type="button" id="input_pw" value="비밀번호 확인" onclick="pw_check()" id = "pwcheck"></a>
-			            </div>
-			             <div id="result_pw_check" style = "display:none" align="center">
-						<span id="result_pw_check"></span>
-		            </div>
-			            <div class="update_nick">
-			                <input type="text" id="nickname" placeholder="변경할 닉네임을 입력해주세요" name = "update_nick">
-			            </div>
-			            <div class="join_check">
-							<a href="#"><input type="button" id="input_nick" value="닉네임 중복체크" onclick="nick_check()"></a>
-			            </div>
-			             <div id="result_nick_check" style = "display:none" align="center">
-						<span id="result_nick_check"></span></div>
-			            <div class="update_tel">
-			                <input type="tel"  placeholder="변경할 전화번호를 입력해주세요" name = "update_tel">
 			            </div>
 			            <div>
 			            	<select name = "team_Num">
@@ -60,7 +37,7 @@
 			            </div>
             	</fieldset>
             </form>
-		  </div>
+            </div>
 <!-- 	    </div> -->
 		<div>
 			<%@ include file="Footer.jsp"%>

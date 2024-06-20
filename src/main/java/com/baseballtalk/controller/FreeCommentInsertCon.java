@@ -33,8 +33,9 @@ import com.baseballtalk.model.TeamBoardCommentDTO;
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 		request.setCharacterEncoding("UTF-8");
-			
-			String mem_id = request.getParameter("mem_id");
+			HttpSession session = request.getSession();
+			MemberDTO login_mem = (MemberDTO)session.getAttribute("login_member");
+			String mem_id = login_mem.getMem_id();
 			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 			String cmt_content = request.getParameter("cmt_content");
 			

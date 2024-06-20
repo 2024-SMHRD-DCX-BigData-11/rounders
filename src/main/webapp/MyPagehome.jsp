@@ -52,9 +52,9 @@
 						</tbody>
 					</table>
 					<%if(member != null && member.getMem_pw() != null){%>
-					<a href="UpdateMypage.jsp">회원정보 수정</a>
+					<a class = "link" href="UpdateMypage.jsp">회원정보 수정</a>
 					<%}else if(member != null && member.getMem_pw() == null) {%>
-					<a class = "link" href="Main.jsp">회원정보 수정</a>
+					<a class = "link" href="UpdateKakaoMy.jsp">회원정보 수정</a>
 					<%} %>
 					<br><a class = "link" href="MyPosting.jsp">내가 작성한 게시물</a>
 					<%if(member != null && member.getMem_pw() != null){%>
