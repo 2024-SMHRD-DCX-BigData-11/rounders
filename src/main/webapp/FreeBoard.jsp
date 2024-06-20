@@ -14,7 +14,7 @@
 <body>
 <% List<FreeBoardDTO> showFreeBoard = new BoardDAO().showFreeBoard();%>
 	<%@ include file = "header.jsp" %>
-	<div>
+	<div id="total">
 		<h1>자유게시판</h1>
 			<table style="border: 1px solid #111111;">
 			<thead>
@@ -30,11 +30,11 @@
 				<%String mem_nick = new MemberDAO().getNick(fb.getMem_id()); %>
 				<tbody>
 				<tr>
-					<td><%= fb.getBoard_title()%><td>
-					<td><%= mem_nick%><td>
-					<td><%= fb.getCreated_at()%><td>
-					<td><%= fb.getBoard_likes()%><td>
-					<td><%= fb.getBoard_likes()%><td>
+					<td><%= fb.getBoard_title()%></td>
+					<td><%= mem_nick%></td>
+					<td><%= fb.getCreated_at()%></td>
+					<td><%= fb.getBoard_likes()%></td>
+					<td><%= fb.getBoard_likes()%></td>
 				</tr>
 				</tbody>
 				<%}%>
