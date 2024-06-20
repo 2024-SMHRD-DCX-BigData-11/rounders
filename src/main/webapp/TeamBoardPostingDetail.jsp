@@ -57,7 +57,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">
-							<a href="#"><input type="button" value="뒤로가기"></a>
+							<a href="#"><input type="button" value="뒤로가기" id="backButton"></a>
 						</td>
 					</tr>
 				</table>
