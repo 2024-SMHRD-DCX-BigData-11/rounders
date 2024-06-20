@@ -1,3 +1,5 @@
+<%@page import="com.baseballtalk.model.MatchDAO"%>
+<%@page import="com.baseballtalk.model.MatchDTO"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.BoardDAO"%>
 <%@page import="com.baseballtalk.model.TeamBoardDTO"%>
@@ -14,6 +16,7 @@
 <body>
 	<%
 	List<TeamBoardDTO> showSamsungBoard = new BoardDAO().showSamsungBoard();
+	MatchDTO mymatch = new MatchDAO().myView(3);
 	%>
 	<%@ include file="header.jsp"%>
 	<div class="container">
@@ -90,19 +93,18 @@
 			</div>
 			<div class="right">
 				<div class="rightone">
-					<table id="schedule_wrap" style="border: 3px solid #074ca1">
+					<table id="schedule_wrap" style="border: 3px solid #ea0029">
 						<tr>
-							<th colspan="3" id="match_date">오늘의 경기<br> <span>${match.get(0).getMatch_date()}</span></th>
+							<th colspan="3" id="match_date">오늘의 경기<br> <span><%=mymatch.getMatch_date() %></span></th>
 						</tr>
-						<c:forEach var="i" begin="0" end="4" step="1">
 							<tr>
-								<td><span class="team">${match.get(i).getAway_team()}</span><br>
-									<span class="pitcher">${match.get(i).getAway_pitcher() }</span></td>
-								<td>${match.get(i).getMatch_time() }</td>
-								<td><span class="team">${match.get(i).getHome_team() }</span><br>
-									<span class="pitcher">${match.get(i).getHome_pitcher() }</span></td>
+								<td><span class="team"><%=mymatch.getAway_team() %></span><br>
+									<span class="pitcher"><%=mymatch.getAway_pitcher() %></span></td>
+								<td><%=mymatch.getMatch_time() %></td>
+								<td><span class="team"><%= mymatch.getHome_team() %></span><br>
+									<span class="pitcher"><%=mymatch.getHome_pitcher() %></span></td>
 							</tr>
-						</c:forEach>
+						
 					</table>
 				</div>
 				<!-- 버튼 -->
