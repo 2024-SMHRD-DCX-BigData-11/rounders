@@ -39,6 +39,13 @@
 				</tbody>
 				<%}%>
 			</table>
+			<%MemberDTO mem_login = (MemberDTO)session.getAttribute("login_member");
+			if(mem_login == null){%>
+				<button id = Notwrite onclick="location.href='Login.jsp'">글쓰기</button>
+			<%}else if(mem_login != null){%>
+				<button id = write onclick="location.href='NoticePostingWrite.jsp'">글쓰기</button>
+			
+			<%}%>
 		</div>
 		<div>
 			<%@ include file="Footer.jsp"%>

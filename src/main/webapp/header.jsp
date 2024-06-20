@@ -154,19 +154,21 @@ a {
 					<li><a href="Pitcher_Stat.jsp">투수</a></li>
 				</ul>
 			</li>
+			<li><a href="Notice.jsp">공지사항</a></li>
+			<li><a href="FreeBoard.jsp">자유게시판</a></li>
 			<li><a href="Hotplayer.jsp">핫플레이어</a></li>
-			<li><a href="">게시판</a>
+			<li><a href="">팀 페이지</a>
 				<ul>
-					<li><a href="">기아</a></li>
-					<li><a href="">엘지</a></li>
-					<li><a href="">삼성</a></li>
-					<li><a href="">두산</a></li>
-					<li><a href="">SSG</a></li>
-					<li><a href="">NC</a></li>
-					<li><a href="">한화</a></li>
-					<li><a href="">롯데</a></li>
-					<li><a href="">kt</a></li>
-					<li><a href="">키움</a></li>
+					<li><a href="KiaTeamPage.jsp">기아</a></li>
+					<li><a href="LgTeamPage.jsp">엘지</a></li>
+					<li><a href="SamsungTeamPage.jsp">삼성</a></li>
+					<li><a href="DoosanTeamPage.jsp">두산</a></li>
+					<li><a href="SsgTeamPage.jsp">SSG</a></li>
+					<li><a href="NcTeamPage.jsp">NC</a></li>
+					<li><a href="HanwhaTeamPage.jsp">한화</a></li>
+					<li><a href="LotteTeamPage.jsp">롯데</a></li>
+					<li><a href="KtTeamPage.jsp">kt</a></li>
+					<li><a href="KiwoomTeamPage.jsp">키움</a></li>
 				</ul>
 			</li>
 		</ul>

@@ -8,11 +8,10 @@
 	<link href="./css/Join.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<%@ include file = "header.jsp" %>
 	<div class="wrap">
 
         <div class="join">
-            <img alt="logo" src="./image/btlogo.png">
+            <a href="Main.jsp"><img alt="logo" src="./image/btlogo.png"></a>
             <form action="JoinCon" method="post">
             	<fieldset>
 		            <div class="join_id">
@@ -67,7 +66,7 @@
             </form>
 		  </div>
 	    </div>
-	    <div><%@ include file = "Footer.jsp" %></div>
+
 	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	    <script type="text/javascript">
 		    

@@ -21,6 +21,17 @@ public class MatchDAO {
 		session.close();
 		return match;
 	}
+	
+	public MatchDTO myView(int team_idx) {
+
+		// Connection 하나 빌려오기
+		SqlSession session = sqlSessionFactory.openSession(true);
+
+		// session.insert("경로",넘겨줄 파라미터);
+		MatchDTO match = session.selectOne("com.baseballtalk.database.MatchMapper.match_my",team_idx);
+		session.close();
+		return match;
+	}
 
 	public String match_time(int team_idx) {
 		SqlSession session = sqlSessionFactory.openSession(true);

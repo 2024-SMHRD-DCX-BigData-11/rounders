@@ -171,29 +171,30 @@
 				</table>
 			</div>
 		</div>
-	</div>
+
 		<!-- 팀 로고 클릭 시 팀게시판으로 링크 윗줄 5개 'team_wrap01' -->
 		<div id="warp2">
+			<h5><span class="underline-arrow">팀 게시판 바로가기</span></h5>
 			<div class='team_wrap01'>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/kia.svg" alt="기아로고" id="kia">
+					<a href="KiaTeamPage.jsp"> <img class="img" src="./image/kia.svg" alt="기아로고" id="kia">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/samsung.svg" alt="삼성로고"
+					<a href="SamsungTeamPage.jsp"> <img class="img" src="./image/samsung.svg" alt="삼성로고"
 						id="samsung">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/lotte.svg" alt="롯데로고" id="lotte">
+					<a href="LotteTeamPage.jsp"> <img class="img" src="./image/lotte.svg" alt="롯데로고" id="lotte">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/nc.svg" alt="엔씨로고" id="nc">
+					<a href="NcTeamPage.jsp"> <img class="img" src="./image/nc.svg" alt="엔씨로고" id="nc">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/kt.svg" alt="케이티로고" id="kt">
+					<a href="KtTeamPage.jsp"> <img class="img" src="./image/kt.svg" alt="케이티로고" id="kt">
 					</a>
 				</div>
 			</div>
@@ -201,26 +202,26 @@
 			<!--       팀 로고 두번째 줄 5개  'team_wrap02'      -->
 			<div class='team_wrap02'>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/hanwha.svg" alt="한화로고"
+					<a href="HanwhaTeamPage.jsp"> <img class="img" src="./image/hanwha.svg" alt="한화로고"
 						id="hanwha">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/kiwoom.svg" alt="키움로고"
+					<a href="KiwoomTeamPage.jsp"> <img class="img" src="./image/kiwoom.svg" alt="키움로고"
 						id="kiwoom">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/doosan.svg" alt="두산로고"
+					<a href="DoosanTeamPage.jsp"> <img class="img" src="./image/doosan.svg" alt="두산로고"
 						id="doosan">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/lg.svg" alt="엘지로고" id="lg">
+					<a href="LgTeamPage.jsp"> <img class="img" src="./image/lg.svg" alt="엘지로고" id="lg">
 					</a>
 				</div>
 				<div class='team_board'>
-					<a href="#"> <img src="./image/ssg.svg" alt="에스에스지로고" id="ssg">
+					<a href="SsgTeamPage.jsp"> <img class="img" src="./image/ssg.svg" alt="에스에스지로고" id="ssg">
 					</a>
 				</div>
 			</div>
