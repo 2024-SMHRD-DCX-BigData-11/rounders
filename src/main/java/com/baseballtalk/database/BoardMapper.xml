@@ -155,7 +155,7 @@ VALUES
 	select * from tbl_team_board where team_idx = 9 order by created_at desc
  	</select>
  	
- 	<select id="showKiwoonBoard" resultType="TeamBoard">
+ 	<select id="showKiwoomBoard" resultType="TeamBoard">
 	select * from tbl_team_board where team_idx = 10 order by created_at desc
  	</select>
  	

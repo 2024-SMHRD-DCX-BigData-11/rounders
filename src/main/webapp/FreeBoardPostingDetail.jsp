@@ -32,6 +32,10 @@
 						<td class="td">첨부파일</td>
 						<td><!-- 첨부파일 불러오기 --></td>
 					</tr>
+					<tr>
+						<td class="td">좋아요</td>
+						<td><button id = "btn_like" onclick="">좋아요</button></td>
+					</tr>
 					
 					<tr>
 						<td colspan="2">내용</td>
@@ -41,7 +45,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">
-							<a href="#"><input type="button" value="뒤로가기"></a>
+							<a href="#"><input type="button" value="뒤로가기" id = "backButton"></a>
 						</td>
 					</tr>
 				</table>
@@ -55,6 +59,12 @@
 				function() {
 					window.history.back(); // 브라우저의 뒤로 가기 기능을 실행합니다.
 				});
+		
+		document.getElementById('btn_like').addEventListener('click',
+				function() {
+					
+				});
+		
 	</script>
 </body>
 </html>
