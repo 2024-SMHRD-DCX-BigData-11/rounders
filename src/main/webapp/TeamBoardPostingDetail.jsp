@@ -21,16 +21,12 @@
 	TeamBoardDTO teamBoard = new BoardDAO().TeamDetail(board_idx) ;
 	List<TeamBoardCommentDTO> showTeamBoardComment = new CommentDAO().show_TeamBoardComment();
 	String mem_nick = new MemberDAO().getNick(teamBoard.getMem_id());
-<<<<<<< HEAD
 	MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 	int View = teamBoard.getBoard_views();
 	View++;
 	TeamBoardDTO tbd = new TeamBoardDTO(teamBoard.getBoard_idx(),
 			View);
 	int cnt = new BoardDAO().updateTeamView(tbd);
-=======
-	MemberDTO login_member = (MemberDTO) session.getAttribute("login_member");
->>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 %>
 <%@ include file = "header.jsp" %>
 	<div id = "board">
@@ -73,15 +69,13 @@
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">
-<<<<<<< HEAD
 							<a href="#"><input type="button" value="뒤로가기"></a>
 							<% if(login_member != null && login_member.getMem_id().equals(teamBoard.getMem_id())){%>
 							<a href = "#""><button id ="updateButton" color="black">수정</button></a>
 							<a href="#"><button id = "deleteButton">삭제</button></a>
 							<%} %>
-=======
+
 							<a href="#"><input type="button" value="뒤로가기" id="backButton"></a>
->>>>>>> branch 'develop' of https://github.com/2024-SMHRD-DCX-BigData-11/Rounders.git
 						</td>
 					</tr>
 				</table>
