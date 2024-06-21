@@ -77,7 +77,7 @@ VALUES
 
 	<update id="updateFreeBoard" parameterType = "FreeBoard">
 	
-		update tbl_freeboard set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{mem_id}
+		update tbl_freeboard set board_title=#{board_title}, board_content=#{board_content}, board_file=#{board_file}  where board_idx =#{board_idx}
 	
 	</update>
 

@@ -21,6 +21,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>베이스볼톡</title>
 <link href="./css/Main.css" rel="stylesheet" type="text/css">
+<style>
+.page_title{
+color: black;
+}
+</style>
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -160,7 +165,7 @@
 					%>
 						<tr>
 							<td><%= team_name%></td>
-							<td><%= tb.getBoard_title()%></td>
+							<td><a class = "page_title" href="TeamBoardPostingDetail.jsp?board_idx=<%=tb.getBoard_idx()%>"><%= tb.getBoard_title()%></a></td>
 							<td><%= nick %></td>
 							<td><%= tb.getCreated_at() %></td>
 							<td><%= tb.getBoard_views() %></td>

@@ -26,7 +26,8 @@ public class FreeBoardUpdateCon extends HttpServlet {
 			// 2. 파일을 저장할 경로(상대경로)
 String path = request.getServletContext().getRealPath("./file");
 System.out.println(path);
-			
+int board_idx = Integer.parseInt(request.getParameter("board_idx"));
+System.out.println(board_idx);
 			// 3. 파일 허용 용량
 			int maxSize = 10*1024*1024; // 10MB
 			
@@ -44,9 +45,8 @@ System.out.println(path);
 			request.setCharacterEncoding("UTF-8");
 			String board_title = multi.getParameter("board_title");
 			String board_content = multi.getParameter("board_content");
-			String board_file = multi.getParameter("board_file");
+			String board_file = multi.getFilesystemName("board_file");
 			String mem_id = multi.getParameter("mem_id");
-			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 			
 			FreeBoardDTO nb = new BoardDAO().FreeDetail(board_idx);
 			System.out.println(board_idx);
@@ -58,11 +58,11 @@ System.out.println(path);
 			
 			
 			if(i_cnt == 1) {
-				System.out.println("공지사항 게시글 수정 성공");
+				System.out.println("자유게시판 게시글 수정 성공");
 				response.sendRedirect("FreeBoardPostingDetail.jsp?board_idx="+board_idx);
 			}
 			else {
-				System.out.println("공지사항 게시글 수정 실패");
+				System.out.println("자유게시판 수정 실패");
 				response.sendRedirect("FreeBoardPostingDetail.jsp?board_idx="+board_idx);
 			}
 			

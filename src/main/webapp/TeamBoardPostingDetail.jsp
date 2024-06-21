@@ -73,8 +73,10 @@
 					<tr>
 						<td colspan="2"><h4><%=teamBoard.getBoard_content()%></h4>
 						<div>
+						<%if(teamBoard.getBoard_file() != null){ %>
 						<img class = "file_img" alt="" src="./file/<%=teamBoard.getBoard_file()%>">
 						</div>
+						<%} %>
 						</td>
 					</tr>
 					<tr>
