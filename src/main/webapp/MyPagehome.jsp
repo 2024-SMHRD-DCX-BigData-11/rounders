@@ -100,6 +100,7 @@
 					<a class = "link" href="UpdateKakaoMy.jsp">회원정보 수정</a>
 					<%} %>
 					<br><a class = "link" href="MyPosting.jsp">내가 작성한 게시물</a>
+					<%System.out.println(member.getMem_pw()); %>
 					<%if(member != null && member.getMem_pw() != null){%>
 					<br> <a class = "link" href="MemberLeave.jsp">회원 탈퇴</a>
 					<%} %>

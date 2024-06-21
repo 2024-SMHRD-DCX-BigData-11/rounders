@@ -10,7 +10,7 @@
 .link{
 	text-decoration: none;
 	color: black;
-	padding-top: 50px;
+	padding-top: 20px;
 	display: inline-block; /* 가운데 정렬을 위해 인라인 블록 요소로 변경 */
 	font-size: 2em;
 	text-align: center;
@@ -27,7 +27,6 @@
 	align-items: center;
 	justify-content: center;
 	background: white;
-	margin-top: 50px;
 }
 
 table {
