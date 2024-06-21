@@ -26,6 +26,6 @@ import com.baseballtalk.model.MemberDAO;
 			}else {
 				System.out.println("삭제 실패");
 			}
-			response.sendRedirect("Notice.jsp");
+			response.sendRedirect("FreeBoard.jsp");
 	}
 }

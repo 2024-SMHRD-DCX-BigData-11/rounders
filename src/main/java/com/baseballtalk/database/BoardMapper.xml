@@ -83,7 +83,7 @@ VALUES
 
 	<update id="updateTeamBoard" parameterType = "TeamBoard">
 	
-		update tbl_team_board set board_title=#{title}, board_content=#{content}, board_file=#{filename}  where board_idx =#{boardNum} and mem_id=#{mem_id}
+		update tbl_team_board set board_category = #{board_category},board_title=#{board_title}, board_content=#{board_content}, board_file=#{board_file}  where board_idx =#{board_idx}
 	
 	</update>
 
@@ -95,7 +95,7 @@ VALUES
 	
 	<delete id="deleteFreeBoard">
 	
-		delete from tbl_freeboard where mem_id=#{writer} and board_idx=#{boardNum} and board_title=#{title}
+		delete from tbl_freeboard where board_idx=#{board_idx}
 	
 	</delete>
 	
@@ -109,7 +109,7 @@ VALUES
 	
 	<delete id="deleteTeamBoard">
 	
-		delete from tbl_team_board where mem_id=#{writer} and team_idx=#{teamNum} and board_idx=#{boardNum} and board_title=#{title}
+		delete from tbl_team_board where board_idx = #{board_idx}
 	
 	</delete>
 	

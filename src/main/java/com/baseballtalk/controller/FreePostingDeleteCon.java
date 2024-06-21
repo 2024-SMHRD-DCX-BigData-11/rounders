@@ -17,15 +17,15 @@ import com.baseballtalk.model.MemberDAO;
 	
 	public class FreePostingDeleteCon extends HttpServlet {
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			int notice_idx = Integer.parseInt(request.getParameter("notice_idx"));
+			int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 			
-			int cnt = new BoardDAO().deleteNoticeBoard(notice_idx);
+			int cnt = new BoardDAO().deleteFreeBoard(board_idx);
 			
 			if(cnt == 1) {
 				System.out.println("삭제 성공");
 			}else {
 				System.out.println("삭제 실패");
 			}
-			response.sendRedirect("Notice.jsp");
+			response.sendRedirect("FreeBoard.jsp");
 	}
 }

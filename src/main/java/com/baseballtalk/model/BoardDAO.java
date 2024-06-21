@@ -76,19 +76,19 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 		
 	}
 	
-	public int deleteFreeBoard(FreeBoardDTO freeBoard) {
+	public int deleteFreeBoard(int board_idx) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteFreeBoard",freeBoard);
+		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteFreeBoard",board_idx);
 		session.close();
 		return cnt;
 		
 	}
 	
-	public int deleteTeamBoard(TeamBoardDTO teamBoard) {
+	public int deleteTeamBoard(int board_idx) {
 		
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteTeamBoard",teamBoard);
+		int cnt = session.delete("com.baseballtalk.database.BoardMapper.deleteTeamBoard",board_idx);
 		session.close();
 		return cnt;
 		

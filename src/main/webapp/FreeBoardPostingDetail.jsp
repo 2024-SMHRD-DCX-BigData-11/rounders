@@ -80,7 +80,7 @@
 							<a href="#"><input type="button" value="뒤로가기" id = "backButton"></a>
 							<% if(login_member != null && login_member.getMem_id().equals(freeBoard.getMem_id())){%>
 							<a href = "FreeBoardUpdate.jsp?board_idx=<%= board_idx %>">"><button id ="updateButton" color="black">수정</button></a>
-							<a href="#"><button id = "deleteButton">삭제</button></a>
+							<a href="FreePostingDeleteCon?board_idx=<%=board_idx%>"><button id = "deleteButton">삭제</button></a>
 							<%} %>
 						</td>
 					</tr>
