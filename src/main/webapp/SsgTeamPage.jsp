@@ -109,11 +109,17 @@ MatchDTO mymatch = new MatchDAO().myView(5);
 	<div class = "write_wrap">
 		<div class="write">
 		<%MemberDTO mem_login = (MemberDTO)session.getAttribute("login_member");
-			if(mem_login == null){%>
-				<a href="Login.jsp"><input style="background:#ce0e2d" type="button" name="write" value="글 쓰기" id="write"></a>
-				<%}else if(mem_login != null){%>
-				<a href="TeamPostingWrite.jsp"><input style="background:#ce0e2d" type="button" name="write" value="글 쓰기" id="write"></a>
-				<%}%>
+		int team_idx = mem_login.getTeam_idx();
+		if(mem_login == null){%>
+		<a href="Login.jsp"><input style="background: #ea0029"
+				type="button" name="write" value="글 쓰기" id="write"></a>
+		<%}else if(mem_login != null && team_idx == 5){%>
+		<a href="TeamPostingWrite.jsp"><input style="background: #ea0029"
+				type="button" name="write" value="글 쓰기" id="write"></a>
+		<%}else if(mem_login != null && team_idx != 5){%>
+		<a href="javascript:window.history.back();"><input style="background: #ea0029"
+				type="button" name="write" value="글 쓰기" id="write"></a>
+	<%}%>
 			</div>
 	</div>
 	<div class = "page_wrap">

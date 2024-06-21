@@ -27,7 +27,7 @@
 					src="./image/sm.jpg" id="img">
 				</a>
 				<div id="sm_text">
-					<p>↑↑↑↑↑↑↑↑↑↑↑↑</p>
+					<p>↑↑↑↑↑↑↑↑↑↑↑↑↑↑</p>
 					<p>개발자가 되고싶다면!!</p>
 				</div>
 			</div>
@@ -93,13 +93,16 @@
 					<div class="write_wrap">
 						<div class="write">
 							<%MemberDTO mem_login = (MemberDTO)session.getAttribute("login_member");
+							int team_idx = mem_login.getTeam_idx();
 							if(mem_login == null){%>
 								<a href="Login.jsp"><input style="background: #ea0029"
 										type="button" name="write" value="글 쓰기" id="write"></a>
-							<%}else if(mem_login != null){%>
+							<%}else if(mem_login != null && team_idx == 1){%>
 								<a href="TeamPostingWrite.jsp"><input style="background: #ea0029"
 										type="button" name="write" value="글 쓰기" id="write"></a>
-							
+							<%}else if(mem_login != null && team_idx != 1){%>
+							<a href="javascript:window.history.back();"><input style="background: #ea0029"
+										type="button" name="write" value="글 쓰기" id="write"></a>
 							<%}%>
 							
 						</div>
