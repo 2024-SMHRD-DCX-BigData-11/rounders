@@ -57,6 +57,12 @@ public class TeamBoardDTO {
 		this.board_likes = board_likes;
 	}
 	
+	public TeamBoardDTO(String board_category,@NonNull int team_idx) {
+		super();
+		this.team_idx = team_idx;
+		this.board_category = board_category;
+	}
+	
 	
 	
 	

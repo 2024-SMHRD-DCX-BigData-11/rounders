@@ -215,5 +215,10 @@ VALUES
  		select * from tbl_freeboard where mem_id = #{mem_id} order by created_at desc
  	</select>
  	
+ 	<select id = "selectTeamBoardCategory" parameterType="TeamBoard" resultType="TeamBoard">
+ 		select * from tbl_team_board where board_category = #{board_category} and team_idx = #{team_idx}
+ 	</select>
+
+ 	
  	
 </mapper>
