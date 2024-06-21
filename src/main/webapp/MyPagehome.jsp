@@ -1,3 +1,5 @@
+<%@page import="com.baseballtalk.model.TeamDAO"%>
+<%@page import="com.baseballtalk.model.TeamDTO"%>
 <%@page import="com.baseballtalk.model.MemberDAO"%>
 <%@page import="com.baseballtalk.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -40,7 +42,45 @@
 						</thead>
 						<tbody>
 							<tr>
-							<%if(member != null){ %>
+							<% String team_name = "";
+								String team_logo = "";
+								String link = "";
+								switch(member.getTeam_idx()){
+								case 1:
+									link = "KiaTeamPage.jsp";
+									break;
+								case 2:
+									link = "LgTeamPage.jsp";
+									break;
+								case 3:
+									link = "SamsungTeamPage.jsp";
+									break;
+								case 4:
+									link = "DoosanTeamPage.jsp";
+									break;
+								case 5:
+									link = "SsgTeamPage.jsp";
+									break;
+								case 6:
+									link = "NcTeamPage.jsp";
+									break;
+								case 7:
+									link = "HanwhaTeamPage.jsp";
+									break;
+								case 8:
+									link = "LotteTeamPage.jsp";
+									break;
+								case 9:
+									link = "KtTeamPage.jsp";
+									break;
+								case 10:
+									link = "KiwoomTeamPage.jsp";
+								}
+									
+								
+							if(member != null){ 
+								team_name = new TeamDAO().getTeamName(member.getTeam_idx());
+								team_logo = new TeamDAO().getTeamLogo(member.getTeam_idx());%>
 								<td><%=member.getMem_nick()%></td>
 								<td><%=member.getMem_point()%></td>
 								<td>
@@ -48,6 +88,9 @@
 									src="./grade/<%=member.getMem_grade()%>.png"
 									alt=<%=member.getMem_grade()%>></td>
 							<%} %>
+							</tr>
+							<tr>
+								<td colspan="3"><div><a href=<%=link%>><img src="<%=team_logo %>"></a></div></td>
 							</tr>
 						</tbody>
 					</table>

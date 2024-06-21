@@ -5,4 +5,8 @@
 	 <select id="selectTeamName" resultType="String" parameterType="int">
 	 	select team_name from tbl_team where team_idx = #{team_idx}
 	 </select>
+	 
+	 <select id="selectTeamLogo" resultType="String" parameterType="int">
+	 	select team_logo from tbl_team where team_idx = #{team_idx}
+	 </select>
 </mapper>

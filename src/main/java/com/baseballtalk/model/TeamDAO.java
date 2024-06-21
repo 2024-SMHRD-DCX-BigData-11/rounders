@@ -16,4 +16,12 @@ public class TeamDAO {
 		return TeamName;
 		
 	}
+	
+	public String getTeamLogo(int team_idx) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		String TeamName = session.selectOne("com.baseballtalk.database.TeamMapper.selectTeamLogo",team_idx);
+		session.close();
+		return TeamName;
+		
+	}
 }
