@@ -24,7 +24,7 @@
 <%
 	int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 	TeamBoardDTO teamBoard = new BoardDAO().TeamDetail(board_idx) ;
-	List<TeamBoardCommentDTO> showTeamBoardComment = new CommentDAO().show_TeamBoardComment();
+	List<TeamBoardCommentDTO> showTeamBoardComment = new CommentDAO().show_TeamBoardComment(board_idx);
 	String mem_nick = new MemberDAO().getNick(teamBoard.getMem_id());
 	MemberDTO login_member = (MemberDTO)session.getAttribute("login_member");
 	int View = teamBoard.getBoard_views();

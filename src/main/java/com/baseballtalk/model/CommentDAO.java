@@ -102,15 +102,15 @@ SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	}
 	
 	
-	public List<FreeBoardCommentDTO> show_FreeBoardComment(){
+	public List<FreeBoardCommentDTO> show_FreeBoardComment(int board_idx){
 		SqlSession session = sqlSessionFactory.openSession(true);
-		List<FreeBoardCommentDTO> show_FreeBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showFreeBoardComment");
+		List<FreeBoardCommentDTO> show_FreeBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showFreeBoardComment",board_idx);
 		return show_FreeBoardComment;
 	}
 	
-	public List<TeamBoardCommentDTO> show_TeamBoardComment(){
+	public List<TeamBoardCommentDTO> show_TeamBoardComment(int board_idx){
 		SqlSession session = sqlSessionFactory.openSession(true);
-		List<TeamBoardCommentDTO> show_TeamBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showTeamBoardComment");
+		List<TeamBoardCommentDTO> show_TeamBoardComment = session.selectList("com.baseballtalk.database.CommentMapper.showTeamBoardComment",board_idx);
 		return show_TeamBoardComment;
 	}
 	

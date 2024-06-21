@@ -25,7 +25,7 @@
 <%
 	int board_idx = Integer.parseInt(request.getParameter("board_idx"));
 	FreeBoardDTO freeBoard = new BoardDAO().FreeDetail(board_idx);
-	List<FreeBoardCommentDTO> showFreeBoardComment = new CommentDAO().show_FreeBoardComment();
+	List<FreeBoardCommentDTO> showFreeBoardComment = new CommentDAO().show_FreeBoardComment(board_idx);
 	String mem_nick = new MemberDAO().getNick(freeBoard.getMem_id());
 	int View = freeBoard.getBoard_views();
 	View++;

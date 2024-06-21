@@ -90,12 +90,12 @@ VALUES
 		select * from tbl_recored_comment order by created_at desc
 	</select>
 	
-	<select id="showFreeBoardComment" resultType = "FreeBoardComment">
-		select * from tbl_freeboard_comment order by created_at desc
+	<select id="showFreeBoardComment" parameterType ="int" resultType="FreeBoardComment">
+		select * from tbl_freeboard_comment where board_idx = #{board_idx} order by created_at desc 
 	</select>
 	
-	<select id="showTeamBoardComment" resultType = "TeamBoardComment">
-		select * from tbl_team_comment order by created_at desc
+	<select id="showTeamBoardComment" parameterType="int" resultType = "TeamBoardComment">
+		select * from tbl_team_comment where board_idx = #{board_idx} order by created_at desc 
 	</select>
  
 </mapper>
