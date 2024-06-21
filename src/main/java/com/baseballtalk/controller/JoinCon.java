@@ -21,6 +21,8 @@ import com.baseballtalk.model.MemberDAO;
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 			request.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
 			
 			String id = request.getParameter("email");
 			String pw = request.getParameter("pw");
