@@ -27,7 +27,7 @@
 					src="./image/sm.jpg" id="img">
 				</a>
 				<div id="sm_text">
-					<p>↑↑↑↑↑↑↑↑↑↑↑↑</p>
+					<p>↑↑↑↑↑↑↑↑↑↑↑↑↑↑</p>
 					<p>개발자가 되고싶다면!!</p>
 				</div>
 			</div>
