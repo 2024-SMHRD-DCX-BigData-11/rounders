@@ -64,7 +64,8 @@
 		<div class="left">
 		<div  id="team">
 			<h1>
-				한화 이글스 게시판 <select>
+				한화 이글스 게시판 <select name = "board_category" onchange="if(this.value) location.href=(this.value);">
+							<option value="카테고리">카테고리</option>
 							<option value="HanwhaTeamPage.jsp?category=전체">전체</option>
 							<option value="HanwhaTeamPage.jsp?category=잡담">잡담</option>
 							<option value="HanwhaTeamPage.jsp?category=정보">정보</option>

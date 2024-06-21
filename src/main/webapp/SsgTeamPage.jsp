@@ -65,8 +65,8 @@ System.out.println(category);
 		<div class="left">
 		<div  id="team">
 			<h1>
-				SSG 랜더스 게시판 <select>
-					<option value="카테고리">카테고리</option>
+				SSG 랜더스 게시판 <select name = "board_category" onchange="if(this.value) location.href=(this.value);">
+							<option value="카테고리">카테고리</option>
 							<option value="SsgTeamPage.jsp?category=전체">전체</option>
 							<option value="SsgTeamPage.jsp?category=잡담">잡담</option>
 							<option value="SsgTeamPage.jsp?category=정보">정보</option>

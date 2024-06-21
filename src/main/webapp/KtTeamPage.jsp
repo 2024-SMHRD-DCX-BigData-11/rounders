@@ -64,11 +64,12 @@ System.out.println(category);
 		<div class="left">
 		<div  id="team">
 			<h1>
-				KT wiz 게시판 <select>
-							<option value="LotteTeamPage.jsp?category=전체">전체</option>
-							<option value="LotteTeamPage.jsp?category=잡담">잡담</option>
-							<option value="LotteTeamPage.jsp?category=정보">정보</option>
-							<option value="LotteTeamPage.jsp?category=직관모임">직관모임</option>
+				KT wiz 게시판 <select name = "board_category" onchange="if(this.value) location.href=(this.value);">
+							<option value="카테고리">카테고리</option>
+							<option value="KtTeamPage.jsp?category=전체">전체</option>
+							<option value="KtTeamPage.jsp?category=잡담">잡담</option>
+							<option value="KtTeamPage.jsp?category=정보">정보</option>
+							<option value="KtTeamPage.jsp?category=직관모임">직관모임</option>
 				</select>
 			</h1>
 			<table class="table">

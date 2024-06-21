@@ -63,7 +63,8 @@ System.out.println(category);
 		<div class="left">
 		<div  id="team">
 			<h1>
-				NC 다이노스 게시판 <select>
+				NC 다이노스 게시판 <select name = "board_category" onchange="if(this.value) location.href=(this.value);">
+							<option value="카테고리">카테고리</option>
 							<option value="NcTeamPage.jsp?category=전체">전체</option>
 							<option value="NcTeamPage.jsp?category=잡담">잡담</option>
 							<option value="NcTeamPage.jsp?category=정보">정보</option>
