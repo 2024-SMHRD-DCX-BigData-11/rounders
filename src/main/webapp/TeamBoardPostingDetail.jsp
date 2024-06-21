@@ -13,7 +13,12 @@
 <title>게시글</title>
 	<link href="./css/PostingDetail.css" rel="stylesheet" type="text/css">
 	<link href="./css/CommentTable.css" rel="stylesheet" type="text/css">
-	
+	<style>
+	.file_img{
+		width: 100px;
+		height: 100px;
+	}
+	</style>
 </head>
 <body>
 <%
@@ -66,7 +71,11 @@
 						<td colspan="2">내용</td>
 					</tr>
 					<tr>
-						<td colspan="2"><h4><%=teamBoard.getBoard_content()%></h4></td>
+						<td colspan="2"><h4><%=teamBoard.getBoard_content()%></h4>
+						<div>
+						<img class = "file_img" alt="" src="./file/<%=teamBoard.getBoard_file()%>">
+						</div>
+						</td>
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">

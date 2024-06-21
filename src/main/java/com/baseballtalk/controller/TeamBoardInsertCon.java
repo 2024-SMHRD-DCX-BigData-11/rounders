@@ -53,7 +53,7 @@ import com.baseballtalk.model.BoardDAO;
 			String board_category = multi.getParameter("board_category");
 			String board_title = multi.getParameter("board_title");
 			String board_content = multi.getParameter("board_content");
-			String board_file = multi.getParameter("board_file");
+			String board_file = multi.getFilesystemName("board_file");
 			String mem_id = multi.getParameter("mem_id");
 			
 			TeamBoardDTO TeamBoard = new TeamBoardDTO(board_idx, team_idx, board_category, board_title, board_content, board_file, mem_id);

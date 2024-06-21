@@ -120,7 +120,7 @@ VALUES
 	</select>
 	
 	<select id="showNoticeBoard" resultType="NoticeBoard">
-	select * from tbl_notice
+	select * from tbl_notice order by created_at desc
  	</select>
  	
  	<update id="updateNoticeView" parameterType="NoticeBoard">
@@ -152,7 +152,7 @@ VALUES
  	</update>
  	
  	<select id="showFreeBoard" resultType="FreeBoard">
-	select * from tbl_freeboard
+	select * from tbl_freeboard order by created_at desc
  	</select>
  	
  	<select id="showKiaBoard" resultType="TeamBoard">
@@ -196,7 +196,7 @@ VALUES
  	</select>
  	
  	<select id="NoticeBoardDetail" resultType = "NoticeBoard">
- 	select * from tbl_notice where notice_idx = #{notice_idx}
+ 	select * from tbl_notice where notice_idx = #{notice_idx} 
  	</select>
  	
  	<select id="FreeBoardDetail" resultType = "FreeBoard">
