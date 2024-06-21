@@ -176,9 +176,6 @@ img {
 	text-align: center;
 	}
 	
-
-
-
 #match_date {
 	border-bottom: 1px solid;
 }
@@ -219,6 +216,15 @@ img {
 }
 
 @media (768px<width<=1200px) {
+	.img {
+		
+	
+		width: 80%;
+		height: auto;
+		
+	
+		object-fit: contain;
+	}
 	.p_rank,.p_name,.vote{
 	font-size:15px;
 	}
@@ -241,5 +247,16 @@ img {
 	#rank,#wrap1_sub,#hot_board,#wrap2,.p_rank{
 	width: 90%;
 	margin: auto;
+	}
+}
+@media ( width <=768px) {
+.img {
+		
+	
+width: 80%;
+		height: auto;
+		
+	
+object-fit: contain;
 	}
 }
