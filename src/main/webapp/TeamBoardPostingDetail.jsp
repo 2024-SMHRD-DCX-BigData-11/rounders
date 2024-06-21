@@ -60,7 +60,7 @@
 					</tr>
 					<tr>
 						<td class="td">좋아요</td>
-						<td><span><%=teamBoard.getBoard_likes() %></span><a href="TeamBoardUpCon?board_idx=<%=board_idx%>"><button id = "btn_like">추천</button></td></a>
+						<td><span><%=teamBoard.getBoard_likes() %></span><a href="TeamBoardUpCon?board_idx=<%=board_idx%>"><img alt=" 좋아요" src="./image/rating.png" id="like"></a></td>
 					</tr>
 					<tr>
 						<td class="td">첨부파일</td>
@@ -73,10 +73,8 @@
 					<tr>
 						<td colspan="2"><h4><%=teamBoard.getBoard_content()%></h4>
 						<div>
-						<%if(teamBoard.getBoard_file() != null){ %>
 						<img class = "file_img" alt="" src="./file/<%=teamBoard.getBoard_file()%>">
 						</div>
-						<%} %>
 						</td>
 					</tr>
 					<tr>
