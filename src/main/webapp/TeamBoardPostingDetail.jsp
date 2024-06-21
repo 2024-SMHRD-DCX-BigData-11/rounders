@@ -86,8 +86,8 @@
 
 							<a href="#"><input type="button" value="뒤로가기"></a>
 							<% if(login_member != null && login_member.getMem_id().equals(teamBoard.getMem_id())){%>
-							<a href = "#""><button id ="updateButton" color="black">수정</button></a>
-							<a href="#"><button id = "deleteButton">삭제</button></a>
+							<a href = "TeamBoardUpdate.jsp?board_idx=<%= board_idx %>">"><button id ="updateButton" color="black">수정</button></a>
+							<a href="TeamPostingDeleteCon?board_idx=<%=board_idx%>&team_idx=<%=teamBoard.getTeam_idx()%>"><button id = "deleteButton">삭제</button></a>
 							<%} %>
 
 							<a href="#"><input type="button" value="뒤로가기" id="backButton"></a>
