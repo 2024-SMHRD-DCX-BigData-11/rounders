@@ -13,6 +13,7 @@
 .CommentTable{
    text-align: center;
     border: 1px solid #dddddd;
+   border-collapse: collapse;
 }
 
 .CommentList{
@@ -43,6 +44,9 @@
 
 td{
    border-bottom:none;
+    padding: 8px;
+    border: 1px solid #ccc;
+
 }
 
 #all{
