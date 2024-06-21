@@ -1,6 +1,7 @@
 package com.baseballtalk.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +33,7 @@ import com.baseballtalk.model.MemberDAO;
 			System.out.println(nick);
 			
 			 MemberDTO member = new MemberDTO(id, pw, name, nick, tel, team_Num);
+			 PrintWriter out = response.getWriter();
 			 System.out.println(member.toString());
 				
 				System.out.println(member.toString());
@@ -44,8 +46,9 @@ import com.baseballtalk.model.MemberDAO;
 				
 				session.setAttribute("join_member", join_member);
 				
-				 response.sendRedirect("Main.jsp"); } else { System.out.println("회원가입 실패ㅠㅠ");
-				 response.sendRedirect("Main.jsp"); }
+				out.println("<script>alert('회원가입 성공!!');" + "location.href='Login.jsp';</script>");} else { System.out.println("회원가입 실패ㅠㅠ");
+				 out.println("<script>alert('회원가입에 실패하였습니다.');" + "location.href='Join.jsp';</script>");
+				 }
 			 
 			
 		}
