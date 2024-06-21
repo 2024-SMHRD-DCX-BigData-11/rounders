@@ -321,6 +321,13 @@ public MemberDTO showTeamWriter(int board_idx) {
 	return	cnt;
 }
 	
+public List<TeamBoardDTO> selectTeamBoardCategory(TeamBoardDTO tbd) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	List<TeamBoardDTO> showCategory = session.selectList("com.baseballtalk.database.BoardMapper.selectTeamBoardCategory",tbd);
+	session.close();
+	return showCategory;
+}
 
 
 }
+

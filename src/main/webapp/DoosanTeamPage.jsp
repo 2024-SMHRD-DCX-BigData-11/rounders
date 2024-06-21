@@ -16,6 +16,33 @@
 <body>
 <%List<TeamBoardDTO> showDoosanBoard = new BoardDAO().showDoosanBoard();
 MatchDTO mymatch = new MatchDAO().myView(4);
+
+String category = request.getParameter("category");
+if(category != null){
+if(category.equals("전체")){
+	category = "전체";
+	System.out.println(category);
+	showDoosanBoard = new BoardDAO().showKiaBoard();
+}else if(category.equals("잡담")){
+	category = "잡담";
+	System.out.println(category);
+	TeamBoardDTO myboard= new TeamBoardDTO(category,4);
+	showDoosanBoard = new BoardDAO().selectTeamBoardCategory(myboard);
+}
+else if(category.equals("정보")){
+	category = "정보";
+	TeamBoardDTO myboard= new TeamBoardDTO(category,4);
+	showDoosanBoard = new BoardDAO().selectTeamBoardCategory(myboard);
+}
+else if(category.equals("직관모임")){
+	category = "직관모임";
+	TeamBoardDTO myboard= new TeamBoardDTO(category,4);
+	showDoosanBoard = new BoardDAO().selectTeamBoardCategory(myboard);
+}
+System.out.println(category);
+}
+
+
 %>
 <%@ include file="header.jsp"%>
 <div class="container">
@@ -38,10 +65,10 @@ MatchDTO mymatch = new MatchDAO().myView(4);
 		<div  id="team">
 			<h1>
 				두산 베어스 게시판 <select>
-					<option value="category">카테고리</option>
-					<option value="category">잡담</option>
-					<option value="category">정보</option>
-					<option value="category">직관모임</option>
+							<option value="DoosanTeamPage.jsp?category=전체">전체</option>
+							<option value="DoosanTeamPage.jsp?category=잡담">잡담</option>
+							<option value="DoosanTeamPage.jsp?category=정보">정보</option>
+							<option value="DoosanTeamPage.jsp?category=직관모임">직관모임</option>
 				</select>
 			</h1>
 			<table class="table">
@@ -107,7 +134,10 @@ MatchDTO mymatch = new MatchDAO().myView(4);
 	<div class = "write_wrap">
 		<div class="write">
 		<%MemberDTO mem_login = (MemberDTO)session.getAttribute("login_member");
-		int team_idx = mem_login.getTeam_idx();
+		int team_idx  = 0;
+		if(mem_login != null){
+		team_idx= mem_login.getTeam_idx();
+		}
 		if(mem_login == null){%>
 		<a href="Login.jsp"><input style="background: #ea0029"
 				type="button" name="write" value="글 쓰기" id="write"></a>
