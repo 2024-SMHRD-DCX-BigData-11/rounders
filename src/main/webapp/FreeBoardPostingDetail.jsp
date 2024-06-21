@@ -57,7 +57,7 @@
 					</tr>
 					<tr>
 						<td class="td">추천</td>
-						<td><span><%=freeBoard.getBoard_likes() %></span><a href="FreeUpCon?board_idx=<%=board_idx%>"><button id = "btn_like">추천</button></td></a>
+						<td><span><%=freeBoard.getBoard_likes() %></span><a href="FreeUpCon?board_idx=<%=board_idx%>"><img alt=" 좋아요" src="./image/rating.png" id="like"></a></td>
 					</tr>
 					<tr>
 						<td class="td">조회수</td>
@@ -77,7 +77,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">
-							<a href="#"><input type="button" value="뒤로가기" id = "backButton"></a>
+							<input type="button" value="뒤로가기" id = "backButton">
 							<% if(login_member != null && login_member.getMem_id().equals(freeBoard.getMem_id())){%>
 							<a href = "FreeBoardUpdate.jsp?board_idx=<%= board_idx %>">"><button id ="updateButton" color="black">수정</button></a>
 							<a href="FreePostingDeleteCon?board_idx=<%=board_idx%>"><button id = "deleteButton">삭제</button></a>

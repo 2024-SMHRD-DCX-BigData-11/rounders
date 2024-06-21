@@ -58,7 +58,7 @@
 					</tr>
 					<tr>
 						<td colspan="2" id="rs">
-							<a href="#"><input type="button" value="뒤로가기" id = "backButton"></a>
+							<input type="button" value="뒤로가기" id = "backButton">
 							
 							<% if(login_member != null && login_member.getMem_id().equals(noticeBoard.getMem_id())){%>
 							<a href = "NoticePostingUpdate.jsp?notice_idx=<%= notice_idx %>">"><button id ="updateButton" color="black">수정</button></a>
