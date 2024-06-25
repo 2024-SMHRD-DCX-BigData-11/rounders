@@ -16,7 +16,7 @@
                <fieldset>
                   <div class="login_id">
                       <h4>E-mail</h4>
-                      <input type="email" name="email" placeholder="이메일" autofocus required>
+                      <input type="text" name="email" placeholder="이메일" autofocus required>
                   </div>
                   <div class="login_pw">
                       <h4>Password</h4>
