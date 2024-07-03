@@ -79,7 +79,7 @@
 <br>
 
 ## 📌 ER다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![KakaoTalk_20240621_094801503](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/41752c4e-6065-4a18-8b5c-22cf1b2c1710)
 <br>
 
 ## 🖥 화면 구성
