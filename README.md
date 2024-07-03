@@ -75,7 +75,7 @@
 <br>
 
 ## 📌 SW유스케이스
-![image](https://user-images.githubusercontent.com/25995055/178401023-9a015e66-aa6e-4d74-8564-9b1f9d306649.png)
+![라운더스 유스케이스 다이어그램](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/a4df2d02-6ea1-4fb9-a355-31c10d12b506)
 <br>
 
 ## 📌 ER다이어그램
