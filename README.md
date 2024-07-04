@@ -127,8 +127,8 @@
     <td align="center"><strong>황주휘</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Backen</b></td>
-    <td align="center"><b>Backen/Crawling</b></td>
+    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>Backend/Crawling</b></td>
     <td align="center"><b>Frontend</b></td>
     <td align="center"><b>Frontend</b></td>
   </tr>
