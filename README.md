@@ -84,18 +84,36 @@
 
 ## 🖥 화면 구성
 
-### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-![image](https://user-images.githubusercontent.com/25995055/178401098-95f15a0e-a2de-415e-83d5-883bb4cb0656.png)
+### 회원가입/로그인/마이페이지/내가작성한 게시물/회원정보수정/회원탈퇴/관리자 페이지/회원관리/전체게시물
+![회원가입](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/af5fd9cc-13af-465c-855d-7042035b3246)
+![로그인](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/cbc043a6-5468-4e46-98bf-ee2c2b28fcbf)
+![마이페이지](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/fb53e378-2bd9-4cdf-9d3c-73b2af08d86d)
+![내가작성한게시물](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/0e19f8e2-101b-46a5-9047-5fdcd263c9c9)
+![회원정보수정](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/bc2b82a5-e7e6-44b7-bd5a-2c9a51374eed)
+![회원탈퇴](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/6644ca81-b6e7-4538-bb78-301b491bff05)
+![관리자 페이지](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/bfac9a5d-fa3d-409a-8d87-b0c4c25d04da)
+![회원관리](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/2b9c999a-3eef-4be9-aa88-11c3aa9f321a)
+![전체게시물](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/a30a7e48-b9e4-44e6-a38c-1d2f8ce380d8)
+
 <br>
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+
+### 메인화면
+![메인](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/4f03bc6b-40a9-45d2-a9ea-7e933d6f4fea)
 <br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 게시판(공지사항, 자유게시판) 및 팀페이지(응원하기)
+![공지사항](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/63f98f18-e744-4437-a039-593139653a36)
+![자유게시판](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/ecf14511-08ee-49e7-ae17-96aff8276aab)
+![팀페이지](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/5ba89658-de85-4021-b687-d17f0609b061)
+![응원하기](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/1cd48ece-05e8-44a0-bcbb-d4a1872b5f4f)
+
 <br>
 
+### 핫플레이어
+![핫플레이어](https://github.com/2024-SMHRD-DCX-BigData-11/Rounders/assets/106016609/6d607441-a032-4d8d-a2b5-813d6c035cbf)
+
+<br>
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
